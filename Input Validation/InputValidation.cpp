@@ -1,5 +1,5 @@
 // TestingInput.cpp : Defines the entry point for the console application.
-//
+//Michael Apperson
 
 #include "stdafx.h"
 #include "iostream"
