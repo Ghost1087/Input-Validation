@@ -199,10 +199,10 @@ void easy4x4()
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num4 ,  num1 , "   " },
-		{ " 2 " , "   " , "   " , "   " ,  num4 },
-		{ " 3 " ,  num2 , "   " , "   " , "   " },
-		{ " 4 " , "   " ,  num3 ,  num2 , "   " }
+		{ " 1 " ,  num3 ,  num4 ,  num1 ,  num2 },
+		{ " 2 " ,  num1 ,  num2 ,  num3 ,  num4 },
+		{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
+		{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
 	};
 	//===========Elise Borbely End========================
 	string boardThree[rows][cols] =
@@ -217,10 +217,10 @@ void easy4x4()
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 , "   " , "   " ,  num2 },
-		{ " 2 " , "   " ,  num2 , "   " , "   " },
-		{ " 3 " , "   " , "   " ,  num3 , "   " },
-		{ " 4 " ,  num3 , "   " , "   " ,  num4 }
+		{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
+		{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
+		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
+		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
 	//===========Elise Borbely End=====================
 
@@ -653,9 +653,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 	bool valid = false;                                                         //--- check-input flag
 	cout << endl << endl;
 
-	for (int countRows = 0; countRows < 5; countRows++)
+	for (int countRows = 0; countRows < 5; countRows++) //Elise Borbely 
 	{
-		for (int countColumns = 0; countColumns < 5; countColumns++)
+		for (int countColumns = 0; countColumns < 5; countColumns++) //Elise Borbely
 		{
 
 
@@ -804,15 +804,15 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 			board[numRow][numCol] = choiceNum;                                          //--- update the array using the converted row and col variables, and insert the modified number into array
 
-																						//===========Elise Borbely==============================================
-			if (board[numRow][numCol] == boardAnswer[numRow][numCol])
+	//===========Elise Borbely==============================================
+			if (board[numRow][numCol] == boardAnswer[numRow][numCol])               //---- Compares the user input to the board answer
 			{
-				cout << "That number is correctly placed" << endl;
+				cout << endl << "That number is correctly placed" << endl;        //---If the input matches the answer the number has brackets.
 
 			}
-			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])
+			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])          //---If the number isn't correct
 			{
-				cout << "That number is not correctly placed" << endl;
+				cout << endl << "That number is not correctly placed" << endl;     //---This code makes it so it doesn't have brackets so the user knows to try and change that one. 
 
 				if (board[numRow][numCol] == num1)
 				{
@@ -835,6 +835,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 		}
 	}
 	//=====================Elise Borbely End======================================
+
+
+
 	//=============== GENERATE UPDATED BOARD ===================
 	cout << boardTop << endl;
 	for (int i = 0; i < rows; i++)
@@ -880,7 +883,7 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 
 	cout << endl << endl;
 
-	//this is where the code repeats
+	
 
 
 
