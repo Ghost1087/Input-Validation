@@ -177,8 +177,8 @@ void easy4x4()
 		{ " 3 " , "   " ,  num4 ,  num3 , "   " },
 		{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
-//===========Elise Borbely==============================
-	string boardOneAnswer[rows][cols] = 
+	//===========Elise Borbely==============================
+	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
 		{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
@@ -186,7 +186,7 @@ void easy4x4()
 		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
 		{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
 	};
-//=============Elise Borbely End========================
+	//=============Elise Borbely End========================
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -195,6 +195,16 @@ void easy4x4()
 		{ " 3 " , " 2 " , "   " , "   " , "   " },
 		{ " 4 " , "   " , " 3 " , " 2 " , "   " }
 	};
+	//=============Elise Borbely==========================
+	string boardTwoAnswer[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " },
+		{ " 1 " , "   " ,  num4 ,  num1 , "   " },
+		{ " 2 " , "   " , "   " , "   " ,  num4 },
+		{ " 3 " ,  num2 , "   " , "   " , "   " },
+		{ " 4 " , "   " ,  num3 ,  num2 , "   " }
+	};
+	//===========Elise Borbely End========================
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -203,6 +213,16 @@ void easy4x4()
 		{ " 3 " , "   " , "   " , " 3 " , "   " },
 		{ " 4 " , " 3 " , "   " , "   " , " 4 " }
 	};
+	//============Elise Borbely==========================
+	string boardThreeAnswer[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " },
+		{ " 1 " ,  num1 , "   " , "   " ,  num2 },
+		{ " 2 " , "   " ,  num2 , "   " , "   " },
+		{ " 3 " , "   " , "   " ,  num3 , "   " },
+		{ " 4 " ,  num3 , "   " , "   " ,  num4 }
+	};
+	//===========Elise Borbely End=====================
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
 	cout << endl;
@@ -620,6 +640,11 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 {
 	system("CLS");                                                              //--- clear screen
 
+	const string num1 = "[1]";                                          //--- constants
+	const string num2 = "[2]";
+	const string num3 = "[3]";
+	const string num4 = "[4]";
+
 	string choiceRow;                                                           //--- input variables
 	string choiceCol;
 	string choiceNum;
@@ -627,161 +652,190 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 	int numCol;                                                                 //--- used as col when entering number into array
 	bool valid = false;                                                         //--- check-input flag
 	cout << endl << endl;
-	for (int count = 0; count < 5; count++)                                    //---Elise working on this loop
+
+	for (int countRows = 0; countRows < 5; countRows++)
 	{
-		while (board[count] != boardAnswer[count])
+		for (int countColumns = 0; countColumns < 5; countColumns++)
 		{
 
-		}
-	}                                                                          
-	//============= GENERATE CHOSEN BOARD TO PLAY ===============
-	cout << boardTop << endl;
-	for (int i = 0; i < rows; i++)
-	{
-		cout << "|";
-		for (int j = 0; j < cols; j++)
-		{
-			cout << board[i][j];
-			if (i == 0)
+
+			cout << boardTop << endl;
+			for (int i = 0; i < rows; i++)
 			{
 				cout << "|";
-			}
-			else if (j == 0 || j == 2 || j == 4)
-			{
-				cout << "|";
-			}
-			else
-			{
-				cout << " ";
-			}
-		}
-		if (i == 0 || i == 2 || i == 4)
-		{
-			cout << endl << boardTop << endl;
-		}
-		else
-		{
-			cout << endl;
-			for (int j = 0; j < cols; j++)
-			{
-				if (j == 0)
+				for (int j = 0; j < cols; j++)
 				{
-					cout << "|---|";
+					cout << board[i][j];
+					if (i == 0)
+					{
+						cout << "|";
+					}
+					else if (j == 0 || j == 2 || j == 4)
+					{
+						cout << "|";
+					}
+					else
+					{
+						cout << " ";
+					}
 				}
-				else if (j == 2 || j == 4)
+				if (i == 0 || i == 2 || i == 4)
 				{
-					cout << "       |";
+					cout << endl << boardTop << endl;
+				}
+				else
+				{
+					cout << endl;
+					for (int j = 0; j < cols; j++)
+					{
+						if (j == 0)
+						{
+							cout << "|---|";
+						}
+						else if (j == 2 || j == 4)
+						{
+							cout << "       |";
+						}
+					}
+					cout << endl;
 				}
 			}
-			cout << endl;
-		}
-	}
 
-	cout << endl << endl << "Select a row (1-4) to enter a number in: ";        //--- get desired row
-	getline(cin, choiceRow);
-
-	while (valid == false)                                                      //--- check-input loop
-	{
-		if (choiceRow == "1" || choiceRow == "2" || choiceRow == "3" || choiceRow == "4") //--- if good input...
-		{
-			valid = true;                                                       //--- set flag to true
-			if (choiceRow == "1")                                               //--- then, if user chose row 1 to enter a number in...
-			{
-				numRow = 1;                                                     //--- set numRow to 1
-			}
-			if (choiceRow == "2")                                               //--- if user chose row 2...
-			{
-				numRow = 2;                                                     //--- set numRow to 2, etc.
-			}
-			if (choiceRow == "3")
-			{
-				numRow = 3;
-			}
-			if (choiceRow == "4")
-			{
-				numRow = 4;
-			}
-		}
-		else                                                                    //--- otherwise, bad input. ask again
-		{
-			cout << "Invalid input. Please select a row (1-4) to enter a number in: ";
+			cout << endl << endl << "Select a row (1-4) to enter a number in: ";        //--- get desired row
 			getline(cin, choiceRow);
-		}
-	}
 
-	valid = false;                                                              //--- reset check-input flag to false for next loop
+			while (valid == false)                                                      //--- check-input loop
+			{
+				if (choiceRow == "1" || choiceRow == "2" || choiceRow == "3" || choiceRow == "4") //--- if good input...
+				{
+					valid = true;                                                       //--- set flag to true
+					if (choiceRow == "1")                                               //--- then, if user chose row 1 to enter a number in...
+					{
+						numRow = 1;                                                     //--- set numRow to 1
+					}
+					if (choiceRow == "2")                                               //--- if user chose row 2...
+					{
+						numRow = 2;                                                     //--- set numRow to 2, etc.
+					}
+					if (choiceRow == "3")
+					{
+						numRow = 3;
+					}
+					if (choiceRow == "4")
+					{
+						numRow = 4;
+					}
+				}
+				else                                                                    //--- otherwise, bad input. ask again
+				{
+					cout << "Invalid input. Please select a row (1-4) to enter a number in: ";
+					getline(cin, choiceRow);
+				}
+			}
 
-	cout << endl << endl << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
-	getline(cin, choiceCol);
-	choiceCol[0] = toupper(choiceCol[0]);                                       //--- if user enters lowercase letter, this will change it to uppercase
+			valid = false;                                                              //--- reset check-input flag to false for next loop
 
-	while (valid == false)                                                      //--- check-input loop
-	{
-		if (choiceCol == "A" || choiceCol == "B" || choiceCol == "C" || choiceCol == "D")  //--- if good input...
-		{
-			valid = true;                                                       //--- set flag to true
-			if (choiceCol == "A")                                               //--- then, if column A is chosen...
-			{
-				numCol = 1;                                                     //--- set numCol to 1
-			}
-			if (choiceCol == "B")                                               //--- if column B...
-			{
-				numCol = 2;                                                     //--- set numCol to 2, etc.
-			}
-			if (choiceCol == "C")
-			{
-				numCol = 3;
-			}
-			if (choiceCol == "D")
-			{
-				numCol = 4;
-			}
-		}
-		else                                                                    //--- otherwise, bad input, ask again.
-		{
-			cout << "Invalid input. Please select a column (A-D) to enter a number in: ";
+			cout << endl << endl << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
 			getline(cin, choiceCol);
-			choiceCol[0] = toupper(choiceCol[0]);                               //--- changing new entered-letter to uppercase again
-		}
-	}
+			choiceCol[0] = toupper(choiceCol[0]);                                       //--- if user enters lowercase letter, this will change it to uppercase
 
-	valid = false;                                                              //--- flag to false again for next loop
+			while (valid == false)                                                      //--- check-input loop
+			{
+				if (choiceCol == "A" || choiceCol == "B" || choiceCol == "C" || choiceCol == "D")  //--- if good input...
+				{
+					valid = true;                                                       //--- set flag to true
+					if (choiceCol == "A")                                               //--- then, if column A is chosen...
+					{
+						numCol = 1;                                                     //--- set numCol to 1
+					}
+					if (choiceCol == "B")                                               //--- if column B...
+					{
+						numCol = 2;                                                     //--- set numCol to 2, etc.
+					}
+					if (choiceCol == "C")
+					{
+						numCol = 3;
+					}
+					if (choiceCol == "D")
+					{
+						numCol = 4;
+					}
+				}
+				else                                                                    //--- otherwise, bad input, ask again.
+				{
+					cout << "Invalid input. Please select a column (A-D) to enter a number in: ";
+					getline(cin, choiceCol);
+					choiceCol[0] = toupper(choiceCol[0]);                               //--- changing new entered-letter to uppercase again
+				}
+			}
 
-	cout << endl << endl << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
-	getline(cin, choiceNum);
+			valid = false;                                                              //--- flag to false again for next loop
 
-	while (valid == false)                                                      //--- check-input loop
-	{
-		if (choiceNum == "1" || choiceNum == "2" || choiceNum == "3" || choiceNum == "4")  //--- if good input...
-		{
-			valid = true;                                                       //--- flag to true
-			if (choiceNum == "1")                                               //--- if user wants to insert a 1 in chosen cell...
-			{
-				choiceNum = " 1 ";                                              //--- set the variable to same number with spaces around it (this keeps the board from thinning when the number is entered in array)
-			}
-			if (choiceNum == "2")                                               //--- if user wants to insert a 2...
-			{
-				choiceNum = " 2 ";                                              //--- set variable to 2 with spaces, etc.
-			}
-			if (choiceNum == "3")
-			{
-				choiceNum = " 3 ";
-			}
-			if (choiceNum == "4")
-			{
-				choiceNum = " 4 ";
-			}
-		}
-		else                                                                     //--- otherwise, bad input, ask again
-		{
-			cout << "Invalid input. Please select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
+			cout << endl << endl << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
 			getline(cin, choiceNum);
+
+			while (valid == false)                                                      //--- check-input loop
+			{
+				if (choiceNum == "1" || choiceNum == "2" || choiceNum == "3" || choiceNum == "4")  //--- if good input...
+				{
+					valid = true;                                                       //--- flag to true
+					if (choiceNum == "1")                                               //--- if user wants to insert a 1 in chosen cell...
+					{
+						choiceNum = num1;                                              //--- set the variable to same number with spaces around it (this keeps the board from thinning when the number is entered in array)
+					}
+					if (choiceNum == "2")                                               //--- if user wants to insert a 2...
+					{
+						choiceNum = num2;                                              //--- set variable to 2 with spaces, etc.
+					}
+					if (choiceNum == "3")
+					{
+						choiceNum = num3;
+					}
+					if (choiceNum == "4")
+					{
+						choiceNum = num4;
+					}
+				}
+				else                                                                     //--- otherwise, bad input, ask again
+				{
+					cout << "Invalid input. Please select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
+					getline(cin, choiceNum);
+				}
+			}
+			board[numRow][numCol] = choiceNum;                                          //--- update the array using the converted row and col variables, and insert the modified number into array
+
+																						//===========Elise Borbely==============================================
+			if (board[numRow][numCol] == boardAnswer[numRow][numCol])
+			{
+				cout << "That number is correctly placed" << endl;
+
+			}
+			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])
+			{
+				cout << "That number is not correctly placed" << endl;
+
+				if (board[numRow][numCol] == num1)
+				{
+					board[numRow][numCol] = " 1 ";
+				}
+				if (board[numRow][numCol] == num2)
+				{
+					board[numRow][numCol] = " 2 ";
+				}
+				if (board[numRow][numCol] == num3)
+				{
+					board[numRow][numCol] = " 3 ";
+				}
+				if (board[numRow][numCol] == num4)
+				{
+					board[numRow][numCol] = " 4 ";
+				}
+
+			}
 		}
 	}
-	board[numRow][numCol] = choiceNum;                                           //--- update the array using the converted row and col variables, and insert the modified number into array
-
-
-																				 //=============== GENERATE UPDATED BOARD ===================
+	//=====================Elise Borbely End======================================
+	//=============== GENERATE UPDATED BOARD ===================
 	cout << boardTop << endl;
 	for (int i = 0; i < rows; i++)
 	{
@@ -823,12 +877,17 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			cout << endl;
 		}
 	}
-
 
 	cout << endl << endl;
-//============Elise started coding here======================================================================
 
-	
+	//this is where the code repeats
+
+
+
+
+
+
+
 
 
 }
