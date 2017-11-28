@@ -1,3 +1,5 @@
-﻿  InputValidation.cpp
-  Input Validation.vcxproj -> C:\Users\Mike\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
-  Input Validation.vcxproj -> C:\Users\Mike\Documents\GitHub\Input-Validation\Debug\Input Validation.pdb (Partial PDB)
+﻿  stdafx.cpp
+  InputValidation.cpp
+  LINK : C:\Users\elise\Documents\GitHub\Input-Validation\Debug\Input Validation.exe not found or not built by the last incremental link; performing full link
+  Input Validation.vcxproj -> C:\Users\elise\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
+  Input Validation.vcxproj -> C:\Users\elise\Documents\GitHub\Input-Validation\Debug\Input Validation.pdb (Partial PDB)
