@@ -167,7 +167,7 @@ void easy4x4()
 	const string num4 = "[4]";
 
 	string boardTop = "=====================";                          //--- small board top border / block divider
-
+	string boardMid = "|===|=======|=======|";                          //--- small board mid border / block divider
 
 	string boardOne[rows][cols] =                                       //--- puzzle arrays
 	{
@@ -231,7 +231,7 @@ void easy4x4()
 	for (int i = 0; i < rows; i++)                                                                       //---- main rows loop (do the following per entire row)
 	{
 		cout << "|";                                                               //---- (puzzle 1) print left wall of puzzle 1 column 0
-		for (int j = 0; j < cols; j++)                                             //---- (puzzle 2) loop to print puzzle 1's contents
+		for (int j = 0; j < cols; j++)                                             //---- (puzzle 1) loop to print puzzle 1's contents
 		{
 			cout << boardOne[i][j];                                                //---- (puzzle 1) print puzzle 1's elements
 			if (i == 0)                                                            //---- (puzzle 1) if first row...
@@ -314,7 +314,14 @@ void easy4x4()
 		}
 		if (i == 0 || i == 2 || i == 4)                                //---- if row 0, 2, or 4, print boardTop to separate blocks
 		{
-			cout << endl << boardTop << "    " << boardTop << "    " << boardTop << endl; //---- print boardTop to separate blocks
+			if (i == 0 || i == 2)
+			{
+				cout << endl << boardMid << "    " << boardMid << "    " << boardMid << endl;
+			}
+			else if (i == 4)
+			{
+				cout << endl << boardTop << "    " << boardTop << "    " << boardTop << endl; //---- print boardTop to separate blocks
+			}
 		}
 		else                                                           //---- otherwise...
 		{
@@ -437,74 +444,234 @@ void easy9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 4 " , "   " , num1  , num2  , " 9 " , "   " , "   " , " 7 " , " 5 " },
-		{ " 2 " , " 2 " , "   " , "   " , " 3 " , "   " , "   " , " 8 " , "   " , "   " },
-		{ " 3 " , "   " , " 7 " , "   " , "   " , " 8 " , "   " , "   " , "   " , " 6 " },
-		{ " 4 " , "   " , "   " , "   " , num1  , "   " , " 3 " , "   " , "[6]" , "[2]" },
-		{ " 5 " , "[1]" , "   " , " 5 " , "   " , "   " , "   " , " 4 " , "   " , " 3 " },
-		{ " 6 " , "[7]" , " 3 " , "   " , " 6 " , "   " , " 8 " , "   " , "   " , "   " },
-		{ " 7 " , " 6 " , "   " , "   " , "   " , "[2]" , "   " , "   " , " 3 " , "   " },
-		{ " 8 " , "   " , "   " , " 7 " , "   " , "   " , num1  , "   " , "   " , " 4 " },
-		{ " 9 " , " 8 " , " 9 " , "   " , "   " , "[6]" , "[5]" , " 1 " , "   " , " 7 " }
+		{ " 1 " , num4  , "   " , num1  , num2  , num9  , "   " , "   " , num7  , num5 },
+		{ " 2 " , num2  , "   " , "   " , num3  , "   " , "   " , num8  , "   " , "   " },
+		{ " 3 " , "   " , num7  , "   " , "   " , num8  , "   " , "   " , "   " , num6 },
+		{ " 4 " , "   " , "   " , "   " , num1  , "   " , num3  , "   " , num6  , num2 },
+		{ " 5 " , num1  , "   " , num5  , "   " , "   " , "   " , num4  , "   " , num3 },
+		{ " 6 " , num7  , num3  , "   " , num6  , "   " , num8  , "   " , "   " , "   " },
+		{ " 7 " , num6  , "   " , "   " , "   " , num2  , "   " , "   " , num3  , "   " },
+		{ " 8 " , "   " , "   " , num7  , "   " , "   " , num1  , "   " , "   " , num4 },
+		{ " 9 " , num8  , num9  , "   " , "   " , num6  , num5  , num1  , "   " , num7 }
+	};
+	string boardOneAnswer[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
+		{ " 1 " , num4  , num8  , num1  , num2  , num9  , num6  , num3  , num7  , num5 },
+		{ " 2 " , num2  , num5  , num6  , num3  , num1  , num7  , num8  , num4  , num9 },
+		{ " 3 " , num3  , num7  , num9  , num5  , num8  , num4  , num2  , num1  , num6 },
+		{ " 4 " , num9  , num4  , num8  , num1  , num5  , num3  , num7  , num6  , num2 },
+		{ " 5 " , num1  , num6  , num5  , num9  , num7  , num2  , num4  , num8  , num3 },
+		{ " 6 " , num7  , num3  , num2  , num6  , num4  , num8  , num9  , num5  , num1 },
+		{ " 7 " , num6  , num1  , num4  , num7  , num2  , num9  , num5  , num3  , num8 },
+		{ " 8 " , num5  , num2  , num7  , num8  , num3  , num1  , num6  , num9  , num4 },
+		{ " 9 " , num8  , num9  , num3  , num4  , num6  , num5  , num1  , num2  , num7 }
 	};
 
-	//--- other large easy boards to come
-	string boardTwo[rows][cols] = {
-
+	string boardTwo[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
+		{ " 1 " , num9  , "   " , num2  , "   " , num1  , num7  , num4  , num6  , "   " },
+		{ " 2 " , "   " , num1  , "   " , num9  , num4  , "   " , "   " , "   " , "   " },
+		{ " 3 " , num3  , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+		{ " 4 " , "   " , "   " , num5  , num8  , "   " , "   " , num6  , "   " , num4 },
+		{ " 5 " , "   " , num4  , num9  , num3  , "   " , num5  , num7  , num2  , "   " },
+		{ " 6 " , num1  , "   " , num3  , "   " , "   " , num4  , num9  , "   " , "   " },
+		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num5 },
+		{ " 8 " , "   " , "   " , "   " , "   " , num3  , num2  , "   " , num4  , "   " },
+		{ " 9 " , "   " , num3  , num1  , num6  , num5  , "   " , num2  , "   " , num7 }
+	};
+	string boardTwoAnswer[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
+		{ " 1 " , num9  , num8  , num2  , num5  , num1  , num7  , num4  , num6  , num3 },
+		{ " 2 " , num7  , num1  , num6  , num9  , num4  , num3  , num5  , num8  , num2 },
+		{ " 3 " , num3  , num5  , num4  , num2  , num8  , num6  , num1  , num7  , num9 },
+		{ " 4 " , num2  , num7  , num5  , num8  , num9  , num1  , num6  , num3  , num4 },
+		{ " 5 " , num8  , num4  , num9  , num3  , num6  , num5  , num7  , num2  , num1 },
+		{ " 6 " , num1  , num6  , num3  , num7  , num2  , num4  , num9  , num5  , num8 },
+		{ " 7 " , num6  , num2  , num8  , num4  , num7  , num9  , num3  , num1  , num5 },
+		{ " 8 " , num5  , num9  , num7  , num1  , num3  , num2  , num8  , num4  , num6 },
+		{ " 9 " , num4  , num3  , num1  , num6  , num5  , num8  , num2  , num9  , num7 }
 	};
 
-	string boardThree[rows][cols] = {
-
+	string boardThree[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
+		{ " 1 " , num8  , "   " , "   " , "   " , num9  , "   " , num6  , "   " , "   " },
+		{ " 2 " , "   " , "   " , num4  , num1  , num5  , num6  , num8  , "   " , "   " },
+		{ " 3 " , "   " , num6  , num5  , "   " , "   " , num8  , "   " , "   " , "   " },
+		{ " 4 " , num5  , "   " , "   " , num3  , num6  , "   " , num2  , "   " , "   " },
+		{ " 5 " , num9  , "   " , num8  , "   " , "   " , "   " , num1  , "   " , num6 },
+		{ " 6 " , "   " , "   " , num7  , "   " , num1  , num9  , "   " , "   " , num4 },
+		{ " 7 " , "   " , "   " , "   " , num9  , "   " , "   " , num7  , num1  , "   " },
+		{ " 8 " , "   " , "   " , num9  , num2  , num7  , num5  , num4  , "   " , "   " },
+		{ " 9 " , "   " , "   " , num2  , "   " , num4  , "   " , "   " , "   " , num9 }
+	};
+	string boardThreeAnswer[rows][cols] =
+	{
+		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
+		{ " 1 " , num8  , num1  , num3  , num7  , num9  , num2  , num6  , num4  , num5 },
+		{ " 2 " , num2  , num9  , num4  , num1  , num5  , num6  , num8  , num3  , num7 },
+		{ " 3 " , num7  , num6  , num5  , num4  , num3  , num8  , num9  , num2  , num1 },
+		{ " 4 " , num5  , num4  , num1  , num3  , num6  , num7  , num2  , num9  , num8 },
+		{ " 5 " , num9  , num3  , num8  , num5  , num2  , num4  , num1  , num7  , num6 },
+		{ " 6 " , num6  , num2  , num7  , num8  , num1  , num9  , num3  , num5  , num4 },
+		{ " 7 " , num4  , num5  , num6  , num9  , num8  , num3  , num7  , num1  , num2 },
+		{ " 8 " , num1  , num8  , num9  , num2  , num7  , num5  , num4  , num6  , num3 },
+		{ " 9 " , num3  , num7  , num2  , num6  , num4  , num1  , num5  , num8  , num9 }
 	};
 
 
 	string boardTop = "=========================================";              //--- large board top / block borders
+	string boardMid = "|===|===========|===========|===========|";
 
-																				//================ GENERATE LARGE PUZZLES =======================
-	cout << "                PUZZLE 1                " << endl;
-	cout << boardTop << endl;
+	//================ GENERATE LARGE PUZZLES =======================
+	cout << endl;
+	cout << "                PUZZLE 1                                        PUZZLE 2                                        PUZZLE 3                 " << endl;  //--- puzzle headers
+	cout << boardTop << "       " << boardTop << "       " << boardTop << endl;     //--- print top of each board
 
-	for (int i = 0; i < rows; i++)                                              //--- main loop to print all rows
+	for (int i = 0; i < rows; i++)                                              //--- main rows loop (do the following per entire row)
 	{
-		cout << "|";                                                            //--- print left-most border
-
-		for (int j = 0; j < cols; j++)                                          //--- loop to print a row's contents
+		cout << "|";                                                            //--- (puzzle 1) print left wall of puzzle 1 column 0
+		for (int j = 0; j < cols; j++)                                          //--- (puzzle 1) loop to print puzzle 1's contents
 		{
 			cout << boardOne[i][j];                                             //--- (puzzle 1) print elements
-			if (i == 0)                                                         //--- if row 0...
+			if (i == 0)                                                         //--- (puzzle 1) if first row...
 			{
-				cout << "|";                                                    //--- print wall (walls of the column headers)
-			}
-			else if (j == 0 || j == 3 || j == 6 || j == 9)                      //--- if not row 0, but is column 0, 3, 6, or 9...
-			{
-				cout << "|";                                                    //--- print wall (these form the block's walls)
-			}
-			else                                                                //--- otherwise...
-			{
-				cout << " ";                                                    //--- print space (this evens out the rows)
-			}
-		}
-		if (i == 0 || i == 3 || i == 6 || i == 9)                               //--- if row 0, 3, 6, or 9...
-		{
-			cout << endl << boardTop << endl;                                   //--- skip line, print border, skip line (these are block floors / ceilings)
-		}
-		else                                                                    //--- otherwise...
-		{
-			cout << endl;                                                       //--- skip line
-			for (int j = 0; j < cols; j++)                                      //--- loop to print empty row's contents (not part of the array)
-			{
-				if (j == 0)                                                     //--- if column 0...
+				cout << "|";                                                    //--- (puzzle 1) print right-side wall of each cell, will close last cell (column header dividers)
+				if (j == 9)                                                     //--- (puzzle 1) if last element in current row...
 				{
-					cout << "|---|";                                            //--- print row-header divider
-				}
-				else if (j == 3 || j == 6 || j == 9)                            //--- if column 3, 6, or 9...
-				{
-					cout << "           |";                                     //--- print empty space and right-side wall (these also form the block's walls)
+					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
+					for (int ii = 0; ii < rows - 9; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					{
+						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
+						for (int jj = 0; jj < cols; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
+						{
+							cout << boardTwo[ii][jj];                                       //--- (puzzle 2) print puzzle 2's elements
+							if (ii == 0)                                                    //--- (puzzle 2) if first row in puzzle 2...
+							{
+								cout << "|";                                                //--- (puzzle 2) print column header dividers
+								if (jj == 9)                                                //--- (puzzle 2) if last element in first row...
+								{
+									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
+									for (int iii = 0; iii < rows - 9; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									{
+										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
+										for (int jjj = 0; jjj < cols; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
+										{
+											cout << boardThree[iii][jjj];                               //--- (puzzle 3) print puzzle 3's elements
+											if (iii == 0)                                               //--- (puzzle 3) if first row...
+											{
+												cout << "|";                                            //--- (puzzle 3) print column header dividers
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
-			cout << endl;                                                       //--- skip line
+			else if (j == 0 || j == 3 || j == 6 || j == 9)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			{
+				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
+				if (j == 9)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
+				{
+					cout << "       |";                                         //--- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
+					for (int jj = 0; jj < cols; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
+					{
+						cout << boardTwo[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
+						if (jj == 0 || jj == 3 || jj == 6 || jj == 9)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						{
+							cout << "|";                                                    //--- (puzzle 2) print wall
+							if (jj == 9)                                                    //--- (puzzle 2) if column 9...
+							{
+								cout << "       |";                                         //--- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
+								for (int jjj = 0; jjj < cols; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
+								{
+									cout << boardThree[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
+									if (jjj == 0 || jjj == 3 || jjj == 6 || jjj == 9)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									{
+										cout << "|";                                                    //--- (puzzle 3) print wall
+									}
+									else                                                                //--- (puzzle 3) otherwise...
+									{
+										cout << " ";                                                    //--- (puzzle 3) print space to even out rows
+									}
+								}
+							}
+						}
+						else                                                                //--- (puzzle 2) otherwise...
+						{
+							cout << " ";                                                    //--- (puzzle 2) print space to even out rows
+						}
+					}
+				}
+			}
+			else                                                                //--- (puzzle 1) if not first row, or columns 0, 3, 6, or 9...
+			{
+				cout << " ";                                                    //--- (puzzle 1) print space to even out the rows
+			}
 		}
+		if (i == 0 || i == 3 || i == 6 || i == 9)                  //--- if row 0, 3, 6, or 9...
+		{
+			if (i == 0 || i == 3 || i == 6)                             //--- if row 0, 3, or 6...
+			{
+				cout << endl << boardMid << "       " << boardMid << "       " << boardMid << endl;    //--- skip line, print mid border, skip line (these are block floors / ceilings)
+			}
+			else if (i == 9)                                            //--- else if row 9...
+			{
+				cout << endl << boardTop << "       " << boardTop << "       " << boardTop << endl;    //--- skip line, print top border, skip line (these are the top and bottom of entire board)
+			}
 
+		}
+		else                                                       //--- otherwise...
+		{
+			cout << endl;                                          //--- start new line for empty space rows
+			for (int j = 0; j < cols; j++)                                      //--- (puzzle 1) loop to print empty rows
+			{
+				if (j == 0)                                                     //--- (puzzle 1) if at column 0...
+				{
+					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
+				}
+				else if (j == 3 || j == 6 || j == 9)                            //--- (puzzle 1) if column 3, 6, or 9...
+				{
+					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
+					if (j == 9)                                                 //--- (puzzle 1) if at column 9...
+					{
+						cout << "       ";                                      //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
+						for (int jj = 0; jj < cols; jj++)                                   //--- (puzzle 2) loop to print empty rows
+						{
+							if (jj == 0)                                                    //--- (puzzle 2) if at column 0...
+							{
+								cout << "|---|";                                            //--- (puzzle 2) print row header divider
+							}
+							else if (jj == 3 || jj == 6 || jj == 9)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							{
+								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
+								if (jj == 9)                                                //--- (puzzle 2) if at column 9...
+								{
+									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
+									for (int jjj = 0; jjj < cols; jjj++)                                //--- (puzzle 3) loop to print empty rows
+									{
+										if (jjj == 0)                                                   //--- (puzzle 3) if at column 0...
+										{
+											cout << "|---|";                                            //--- (puzzle 3) print row header divider
+										}
+										else if (jjj == 3 || jjj == 6 || jjj == 9)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										{
+											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			cout << endl;                                          //--- once at the end of an empty space row, start new line to print next row of array elements
+		}
 	}
 
 	cout << endl << endl;
