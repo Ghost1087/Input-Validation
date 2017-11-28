@@ -32,7 +32,7 @@ void hard6x6();
 void easy9x9();
 void med9x9();
 void hard9x9();
-void playSmallGame(string[][5], string[][5], string, string, int, int);
+void playSmallGame(string[][5], string[][5], string, string, string, int, int);
 void playMedGame(string[][7]);
 void playLargeGame(string[][10], string, string, int, int);
 void solution(string);
@@ -392,15 +392,15 @@ void easy4x4()
 	//--- NOTE: I was sending boardChoice to eventually use it in solution() function. Haven't gone that far.
 	if (boardChoice == "1")                                                      //--- if puzzle 1 is chosen...
 	{
-		playSmallGame(boardOne, boardOneAnswer, boardTop, boardChoice, rows, cols);              //--- send it to playSmallGame function along with board parameters
+		playSmallGame(boardOne, boardOneAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function along with board parameters
 	}
 	if (boardChoice == "2")                                                      //--- if puzzle 2 is chosen...
 	{
-		playSmallGame(boardTwo, boardTwoAnswer, boardTop, boardChoice, rows, cols);              //--- send it to playSmallGame function
+		playSmallGame(boardTwo, boardTwoAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function
 	}
 	if (boardChoice == "3")
 	{
-		playSmallGame(boardThree, boardThreeAnswer, boardTop, boardChoice, rows, cols);
+		playSmallGame(boardThree, boardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
 void med4x4()
@@ -714,7 +714,7 @@ void hard9x9()
 {
 
 }
-void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, string boardChoice, int rows, int cols)
+void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols)
 {
 	system("CLS");                                                              //--- clear screen
 
@@ -759,7 +759,14 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 				}
 				if (i == 0 || i == 2 || i == 4)
 				{
-					cout << endl << boardTop << endl;
+					if (i == 0 || i == 2)
+					{
+						cout << endl << boardMid << endl;
+					}
+					else if (i == 4)
+					{
+						cout << endl << boardTop << endl;
+					}
 				}
 				else
 				{
