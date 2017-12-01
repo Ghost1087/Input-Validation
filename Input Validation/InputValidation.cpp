@@ -150,7 +150,7 @@ string difficulty(string &choiceTwo)
 
 	return choiceTwo;                                                   //--- send Main choiceTwo
 }
-
+//================Elise Borbely Start====================================
 void easy4x4()
 {
 	system("CLS");                                                      //--- clear screen
@@ -176,7 +176,7 @@ void easy4x4()
 		{ " 3 " , "   " ,  num4 ,  num3 , "   " },
 		{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
-	//===========Elise Borbely==============================
+	
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -185,7 +185,7 @@ void easy4x4()
 		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
 		{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
 	};
-	//=============Elise Borbely End========================
+	
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -194,7 +194,7 @@ void easy4x4()
 		{ " 3 " ,  num2 , "   " , "   " , "   " },
 		{ " 4 " , "   " ,  num3 ,  num2 , "   " }
 	};
-	//=============Elise Borbely==========================
+	
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -203,7 +203,7 @@ void easy4x4()
 		{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
 		{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
 	};
-	//===========Elise Borbely End========================
+	
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -212,7 +212,7 @@ void easy4x4()
 		{ " 3 " , "   " , "   " ,  num3 , "   " },
 		{ " 4 " ,  num3 , "   " , "   " ,  num4 }
 	};
-	//============Elise Borbely==========================
+
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
@@ -221,7 +221,7 @@ void easy4x4()
 		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
 		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
-	//===========Elise Borbely End=====================
+	
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
 	cout << endl;
@@ -402,6 +402,9 @@ void easy4x4()
 		playSmallGame(boardThree, boardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
+//==========================Elise Borbely End========================================
+
+//========================Elise Borbely Start=======================================
 void med4x4()
 {
 	system("CLS");                                                      //--- clear screen
@@ -653,6 +656,9 @@ void med4x4()
 		playSmallGame(MboardThree, MboardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
+//=========================Elise Borbely End=================================
+
+//=======================Elise Borbely Start================================
 void hard4x4()
 {
 	system("CLS");                                                      //--- clear screen
@@ -902,6 +908,7 @@ void hard4x4()
 		playSmallGame(HboardThree, HboardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
+//============================Elise Borbely End=====================================================
 
 void easy6x6()
 {
@@ -1766,6 +1773,8 @@ void hard9x9()
 }
 //======================== MICHAEL APPERSON END ===============================
 
+
+//===========================Elise Borbely Start===================================
 void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols)
 {
 	system("CLS");                                                              //--- clear screen
@@ -2061,6 +2070,7 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 
 
 }
+//===============Elise Borbely End=========================================
 
 void playMedGame()
 {
@@ -2395,12 +2405,13 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 }
 //======================= MICHAEL APPERSON END ================================
 
-
+//====================Elise Borbely Start======================================
 void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols)
 {
 	//system("CLS"); 
 	cout << "Congratulations! You solved the puzzle!" << endl;
 }
+//=====================Elise Borbely End=======================================
 
 //======================= MICHAEL APPERSON START ==============================
 void largeGameSolution(string board[][10], string boardAnswer[][10], string boardTop, string boardMid, int rows, int cols, int steps, bool win)
