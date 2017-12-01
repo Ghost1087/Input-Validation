@@ -2072,7 +2072,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 {
 	system("CLS");
 
-	const string num1 = "[1]";                                                   //--- constants
+	const string num1 = "[1]";                    //--- constants
 	const string num2 = "[2]";
 	const string num3 = "[3]";
 	const string num4 = "[4]";
@@ -2081,26 +2081,26 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 	const string num7 = "[7]";
 	const string num8 = "[8]";
 	const string num9 = "[9]";
+	string terminate = "-999";                    //--- sentinel
 	string choiceRow;
 	string choiceCol;
 	string choiceNum;
 	int numRow;
 	int numCol;
-	int steps = 0;
-	bool validInput = false;
-	bool validCell = false;
-	bool gameOver = false;
-	bool win = false;
-	bool arraysEqual = true;
+	int steps = 0;                                //--- score tracker
+	bool validInput = false;                      //--- validate input flag
+	bool validCell = false;                       //--- valid cell flag
+	bool gameOver = false;                        //--- main running loop flag
+	bool win = false;                             //--- if user finished puzzle flag
+	bool arraysEqual = true;                      //--- if arrays match flag
 
 
 
 	cout << endl << endl;
 
-	while (gameOver == false)
+	while (gameOver == false)                                             //--- run game loop
 	{
-		cout << boardTop << endl;
-
+		cout << boardTop << endl;                                         //--- generate board
 		for (int i = 0; i < rows; i++)
 		{
 			cout << "|";
@@ -2153,17 +2153,26 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 		}
 
 
-		while (validCell == false)                                                           //---- This loop prevents given cells from being changed
+		while (validCell == false && gameOver == false)                                //--- This loop prevents already-given cells from being changed
 		{
 			cout << endl << "Select a row (1-9) to enter a number in: ";
 			getline(cin, choiceRow);
 
-			while (validInput == false)
+			while (validInput == false)                                                //--- input validation loop for row selection
 			{
-				if ((choiceRow >= "1" && choiceRow <= "9") && choiceRow.size() == 1)
+
+				if (choiceRow == terminate)                                            //======= IF SENTINEL WAS ENTERED AS ROW =========
 				{
-					validInput = true;
-					if (choiceRow == "1")
+					gameOver = true;                                                   //--- set gameOver flag to true to quit game
+					validInput = true;                                                 //--- set validInput flag to true to leave current loop
+				}                                                                      //================================================
+
+
+				else if ((choiceRow >= "1" && choiceRow <= "9") && choiceRow.size() == 1)     //--- else if good input...
+				{
+
+					validInput = true;                                                        //--- set flag to leave loop
+					if (choiceRow == "1")                                                     //--- assign corresponding integer for array row
 					{
 						numRow = 1;
 					}
@@ -2200,25 +2209,37 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 						numRow = 9;
 					}
 				}
-				else
+				else                                                                          //--- otherwise, bad input
 				{
 					cout << "Invalid input. Please select a row (1-9) to enter a number in: ";
 					getline(cin, choiceRow);
 				}
 			}
 
-			validInput = false;
-
-			cout << endl << "Select a column (A-I) to enter a number in: ";
-			getline(cin, choiceCol);
-			choiceCol[0] = toupper(choiceCol[0]);
-
-			while (validInput == false)
+			if (gameOver == false)                                                            //======= IF SENTINEL HAS NOT BEEN ENTERED ==========
 			{
-				if ((choiceCol >= "A" && choiceCol <= "I") && choiceCol.size() == 1)
+				validInput = false;                                                           //--- set input flag to false for next input loop
+				cout << endl << "Select a column (A-I) to enter a number in: ";               //--- get column input
+				getline(cin, choiceCol);
+				choiceCol[0] = toupper(choiceCol[0]);                                         //--- raise letter to uppercase if possible
+			}                                                                                 //===================================================
+
+
+
+			while (validInput == false)                                                       //--- input validation loop for column selection
+			{
+
+				if (choiceCol == terminate)                                                   //======= IF SENTINEL WAS ENTERED AS COLUMN =========
 				{
-					validInput = true;
-					if (choiceCol == "A")
+					gameOver = true;                                                          //--- set gameOver flag to true to quit game
+					validInput = true;                                                        //--- set input flag to true to leave current loop
+				}                                                                             //===================================================
+
+
+				else if ((choiceCol >= "A" && choiceCol <= "I") && choiceCol.size() == 1)     //--- else if good input...
+				{
+					validInput = true;                                                        //--- set input flag to true to leave loop
+					if (choiceCol == "A")                                                     //--- set column input to corresponding integer for array column
 					{
 						numCol = 1;
 					}
@@ -2255,35 +2276,52 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 						numCol = 9;
 					}
 				}
-				else
+				else                                                                          //--- otherwise, bad input
 				{
 					cout << "Invalid input. Please select a column (A-I) to enter a number in: ";
 					getline(cin, choiceCol);
 					choiceCol[0] = toupper(choiceCol[0]);
 				}
 			}
-			if (board[numRow][numCol] >= num1 && board[numRow][numCol] <= num9)              //---- if the user's chosen row and col matches an element already given...
+
+			if (gameOver == false)                                                            //======= IF SENTINEL HAS NOT BEEN ENTERED =======
 			{
-				cout << endl << "You cannot change this cell. Try again." << endl;           //---- display error, loop back to row and col input
-			}
-			else                                                                             //---- otherwise...
-			{
-				validCell = true;                                                            //---- the chosen element is acceptable to change
-			}
+				if (board[numRow][numCol] >= num1 && board[numRow][numCol] <= num9)           //--- if the user's chosen row and col matches an element already given...
+				{
+					cout << endl << "You cannot change this cell. Try again." << endl;        //--- display error, loop back to row and col input
+				}
+				else                                                                          //--- otherwise...
+				{
+					validCell = true;                                                         //--- the chosen element is acceptable to change
+				}
+			}                                                                                 //================================================
 		}
-		validCell = false;                                                                   //---- reset validCell flag for next iteration
-		validInput = false;
 
-		cout << endl << "Select a number (1-9) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
-		getline(cin, choiceNum);
 
-		while (validInput == false)
+		if (gameOver == false)                                                                //======= IF SENTINEL HAS NOT BEEN ENTERED =======
 		{
-			if ((choiceNum >= "1" && choiceNum <= "9") && choiceNum.size() == 1)
-			{
-				validInput = true;
+			validCell = false;                                                                //--- reset validCell flag for next iteration
+			validInput = false;                                                               //--- reset input flag for next loop
+			cout << endl << "Select a number (1-9) to insert in cell " << choiceRow << "-" << choiceCol << ": ";
+			getline(cin, choiceNum);
+		}                                                                                     //================================================
 
-				if (choiceNum == "1")
+
+
+		while (validInput == false)                                                           //--- input validation loop for selected number to enter in cell
+		{
+
+			if (choiceNum == terminate)                                                       //======= IF SENTINEL WAS ENTERED AS NUMBER =======
+			{
+				gameOver = true;                                                              //--- set gameOver flag to true to quit game
+				validInput = true;                                                            //--- set input flag to true to leave current loop
+			}                                                                                 //=================================================
+
+
+			else if ((choiceNum >= "1" && choiceNum <= "9") && choiceNum.size() == 1)         //--- else if good input...
+			{
+				validInput = true;                                                            //--- set input flag to true to leave loop
+				if (choiceNum == "1")                                                         //--- modify user's input for the array
 				{
 					choiceNum = " 1 ";
 				}
@@ -2320,36 +2358,40 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 					choiceNum = " 9 ";
 				}
 			}
-			else
+			else                                                                              //--- otherwise, bad input
 			{
-				cout << "Invalid input. Please select a number (1-9) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
+				cout << "Invalid input. Please select a number (1-9) to insert in cell " << choiceRow << "-" << choiceCol << ": ";
 				getline(cin, choiceNum);
 			}
 		}
-		board[numRow][numCol] = choiceNum;
-		validInput = false;
-		steps++;
+		if (gameOver == false)                                                                //======= IF SENTINEL WAS NOT ENTERED ========
+		{
+			board[numRow][numCol] = choiceNum;                                                //--- add user's input into array
+			validInput = false;                                                               //--- reset input flag to false for next iteration
+			steps++;                                                                          //--- increment score counter
+		}                                                                                     //============================================
 
-		for (int i = 0; i < rows; i++)                           //---- loop to compare if user board matches finished board
+
+		for (int i = 0; i < rows; i++)                                                        //--- loop to compare if user board matches finished board
 		{
 			for (int j = 0; j < cols; j++)
 			{
-				if (board[i][j] != boardAnswer[i][j])            //---- if board does not match answer...
+				if (board[i][j] != boardAnswer[i][j])                                         //--- if board does not match answer...
 				{
-					arraysEqual = false;                         //---- set flag to false
+					arraysEqual = false;                                                      //--- set flag to false
 				}
 			}
 		}
-		if (arraysEqual)                                         //---- if flag is true, then user board matches finished board...
+		if (arraysEqual)                                                                      //--- if flag is true, then user board matches finished board...
 		{
-			win = true;
-			gameOver = true;                                     //---- and game is over (leave game loop)
+			win = true;                                                                       //--- user completed puzzle
+			gameOver = true;                                                                  //--- and game is over (leave game loop)
 		}
-		arraysEqual = true;                                      //---- reset equal arrays flag to true for next iteration
+		arraysEqual = true;                                                                   //--- reset equal arrays flag to true for next iteration
 
 	}
 
-	largeGameSolution(board, boardAnswer, boardTop, boardMid, rows, cols, steps, win);
+	largeGameSolution(board, boardAnswer, boardTop, boardMid, rows, cols, steps, win);        //--- solution function call when gameOver is true
 }
 //======================= MICHAEL APPERSON END ================================
 
@@ -2364,8 +2406,8 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 void largeGameSolution(string board[][10], string boardAnswer[][10], string boardTop, string boardMid, int rows, int cols, int steps, bool win)
 {
 	system("CLS");
-	if (win)
-	{
+	if (win)                                                                     //--- if WIN flag is true (user finished puzzle)...
+	{                                                                            //--- show congratulations and their solved puzzle
 		cout << endl << endl << "Congratulations! You solved the puzzle in " << steps << " steps!";
 		cout << endl << endl << endl;
 		cout << "               YOUR PUZZLE " << endl;
@@ -2421,8 +2463,8 @@ void largeGameSolution(string board[][10], string boardAnswer[][10], string boar
 		}
 	}
 
-	else
-	{
+	else                                                                            //--- if WIN flag is false (incomplete puzzle)...
+	{                                                                               //--- show incomplete puzzle and solution to puzzle
 		cout << endl;
 		cout << "               YOUR PUZZLE                                      SOLUTION                " << endl;  //--- puzzle headers
 		cout << boardTop << "       " << boardTop << endl;                          //--- print top of each board
