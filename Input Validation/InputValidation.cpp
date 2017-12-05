@@ -24,6 +24,7 @@ using namespace std;
 //======== PROTOTYPES =========
 string puzzleSize(string &);    //--- not sure if referencing was done right, or if was even necessary. I(Michael) suck with them.
 string difficulty(string &);
+string replay(string);
 void easy4x4();                 //--- these 9 will not be passed anything,
 void med4x4();                  //--- they only show puzzles to choose from
 void hard4x4();                 //--- and will access their related playGame() function
@@ -40,51 +41,63 @@ void SmallGamesolution(string[][5], string[][5], string, string, string, int, in
 void mediumGameSolution();
 void largeGameSolution(string[][10], string[][10], string, string, int, int, int, bool);
 
+
 int main()
 {
+	bool playAgain = true;
 	string choiceOne;                                  //--- store puzzle size choice
 	string choiceTwo;                                  //--- store puzzle difficulty choice
+	string choice;
 
-	puzzleSize(choiceOne);                             //--- go to puzzleSize function
-	difficulty(choiceTwo);                             //--- go to difficulty function
 
-	if (choiceOne == "1" && choiceTwo == "1")          //--- if "small puzzle" and "easy" was chosen...
+	while (playAgain == true)
 	{
-		easy4x4();                                     //--- enter easy4x4 function
-	}
-	if (choiceOne == "1" && choiceTwo == "2")          //--- if "small" and "medium"...
-	{
-		med4x4();                                      //--- enter med4x4 function, etc.
-	}
-	if (choiceOne == "1" && choiceTwo == "3")
-	{
-		hard4x4();
-	}
-	if (choiceOne == "2" && choiceTwo == "1")
-	{
-		easy6x6();
-	}
-	if (choiceOne == "2" && choiceTwo == "2")
-	{
-		med6x6();
-	}
-	if (choiceOne == "2" && choiceTwo == "3")
-	{
-		hard6x6();
-	}
-	if (choiceOne == "3" && choiceTwo == "1")
-	{
-		easy9x9();
-	}
-	if (choiceOne == "3" && choiceTwo == "2")
-	{
-		med9x9();
-	}
-	if (choiceOne == "3" && choiceTwo == "3")
-	{
-		hard9x9();
-	}
+		puzzleSize(choiceOne);                             //--- go to puzzleSize function
+		difficulty(choiceTwo);                             //--- go to difficulty function
+		if (choiceOne == "1" && choiceTwo == "1")          //--- if "small puzzle" and "easy" was chosen...
+		{
+			easy4x4();                                     //--- enter easy4x4 function
+		}
+		if (choiceOne == "1" && choiceTwo == "2")          //--- if "small" and "medium"...
+		{
+			med4x4();                                      //--- enter med4x4 function, etc.
+		}
+		if (choiceOne == "1" && choiceTwo == "3")
+		{
+			hard4x4();
+		}
+		if (choiceOne == "2" && choiceTwo == "1")
+		{
+			easy6x6();
+		}
+		if (choiceOne == "2" && choiceTwo == "2")
+		{
+			med6x6();
+		}
+		if (choiceOne == "2" && choiceTwo == "3")
+		{
+			hard6x6();
+		}
+		if (choiceOne == "3" && choiceTwo == "1")
+		{
+			easy9x9();
+		}
+		if (choiceOne == "3" && choiceTwo == "2")
+		{
+			med9x9();
+		}
+		if (choiceOne == "3" && choiceTwo == "3")
+		{
+			hard9x9();
+		}
 
+
+		replay(choice);
+		if (choice == "N")
+		{
+			playAgain = false;
+		}
+	}
 
 
 
@@ -997,7 +1010,7 @@ void easy6x6()
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 9; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
 						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
@@ -1009,7 +1022,7 @@ void easy6x6()
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 9; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
 										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
@@ -1027,7 +1040,7 @@ void easy6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6 || j == 9)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6/* || j == 9*/)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
@@ -1036,7 +1049,7 @@ void easy6x6()
 					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
 					{
 						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6 || jj == 9)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						if (jj == 0 || jj == 3 || jj == 6/* || jj == 9*/)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
@@ -1045,7 +1058,7 @@ void easy6x6()
 								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
 								{
 									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6 || jjj == 9)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									if (jjj == 0 || jjj == 3 || jjj == 6/* || jjj == 9*/)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1070,7 +1083,7 @@ void easy6x6()
 		}
 		if (i == 0 || i == 2 || i == 4 || i == 6)                  //--- if row 0, 3, 6, or 9...
 		{
-			if (i == 0 || i == 2 || i == 4 || i == 6)                             //--- if row 0, 3, or 6...
+			if (i == 0 || i == 2 || i == 4/* || i == 6*/)                             //--- if row 0, 3, or 6...
 			{
 				cout << endl << boardMid << "       " << boardMid << "       " << boardMid << endl;    //--- skip line, print mid border, skip line (these are block floors / ceilings)
 			}
@@ -1089,7 +1102,7 @@ void easy6x6()
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6 || j == 9)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6/* || j == 9*/)                            //--- (puzzle 1) if column 3, 6, or 9...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
 					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
@@ -1101,7 +1114,7 @@ void easy6x6()
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6 || jj == 9)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6/* || jj == 9*/)                         //--- (puzzle 2) if at colum 3, 6, or 9...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
@@ -1113,7 +1126,7 @@ void easy6x6()
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6 || jjj == 9)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6/* || jjj == 9*/)                      //--- (puzzle 3) if at column 3, 6, or 9...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -1247,7 +1260,7 @@ void med6x6()
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 9; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
 						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
@@ -1259,7 +1272,7 @@ void med6x6()
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 9; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
 										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
@@ -1277,7 +1290,7 @@ void med6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6 || j == 9)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6/* || j == 9*/)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
@@ -1286,7 +1299,7 @@ void med6x6()
 					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
 					{
 						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6 || jj == 9)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						if (jj == 0 || jj == 3 || jj == 6/* || jj == 9*/)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
@@ -1295,7 +1308,7 @@ void med6x6()
 								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
 								{
 									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6 || jjj == 9)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									if (jjj == 0 || jjj == 3 || jjj == 6/* || jjj == 9*/)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1320,7 +1333,7 @@ void med6x6()
 		}
 		if (i == 0 || i == 2 || i == 4 || i == 6)                  //--- if row 0, 3, 6, or 9...
 		{
-			if (i == 0 || i == 2 || i == 4 || i == 6)                             //--- if row 0, 3, or 6...
+			if (i == 0 || i == 2 || i == 4/* || i == 6*/)                             //--- if row 0, 3, or 6...
 			{
 				cout << endl << boardMid << "       " << boardMid << "       " << boardMid << endl;    //--- skip line, print mid border, skip line (these are block floors / ceilings)
 			}
@@ -1339,7 +1352,7 @@ void med6x6()
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6 || j == 9)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6/* || j == 9*/)                            //--- (puzzle 1) if column 3, 6, or 9...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
 					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
@@ -1351,7 +1364,7 @@ void med6x6()
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6 || jj == 9)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6/* || jj == 9*/)                         //--- (puzzle 2) if at colum 3, 6, or 9...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
@@ -1363,7 +1376,7 @@ void med6x6()
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6 || jjj == 9)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6/* || jjj == 9*/)                      //--- (puzzle 3) if at column 3, 6, or 9...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -1498,7 +1511,7 @@ void hard6x6()
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 9; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
 						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
@@ -1510,7 +1523,7 @@ void hard6x6()
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 9; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
 										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
@@ -1528,7 +1541,7 @@ void hard6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6 || j == 9)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6/* || j == 9*/)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
@@ -1537,7 +1550,7 @@ void hard6x6()
 					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
 					{
 						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6 || jj == 9)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						if (jj == 0 || jj == 3 || jj == 6/* || jj == 9*/)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
@@ -1546,7 +1559,7 @@ void hard6x6()
 								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
 								{
 									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6 || jjj == 9)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									if (jjj == 0 || jjj == 3 || jjj == 6/* || jjj == 9*/)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1571,7 +1584,7 @@ void hard6x6()
 		}
 		if (i == 0 || i == 2 || i == 4 || i == 6)                  //--- if row 0, 3, 6, or 9...
 		{
-			if (i == 0 || i == 2 || i == 4 || i == 6)                             //--- if row 0, 3, or 6...
+			if (i == 0 || i == 2 || i == 4/* || i == 6*/)                             //--- if row 0, 3, or 6...
 			{
 				cout << endl << boardMid << "       " << boardMid << "       " << boardMid << endl;    //--- skip line, print mid border, skip line (these are block floors / ceilings)
 			}
@@ -1590,7 +1603,7 @@ void hard6x6()
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6 || j == 9)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6/* || j == 9*/)                            //--- (puzzle 1) if column 3, 6, or 9...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
 					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
@@ -1602,7 +1615,7 @@ void hard6x6()
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6 || jj == 9)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6/* || jj == 9*/)                         //--- (puzzle 2) if at colum 3, 6, or 9...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
@@ -1614,7 +1627,7 @@ void hard6x6()
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6 || jjj == 9)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6/* || jjj == 9*/)                      //--- (puzzle 3) if at column 3, 6, or 9...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -2862,9 +2875,13 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 			}
 			if (i == 0 || i == 2 || i == 4 || i == 6)
 			{
-				if (i == 0 || i == 2 || i == 4 || i == 6)
+				if (i == 0 || i == 2 || i == 4/* || i == 6*/)
 				{
 					cout << endl << boardMid << endl;
+				}
+				else if (i == 6)
+				{
+					cout << endl << boardTop << endl;
 				}
 
 			}
@@ -3029,6 +3046,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 
 
+
 	cout << endl << endl;
 
 	while (gameOver == false)                                             //--- run game loop
@@ -3090,6 +3108,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 		{
 			cout << endl << "Select a row (1-9) to enter a number in: ";
 			getline(cin, choiceRow);
+
 
 			while (validInput == false)                                                //--- input validation loop for row selection
 			{
@@ -3507,3 +3526,27 @@ void largeGameSolution(string board[][10], string boardAnswer[][10], string boar
 	}
 }
 //======================= MICHAEL APPERSON END ================================
+
+//======================= Group Collaboration =============================
+string replay(string choice)
+{
+	bool validInput = false;
+	cout << "Would you like to play again? (Y / N):";
+	getline(cin, choice);
+	choice[0] = toupper(choice[0]);
+
+	while (validInput == false)
+	{
+		if ((choice == "Y" || choice == "N") && choice.length() == 1)
+		{
+			return choice;
+		}
+		else
+		{
+			cout << "Invalid input, please try again(Y / N): ";
+			getline(cin, choice);
+			choice[0] = toupper(choice[0]);
+
+		}
+	}
+}
