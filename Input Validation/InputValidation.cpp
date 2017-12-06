@@ -40,7 +40,7 @@ void playSmallGame(string[][5], string[][5], string, string, string, int, int);
 void playMedGame(string[][7], string[][7], const int, const int);
 void playLargeGame(string[][10], string[][10], string, string, int, int);
 void SmallGamesolution(string[][5], string[][5], string, string, string, int, int);
-void mediumGameSolution();
+void mediumGameSolution(string[][7], string[][7], string, string, int, int);
 void largeGameSolution(string[][10], string[][10], string, string, int, int, int, bool);
 
 
@@ -1031,39 +1031,39 @@ void easy6x6()
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", "   ", "   ", num1 , num6 , num5 , "   " },
+		{ " 2 ", num3 , num6 , num5 , "   ", "   ", num2 },
+		{ " 3 ", "   ", num5 , "   ", "   ", num2 , num6 },
+		{ " 4 ", "   ", num2 , num4 , num3 , num1 , num5 },
+		{ " 5 ", num4 , num3 , num2 , "   ", "   ", "   " },
+		{ " 6 ", "   ", num1 , "   ", num2 , num3 , num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", " 2 ", " 4 ", num1 , num6 , num5 , " 3 " },
+		{ " 2 ", num3 , num6 , num5 , " 1 ", " 4 ", num2 },
+		{ " 3 ", " 1 ", num5 , " 3 ", " 4 ", num2 , num6 },
+		{ " 4 ", " 6 ", num2 , num4 , num3 , num1 , num5 },
+		{ " 5 ", num4 , num3 , num2 , " 5 ", " 6 ", " 1 " },
+		{ " 6 ", " 5 ", num1 , " 6 ", num2 , num3 , num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", num1 , num2 , num6 , "   ", "   ", num5 },
+		{ " 2 ", num3 , "   ", "   ", "   ", num6 , num2 },
+		{ " 3 ", "   ", "   ", num3 , num5 , "   ", num6 },
+		{ " 4 ", num5 , num6 , num1 , num3 , "   ", "   " },
+		{ " 5 ", num4 , "   ", "   ", "   ", num5 , num3 },
+		{ " 6 ", "   ", num3 , num5 , num2 , num4 , num1 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", num1 , num2 , num6 , " 4 ", " 3 ", num5 },
+		{ " 2 ", num3 , " 5 ", " 4 ", " 1 ", num6 , num2 },
+		{ " 3 ", " 2 ", " 4 ", num3 , num5 , " 1 ", num6 },
+		{ " 4 ", num5 , num6 , num1 , num3 , " 2 ", " 4 " },
+		{ " 5 ", num4 , " 1 ", " 2 ", " 6 ", num5 , num3 },
+		{ " 6 ", " 6 ", num3 , num5 , num2 , num4 , num1 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1263,57 +1263,59 @@ void med6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", num1 , num4 , num2 , "   ", num6 , "   " },
+		{ " 2 ", "   ", "   ", "   ", num2 , "   ", "   " },
+		{ " 3 ", num2 , "   ", "   ", num5 , num1 , num3 },
+		{ " 4 ", "   ", "   ", num1 , num4 , num2 , "   " },
+		{ " 5 ", num4 , num1 , "   ", "   ", "   ", "   " },
+		{ " 6 ", num6 , "   ", "   ", num1 , num5 , num4 }
+	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", num1 , num4 , num2 , " 3 ", num6 , " 5 " },
+		{ " 2 ", " 3 ", " 5 ", " 6 ", num2 , " 4 ", " 1 " },
+		{ " 3 ", num2 , " 6 ", " 4 ", num5 , num1 , num3 },
+		{ " 4 ", " 5 ", " 3 ", num1 , num4 , num2 , " 6 " },
+		{ " 5 ", num4 , num1 , " 5 ", " 6 ", " 3 ", " 2 " },
+		{ " 6 ", num6 , " 2 ", " 3 ", num1 , num5 , num4 }
+	};
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
+		{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
+		{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
+		{ " 4 ", num3 , "   ", "   ", num2 , num5 , "   " },
+		{ " 5 ", "   ", num5 , num6 , "   ", "   ", num2 },
+		{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
+		{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
+		{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
+		{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
+		{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
+		{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
+		{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
+		{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
+		{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
+		{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
+		{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
+		{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
+		{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
+		{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
+		{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
+		{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1514,57 +1516,58 @@ void hard6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " }
+	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " } };
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+		{ " 1 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 4 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 5 ", "   ", "   ", "   ", "   ", "   ", "   " },
+		{ " 6 ", "   ", "   ", "   ", "   ", "   ", "   " } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -2905,6 +2908,7 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 }
 //===============Elise Borbely End=========================================
 
+//===========================Trevor Ruelle Start===============================
 void playMedGame(string board[][7], string board_answer[][7], const int rows, const int cols)
 {
 	system("CLS");
@@ -2915,6 +2919,7 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 	string boardMid = "|===|===========|===========|";
 	bool Input = false;
 	bool Equal = false;
+	string terminate = "-999";
 	bool Terminated = false;
 	bool ValidCell = false;
 	int celldiff = 0;
@@ -2927,6 +2932,9 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 
 	while (Equal == false && Terminated == false)
 	{
+		system("ClS");
+		cout << endl << endl;
+		cout << "STOP PLAYING AT ANY TIME BY TYPING -999" << endl;
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)
 		{
@@ -2981,7 +2989,7 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 		}
 
 		//start valid cell loop
-		while (ValidCell == false)
+		while (ValidCell == false && Terminated == false)
 		{
 
 			cout << endl << "Select a row (1-6) to enter a number in: ";
@@ -2989,7 +2997,7 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 
 			Input = false;
 
-			while (!Input)
+			while (!Input && Terminated == false)
 			{
 				if (row >= "1" && row <= "6" && row.length() == 1)
 				{
@@ -2998,6 +3006,10 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 
 
 				}
+				else if (row == terminate)
+				{
+					Terminated = true;
+				}
 				else
 				{
 					cout << "Bad input. Enter a row(1-6): ";
@@ -3005,14 +3017,19 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 				}
 
 			}
-			Input = false;
 
-			cout << "Select a column (A-F): ";
-			getline(cin, column);
+			if (Terminated == false)
+			{
+				Input = false;
 
-			column[0] = toupper(column[0]);
+				cout << "Select a column (A-F): ";
+				getline(cin, column);
 
-			while (!Input)
+				column[0] = toupper(column[0]);
+			}
+
+
+			while (!Input && Terminated == false)
 			{
 
 
@@ -3023,75 +3040,100 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 					column[0] = toupper(column[0]);
 					ccolumn = (column[0] - 64); //subtracts ascii value to equate with array
 				}
+				else if (column == terminate)
+				{
+					Terminated = true;
+				}
 				else
 				{
 					Input = true;
 				}
 
 			}
-			ccolumn = (column[0] - 64); //subtracts ascii value to equate with array
-			if (board[crow][ccolumn] >= num1 && board[crow][ccolumn] <= num6)
+
+			if (Terminated == false)
 			{
-				cout << "You cannot edit this cell." << endl;
+				ccolumn = (column[0] - 64); //subtracts ascii value to equate with array
+				if (board[crow][ccolumn] >= num1 && board[crow][ccolumn] <= num6)
+				{
+					cout << "You cannot edit this cell." << endl;
+				}
+				else
+				{
+					ValidCell = true;
+				}
+				Input = false;
 			}
-			else
-			{
-				ValidCell = true;
-			}
-			Input = false;
+
 		}
 
 
 
 		//end valid cell loop
 
-
-		ValidCell = false; //reset valid cell for next iteration
-		cout << "Enter a number to insert: ";
-		getline(cin, number);
-
-		while (!Input)
+		if (Terminated == false)//added just now and also while loop with terminated 
 		{
+			ValidCell = false; //reset valid cell for next iteration
+			cout << "Enter a number to insert: ";
+			getline(cin, number);
 
-			if (number >= "1" && number <= "6" && number.length() == 1)
+			while (!Input && Terminated == false)
 			{
-				cnumber = number;
-				number = ' ' + number + ' ';
-				Input = true;
-			}
-			else
-			{
-				cout << "Bad input. Enter a number between 1 and 9: ";
-				getline(cin, number);
-			}
 
-		}
-
-		board[crow][ccolumn] = number;
-
-		for (int i = 0; i < rows; i++)
-		{
-			for (int j = 0; j < cols; j++)
-			{
-				if (board[i][j] != board_answer[i][j])
+				if (number >= "1" && number <= "6" && number.length() == 1)
 				{
-					Equal = false;
-					celldiff++;
+					cnumber = number;
+					number = ' ' + number + ' ';
+					Input = true;
+				}
+				else if (number == terminate)
+				{
+					Terminated = true;
+				}
+				else
+				{
+					cout << "Bad input. Enter a number between 1 and 9: ";
+					getline(cin, number);
 				}
 
 			}
 		}
-		if (celldiff == 0)
+
+		if (Terminated == false)//added this jst now
 		{
-			Equal = true;
+			board[crow][ccolumn] = number;
+
+			for (int i = 0; i < rows; i++)
+			{
+				for (int j = 0; j < cols; j++)
+				{
+					if (board[i][j] != board_answer[i][j])
+					{
+						Equal = false;
+						celldiff++;
+					}
+
+				}
+			}
+			if (celldiff == 0)
+			{
+				Equal = true;
+			}
+
+			celldiff = 0;
 		}
 
-		celldiff = 0;
 
 	}
 
-	mediumGameSolution();
+	if (Terminated == false)
+	{
+		mediumGameSolution(board, board_answer, boardTop, boardMid, rows, cols);
+	}
+
 }
+
+//============================Trevor End=======================================
 
 //======================= MICHAEL APPERSON START ==============================
 void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop, string boardMid, int rows, int cols)
@@ -3442,8 +3484,64 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 //=====================Elise Borbely End=======================================
 
 //======================Trevor Ruelle Start==================================
-void mediumGameSolution()
+void mediumGameSolution(string board[][7], string boardAnswer[][7], string boardTop, string boardMid, int rows, int cols)
 {
+	system("CLS");
+	//--- show congratulations and their solved puzzle
+	cout << endl << endl << "Congratulations! You solved the puzzle";
+	cout << endl << endl << endl;
+	cout << "         YOUR PUZZLE " << endl;
+	cout << boardTop << endl;
+
+	for (int i = 0; i < rows; i++)                                           //--- main rows loop (do the following per entire row)
+	{
+		cout << "|";                                                         //--- print left wall of puzzle 1 column 0
+		for (int j = 0; j < cols; j++)                                       //--- loop to print puzzle 1's contents
+		{
+			cout << board[i][j];                                             //--- print elements
+			if (i == 0)                                                      //--- if first row...
+			{
+				cout << "|";                                                 //--- print right-side wall of each cell, will close last cell (column header dividers)
+			}
+			else if (j == 0 || j == 3 || j == 6 || j == 9)                   //--- if not first row, but is column 0, 3, 6, or 9...
+			{
+				cout << "|";                                                 //--- print divider (this will close off row headers as well as become block dividers)
+			}
+			else                                                             //--- if not first row, or columns 0, 3, 6, or 9...
+			{
+				cout << " ";                                                 //--- print space to even out the rows
+			}
+		}
+		if (i == 0 || i == 2 || i == 4 || i == 6)                            //--- if row 0, 3, 6, or 9...
+		{
+			if (i == 0 || i == 2 || i == 4)                                  //--- if row 0, 3, or 6...
+			{
+				cout << endl << boardMid << endl;                            //--- skip line, print mid border, skip line (these are block floors / ceilings)
+			}
+			else if (i == 6)                                                 //--- else if row 9...
+			{
+				cout << endl << boardTop << endl;                            //--- skip line, print top border, skip line (these are the top and bottom of entire board)
+			}
+
+		}
+		else                                                                 //--- otherwise...
+		{
+			cout << endl;                                                    //--- start new line for empty space rows
+			for (int j = 0; j < cols; j++)                                   //--- loop to print empty rows
+			{
+				if (j == 0)                                                  //--- if at column 0...
+				{
+					cout << "|---|";                                         //--- print row-header divider
+				}
+				else if (j == 3 || j == 6 || j == 9)                         //--- if column 3, 6, or 9...
+				{
+					cout << "           |";                                  //--- print gap and wall to form borders
+				}
+			}
+			cout << endl;                                                    //--- once at the end of an empty space row, start new line to print next row of array elements
+		}
+	}
+
 
 }
 //======================Trevor Ruelle End======================================
