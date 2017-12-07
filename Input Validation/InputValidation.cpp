@@ -43,9 +43,62 @@ void SmallGamesolution(string[][5], string[][5], string, string, string, int, in
 void mediumGameSolution(string[][7], string[][7], string, string, int, int);
 void largeGameSolution(string[][10], string[][10], string, string, int, int, int, bool);
 
+//====== Start Credit === The following code is credited to Erik English CIS150-02 ===========
+//====== and from his http://www.cplusplus.com/forum/beginner/105484/ ; User: Giblit
+enum COLOR
+{
+	black, blue,
+	green, cyan,
+	red, magenta,
+	brown, normal,
+	darkgrey, lightblue,
+	lightgreen, lightcyan,
+	lightred, lightmagenta,
+	yellow, white
+};
+ostream& operator<<(ostream &stm, const COLOR &c)
+{
+	HANDLE out_handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(out_handle, c);
+	return(stm);
+}
+//====== End Credit ===========================================================================
+
 
 int main()
-{
+{	//============  The following code is credited to Brian Muth =============
+	//======================== Start Credit ==================================
+	//https://social.msdn.microsoft.com/Forums/en-US/d50184d2-313b-4944-8307-e0343e865879/cc-putting-the-window-in-center-of-screen?forum=vcgeneral
+
+	//Get the window console handle(isn't the right code but works for these sample
+	HWND ConsoleWindow;
+	ConsoleWindow = GetForegroundWindow();
+
+	//Getting the desktop hadle and rectangule
+	HWND   hwndScreen;
+	RECT   rectScreen;
+	hwndScreen = GetDesktopWindow();
+	GetWindowRect(hwndScreen, &rectScreen);
+
+	//Set windows size(see the width problem)
+	SetWindowPos(ConsoleWindow, NULL, 0, 0, 1200, 600, SWP_SHOWWINDOW);
+
+	// Get the current width and height of the console
+	RECT rConsole;
+	GetWindowRect(ConsoleWindow, &rConsole);
+	int Width = rConsole.left = rConsole.right;
+	int Height = rConsole.bottom - rConsole.top;
+
+	//caculate the window console to center of the screen	
+	int ConsolePosX;
+	int ConsolePosY;
+	ConsolePosX = ((rectScreen.right - rectScreen.left) / 2 - Width / 2);
+	ConsolePosY = ((rectScreen.bottom - rectScreen.top) / 2 - Height / 2);
+	SetWindowPos(ConsoleWindow, NULL, ConsolePosX, ConsolePosY, Width, Height, SWP_SHOWWINDOW || SWP_NOSIZE);
+	//===== End Credit =======================================================================================================
+
+
+
 	bool playAgain = true;
 	string choiceOne;                                  //--- store puzzle size choice
 	string choiceTwo;                                  //--- store puzzle difficulty choice
@@ -110,20 +163,19 @@ int main()
 	return 0;
 }
 
-//====== Prototype Main Menu ========
 void startMenu()
 {
 
-	for (int i = 0; i < 30; i++)
+	/*for (int i = 0; i < 30; i++)
 	{
-		cout << endl;
+	cout << endl;
 
-		Sleep(50);
-	}
-	/*Sleep(400);
+	Sleep(50);
+	}*/
+	Sleep(50);
 	cout << endl;
 	Sleep(50);
-	cout << endl;*/
+	cout << endl;
 	cout << "                       =========================" << endl;
 	cout << "                       === WELCOME TO SUDOKU ===" << endl;
 	cout << "                       =========================" << endl << endl << endl;
@@ -184,6 +236,33 @@ void startMenu()
 string puzzleSize(string &choiceOne)
 {
 	system("CLS");
+
+	cout << "               =============================" << endl;
+	cout << "               === Choose a puzzle size! ===" << endl;
+	cout << "               =============================" << endl;
+
+	cout << "                                                                    ========= 9 x 9 =========" << endl;
+	cout << "                                                            =========================================" << endl;
+	cout << "                                                            |   | A | B | C | D | E | F | G | H | I |" << endl;
+	cout << "                              ====== 6 x 6 ======           |===|===========|===========|===========|" << endl;
+	cout << "                          =============================     | 1 |           | 4   3   2 |           |" << endl;
+	cout << "   ==== 4 x 4 ====        |   | A | B | C | D | E | F |     |---|           |           |           |" << endl;
+	cout << "=====================     |===|===========|===========|     | 2 |         5 |           | 1         |" << endl;
+	cout << "|   | A | B | C | D |     | 1 |         2 | 1         |     |---|           |           |           |" << endl;
+	cout << "|===|=======|=======|     |---|           |           |     | 3 |         6 |           | 9         |" << endl;
+	cout << "| 1 |       | 1     |     | 2 |     3     |           |     |===|===========|===========|===========|" << endl;
+	cout << "|---|       |       |     |===|===========|===========|     | 4 |         7 |           | 8         |" << endl;
+	cout << "| 2 |     2 | 3     |     | 3 |     4   6 | 5         |     |---|           |           |           |" << endl;
+	cout << "|===|=======|=======|     |---|           |           |     | 5 |           | 8   9   1 | 7         |" << endl;
+	cout << "| 3 | 4   3 | 2   1 |     | 4 |     5     |     4     |     |---|           |           |           |" << endl;
+	cout << "|---|       |       |     |===|===========|===========|     | 6 |           |           | 6         |" << endl;
+	cout << "| 4 |       | 4     |     | 5 |     6     |     3     |     |===|===========|===========|===========|" << endl;
+	cout << "=====================     |---|           |           |     | 7 |           |           | 5         |" << endl;
+	cout << "                          | 6 |         1 | 2         |     |---|           |           |           |" << endl;
+	cout << "                          =============================     | 8 |           |           | 4         |" << endl;
+	cout << "                                                            |---|           |           |           |" << endl;
+	cout << "                                                            | 9 |           | 1   2   3 |           |" << endl;
+	cout << "                                                            =========================================" << endl;
 
 	bool valid = false;                                                 //--- flag to get out of check-input loop
 
@@ -3031,24 +3110,23 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 
 			while (!Input && Terminated == false)
 			{
+				if (column == terminate)
+				{
+					Terminated = true;
+				}
 
-
-				if (column.length() > 1 || column < "A" || column > "F")
+				else if (column.length() > 1 || column < "A" || column > "F")
 				{
 					cout << "Bad input. Enter a column(A-F): ";
 					getline(cin, column);
 					column[0] = toupper(column[0]);
 					ccolumn = (column[0] - 64); //subtracts ascii value to equate with array
 				}
-				else if (column == terminate)
-				{
-					Terminated = true;
-				}
+
 				else
 				{
 					Input = true;
 				}
-
 			}
 
 			if (Terminated == false)
@@ -3168,14 +3246,16 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 	while (gameOver == false)                                             //--- run game loop
 	{
+		cout << lightred;
 		cout << "        ===================================" << endl;
 		cout << "        === To Solve Puzzle, Enter -999 ===" << endl;
 		cout << "        ===================================" << endl << endl;
-
+		cout << green;
 		cout << "                =================" << endl;
 		cout << "                ==== SUDOKU! ====" << endl;
 		cout << "                =================" << endl << endl;
 
+		cout << cyan;
 		cout << "     " << boardTop << endl;                                         //--- generate board
 		for (int i = 0; i < rows; i++)
 		{
@@ -3183,21 +3263,78 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 			for (int j = 0; j < cols; j++)
 			{
-				cout << board[i][j];
-				if (i == 0)
+				if (board[i][j] >= num1 && board[i][j] <= num9)
 				{
-					cout << "|";
+					cout << lightred;
+					cout << board[i][j];
+					cout << cyan;
+					if (i == 0)
+					{
+						cout << "|";
+					}
+					else if (j == 0 || j == 3 || j == 6 || j == 9)
+					{
+						cout << "|";
+					}
+
+					else
+					{
+						cout << " ";
+					}
+				}
+				else
+				{
+					/*cout << white;
+					cout << board[i][j];
+					cout << yellow;*/
+					if (i == 0)
+					{
+						cout << lightred;
+						cout << board[i][j];
+						cout << cyan;
+						cout << "|";
+					}
+					else if (j == 0 || j == 3 || j == 6 || j == 9)
+					{
+						if (j == 0)
+						{
+							cout << lightred;
+							cout << board[i][j];
+							cout << cyan;
+						}
+						else
+						{
+							cout << white;
+							cout << board[i][j];
+							cout << cyan;
+
+						}
+						cout << "|";
+					}
+
+					else
+					{
+						cout << white;
+						cout << board[i][j];
+						cout << cyan;
+						cout << " ";
+					}
+				}
+				/*if (i == 0)
+				{
+				cout << "|";
 				}
 				else if (j == 0 || j == 3 || j == 6 || j == 9)
 				{
-					cout << "|";
+				cout << "|";
 				}
 
 				else
 				{
-					cout << " ";
-				}
+				cout << " ";
+				}*/
 			}
+
 			if (i == 0 || i == 3 || i == 6 || i == 9)
 			{
 				if (i == 0 || i == 3 || i == 6)
@@ -3228,6 +3365,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 		}
 
+		cout << normal;
 
 		while (validCell == false && gameOver == false)                                //--- This loop prevents already-given cells from being changed
 		{
@@ -3287,7 +3425,8 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 				}
 				else                                                                          //--- otherwise, bad input
 				{
-					cout << "     Invalid input. Please select a row (1-9) to enter a number in: ";
+					cout << lightred;
+					cout << "     Invalid input. Please select a row (1-9) to enter a number in: " << normal;
 					getline(cin, choiceRow);
 				}
 			}
@@ -3354,7 +3493,8 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 				}
 				else                                                                          //--- otherwise, bad input
 				{
-					cout << "     Invalid input. Please select a column (A-I) to enter a number in: ";
+					cout << lightred;
+					cout << "     Invalid input. Please select a column (A-I) to enter a number in: " << normal;
 					getline(cin, choiceCol);
 					choiceCol[0] = toupper(choiceCol[0]);
 				}
@@ -3364,7 +3504,8 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 			{
 				if (board[numRow][numCol] >= num1 && board[numRow][numCol] <= num9)           //--- if the user's chosen row and col matches an element already given...
 				{
-					cout << endl << "     You cannot change this cell. Try again." << endl;        //--- display error, loop back to row and col input
+					cout << lightred;
+					cout << endl << "     You cannot change this cell. Try again." << normal << endl;        //--- display error, loop back to row and col input
 					validInput = false;
 				}
 				else                                                                          //--- otherwise...
@@ -3438,7 +3579,8 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 			}
 			else                                                                              //--- otherwise, bad input
 			{
-				cout << "     Invalid input. Please select a number (1-9) to insert in cell " << choiceRow << "-" << choiceCol << ": ";
+				cout << lightred;
+				cout << "     Invalid input. Please select a number (1-9) to insert in cell " << choiceRow << "-" << choiceCol << ": " << normal;
 				getline(cin, choiceNum);
 			}
 		}
