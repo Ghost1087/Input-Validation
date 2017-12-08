@@ -39,7 +39,7 @@ void hard9x9();
 void playSmallGame(string[][5], string[][5], string, string, string, int, int);
 void playMedGame(string[][7], string[][7], const int, const int);
 void playLargeGame(string[][10], string[][10], string, string, int, int);
-void SmallGamesolution(string[][5], string[][5], string, string, string, int, int, string, string, string);
+void SmallGamesolution(string[][5], string[][5], string, string, string, int, int);
 void mediumGameSolution(string[][7], string[][7], string, string, int, int);
 void largeGameSolution(string[][10], string[][10], string, string, int, int, int, bool);
 
@@ -694,6 +694,9 @@ void easy4x4()
 		playSmallGame(boardThree, boardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
+//==========================Elise Borbely End========================================
+
+//========================Elise Borbely Start=======================================
 void med4x4()
 {
 	system("CLS");                                                      //--- clear screen
@@ -949,6 +952,9 @@ void med4x4()
 		playSmallGame(MboardThree, MboardThreeAnswer, boardTop, boardMid, boardChoice, rows, cols);
 	}
 }
+//=========================Elise Borbely End=================================
+
+//=======================Elise Borbely Start================================
 void hard4x4()
 {
 	system("CLS");                                                      //--- clear screen
@@ -3041,7 +3047,7 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 				getline(cin, choiceNum);
 			}
 		}
-		if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
+		while (GiveUp == false)
 		{
 
 
@@ -3104,18 +3110,15 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 
 	while (CorrectAnswer == true)
 	{
-		SmallGamesolution(board, boardAnswer, boardTop, boardMid, boardChoice, rows, cols, choiceRow, choiceCol, choiceNum);
+		SmallGamesolution(board, boardAnswer, boardTop, boardMid, boardChoice, rows, cols);
 		CorrectAnswer = false;
-		GiveUp = false; 
-		valid = false; 
-		ArraysEqual = true; 
 
 	}
 
-	
+	//=====================Elise Borbely End======================================
 
 }
-//===========================Elise Borbely End=========================================
+//===============Elise Borbely End=========================================
 
 //===========================Trevor Ruelle Start===============================
 void playMedGame(string board[][7], string board_answer[][7], const int rows, const int cols)
@@ -3742,176 +3745,10 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 //======================= MICHAEL APPERSON END ================================
 
 //====================Elise Borbely Start======================================
-void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols, string choiceRow, string choiceCol, string choiceNum)
+void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols)
 {
-	string Answer;
-	bool Random = false; 
-
-	system("CLS"); 
-	if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
-	{
-		cout << "Congratulations! You solved the puzzle!" << endl;
-		//=============== GENERATE COMPLETED BOARD ===================
-		cout << boardTop << endl;
-		for (int i = 0; i < rows; i++)
-		{
-			cout << "|";
-			for (int j = 0; j < cols; j++)
-			{
-				cout << board[i][j];
-				if (i == 0)
-				{
-					cout << "|";
-				}
-				else if (j == 0 || j == 2 || j == 4)
-				{
-					cout << "|";
-				}
-				else
-				{
-					cout << " ";
-				}
-			}
-			if (i == 0 || i == 2 || i == 4)
-			{
-				cout << endl << boardTop << endl;
-			}
-			else
-			{
-				cout << endl;
-				for (int j = 0; j < cols; j++)
-				{
-					if (j == 0)
-					{
-						cout << "|---|";
-					}
-					else if (j == 2 || j == 4)
-					{
-						cout << "       |";
-					}
-				}
-				cout << endl;
-			}
-		}
-
-		cout << endl << endl;
-		
-	}
-	else
-	{
-		cout << "Here is your partially completed board:" << endl;							// Generating the partial board
-		cout << boardTop << endl;
-		for (int i = 0; i < rows; i++)
-		{
-			cout << "|";
-			for (int j = 0; j < cols; j++)
-			{
-				cout << board[i][j];
-				if (i == 0)
-				{
-					cout << "|";
-				}
-				else if (j == 0 || j == 2 || j == 4)
-				{
-					cout << "|";
-				}
-				else
-				{
-					cout << " ";
-				}
-			}
-			if (i == 0 || i == 2 || i == 4)
-			{
-				cout << endl << boardTop << endl;
-			}
-			else
-			{
-				cout << endl;
-				for (int j = 0; j < cols; j++)
-				{
-					if (j == 0)
-					{
-						cout << "|---|";
-					}
-					else if (j == 2 || j == 4)
-					{
-						cout << "       |";
-					}
-				}
-				cout << endl;
-			}
-		}
-
-		cout << endl << endl;
-
-		cout << "Would you like to reveal the answer? (Y / N): ";
-		getline(cin, Answer); 
-		Answer[0] = toupper(Answer[0]);
-		cout << endl; 
-
-		while (Random == false)
-		{
-			if (Answer == "Y")
-			{
-				Random = true;
-				cout << "Here is the answer to the puzzle:" << endl; 
-				cout << boardTop << endl;
-				for (int i = 0; i < rows; i++)
-				{
-					cout << "|";
-					for (int j = 0; j < cols; j++)
-					{
-						cout << boardAnswer[i][j];
-						if (i == 0)
-						{
-							cout << "|";
-						}
-						else if (j == 0 || j == 2 || j == 4)
-						{
-							cout << "|";
-						}
-						else
-						{
-							cout << " ";
-						}
-					}
-					if (i == 0 || i == 2 || i == 4)
-					{
-						cout << endl << boardTop << endl;
-					}
-					else
-					{
-						cout << endl;
-						for (int j = 0; j < cols; j++)
-						{
-							if (j == 0)
-							{
-								cout << "|---|";
-							}
-							else if (j == 2 || j == 4)
-							{
-								cout << "       |";
-							}
-						}
-						cout << endl;
-					}
-				}
-
-				cout << endl << endl;
-			}
-			else if (Answer == "N")
-			{
-				Random = true; 
-			}
-			else
-			{
-				cout << "Invalid input. Please try again (Y / N) :";
-				getline(cin, Answer);
-				Answer[0] = toupper(Answer[0]);
-			}
-		}
-	}
-	
+	//system("CLS"); 
+	cout << "Congratulations! You solved the puzzle!" << endl;
 }
 //=====================Elise Borbely End=======================================
 
