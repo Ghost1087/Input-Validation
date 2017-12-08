@@ -2864,7 +2864,7 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 	bool CorrectAnswer = false;
 	bool ArraysEqual = true;
 	bool GiveUp = false;
-	cout << endl << endl;
+	cout << endl << endl << lightcyan;
 
 	while (CorrectAnswer == false)												//---Elise Borbely figured out the loop. 
 	{
@@ -2918,8 +2918,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 		}
 
-		cout << endl << endl << "Select a row (1-4) to enter a number in: ";        //--- get desired row
+		cout << endl << endl << lightmagenta << "Select a row (1-4) to enter a number in: ";        //--- get desired row
 		getline(cin, choiceRow);
+		cout << lightcyan; 
 
 		while (valid == false)                                                      //--- check-input loop
 		{
@@ -2950,8 +2951,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 			else                                                                    //--- otherwise, bad input. ask again
 			{
-				cout << "Invalid input. Please select a row (1-4) to enter a number in: ";
+				cout << yellow << "Invalid input. Please select a row (1-4) to enter a number in: ";
 				getline(cin, choiceRow);
+				cout << lightcyan; 
 			}
 		}
 
@@ -2964,9 +2966,10 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 
 		while (valid == false && GiveUp == false)                                                      //--- check-input loop
 		{
-			cout << endl << endl << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
+			cout << endl << endl << lightmagenta << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
 			getline(cin, choiceCol);
 			choiceCol[0] = toupper(choiceCol[0]);
+			cout << lightcyan; 
 
 			if (choiceCol == "A" || choiceCol == "B" || choiceCol == "C" || choiceCol == "D" || choiceCol == "-999")  //--- if good input...
 			{
@@ -2995,9 +2998,10 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 			else                                                                    //--- otherwise, bad input, ask again.
 			{
-				cout << "Invalid input. Please select a column (A-D) to enter a number in: ";
+				cout << yellow << "Invalid input. Please select a column (A-D) to enter a number in: ";
 				getline(cin, choiceCol);
 				choiceCol[0] = toupper(choiceCol[0]);                               //--- changing new entered-letter to uppercase again
+				cout << lightcyan; 
 			}
 		}
 
@@ -3007,8 +3011,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 
 		while (valid == false && GiveUp == false)                                                      //--- check-input loop
 		{
-			cout << endl << endl << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
+			cout << endl << endl << lightmagenta << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
 			getline(cin, choiceNum);
+			cout << lightcyan; 
 
 			if (choiceNum == "1" || choiceNum == "2" || choiceNum == "3" || choiceNum == "4" || choiceNum == "-999")  //--- if good input...
 			{
@@ -3037,8 +3042,9 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 			else                                                                     //--- otherwise, bad input, ask again
 			{
-				cout << "Invalid input. Please select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
+				cout << yellow << "Invalid input. Please select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
 				getline(cin, choiceNum);
+				cout << lightcyan; 
 			}
 		}
 		if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
@@ -3051,29 +3057,30 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 																						//===========Elise Borbely==============================================
 			if (board[numRow][numCol] == boardAnswer[numRow][numCol])               //---- Compares the user input to the board answer
 			{
-				cout << endl << "That number is correctly placed" << endl;        //---If the input matches the answer the number has brackets.
-
+				cout << yellow << endl << "That number is correctly placed" << endl;        //---If the input matches the answer the number has brackets.
+				cout << lightcyan; 
 			}
 			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])          //---If the number isn't correct
 			{
-				cout << endl << "That number is not correctly placed" << endl;     //---This code makes it so it doesn't have brackets so the user knows to try and change that one. 
+				cout << yellow << endl << "That number is not correctly placed" << endl;     //---This code makes it so it doesn't have brackets so the user knows to try and change that one. 
+				cout << lightcyan; 
 
 				if (board[numRow][numCol] == num1)
 				{
 					board[numRow][numCol] = " 1 ";
 				}
 				if (board[numRow][numCol] == num2)
-				{
-					board[numRow][numCol] = " 2 ";
+				{ 
+					board[numRow][numCol] = " 2 "; 
 				}
 				if (board[numRow][numCol] == num3)
-				{
-					board[numRow][numCol] = " 3 ";
+				{ 
+					board[numRow][numCol] = " 3 "; 
 				}
 				if (board[numRow][numCol] == num4)
-				{
+				{ 
 					board[numRow][numCol] = " 4 ";
-				}
+				} 
 			}
 
 			int rowCount = 0;
@@ -3747,18 +3754,20 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 	string Answer;
 	bool Random = false; 
 
-	system("CLS"); 
+	system("CLS");
 	if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
 	{
-		cout << "Congratulations! You solved the puzzle!" << endl;
+		cout << lightmagenta << "Congratulations! You solved the puzzle!" << endl;
 		//=============== GENERATE COMPLETED BOARD ===================
+		cout << cyan; 
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)
 		{
 			cout << "|";
 			for (int j = 0; j < cols; j++)
 			{
-				cout << board[i][j];
+				cout << lightmagenta << board[i][j];
+				cout << cyan; 
 				if (i == 0)
 				{
 					cout << "|";
@@ -3799,14 +3808,16 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 	}
 	else
 	{
-		cout << "Here is your partially completed board:" << endl;							// Generating the partial board
+		cout << lightmagenta << "Here is your partially completed board:" << endl;							// Generating the partial board
+		cout << cyan; 
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)
 		{
 			cout << "|";
 			for (int j = 0; j < cols; j++)
 			{
-				cout << board[i][j];
+				cout << lightmagenta << board[i][j];
+				cout << cyan; 
 				if (i == 0)
 				{
 					cout << "|";
@@ -3844,7 +3855,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 
 		cout << endl << endl;
 
-		cout << "Would you like to reveal the answer? (Y / N): ";
+		cout << lightmagenta << "Would you like to reveal the answer? (Y / N): ";
 		getline(cin, Answer); 
 		Answer[0] = toupper(Answer[0]);
 		cout << endl; 
@@ -3854,14 +3865,15 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			if (Answer == "Y")
 			{
 				Random = true;
-				cout << "Here is the answer to the puzzle:" << endl; 
-				cout << boardTop << endl;
+				cout << lightmagenta << "Here is the answer to the puzzle:" << endl; 
+				cout << cyan << boardTop << endl;
 				for (int i = 0; i < rows; i++)
 				{
 					cout << "|";
 					for (int j = 0; j < cols; j++)
 					{
-						cout << boardAnswer[i][j];
+						cout << lightmagenta << boardAnswer[i][j];
+						cout << cyan; 
 						if (i == 0)
 						{
 							cout << "|";
@@ -3905,7 +3917,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			}
 			else
 			{
-				cout << "Invalid input. Please try again (Y / N) :";
+				cout << lightmagenta << "Invalid input. Please try again (Y / N) :";
 				getline(cin, Answer);
 				Answer[0] = toupper(Answer[0]);
 			}
