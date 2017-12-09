@@ -1961,7 +1961,6 @@ void hard6x6()
 	}
 
 }
-
 //========================= Trevor Ruelle End====================================
 
 //======================== MICHAEL APPERSON START =============================
@@ -2852,10 +2851,10 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 	bool CorrectAnswer = false;
 	bool ArraysEqual = true;
 	bool GiveUp = false;
-	cout << endl << endl << lightcyan;
 
 	while (CorrectAnswer == false)                                                            //---Elise Borbely figured out the loop. 
 	{
+		cout << endl << endl << lightgreen << "== At any time, enter -999 to solve puzzle ==" << lightcyan << endl << endl;
 
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)

@@ -1,4 +1,3 @@
-﻿  stdafx.cpp
-  InputValidation.cpp
+﻿  InputValidation.cpp
 c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(4396): warning C4715: 'replay': not all control paths return a value
   Input Validation.vcxproj -> C:\Users\Mike\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
