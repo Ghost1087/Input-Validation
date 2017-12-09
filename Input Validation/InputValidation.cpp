@@ -100,24 +100,24 @@ int main()
 
 
 
-	bool playAgain = true;
-	string choiceOne;                                               //--- store puzzle size choice
-	string choiceTwo;                                               //--- store puzzle difficulty choice
-	string choice;                                                  //--- store replay choice at end of game
+	bool playAgain = true;                                                             //--- play again flag
+	string choiceOne;                                                                  //--- store puzzle size choice
+	string choiceTwo;                                                                  //--- store puzzle difficulty choice
+	string choice;                                                                     //--- store replay choice at end of game
 
-	startMenu();                                                    //--- call startMenu function to display title screen
+	startMenu();                                                                       //--- call startMenu function to display title screen
 
-	while (playAgain == true)
+	while (playAgain == true)                                                          //--- program-wide loop to play again
 	{
-		puzzleSize(choiceOne);                                      //--- go to puzzleSize function
-		difficulty(choiceTwo, choiceOne);                           //--- go to difficulty function
-		if (choiceOne == "1" && choiceTwo == "1")                   //--- if "small puzzle" and "easy" was chosen...
+		puzzleSize(choiceOne);                                                         //--- go to puzzleSize function
+		difficulty(choiceTwo, choiceOne);                                              //--- go to difficulty function
+		if (choiceOne == "1" && choiceTwo == "1")                                      //--- if "small puzzle" and "easy" was chosen...
 		{
-			easy4x4();                                              //--- enter easy4x4 function
+			easy4x4();                                                                 //--- enter easy4x4 function
 		}
-		if (choiceOne == "1" && choiceTwo == "2")                   //--- if "small" and "medium"...
+		if (choiceOne == "1" && choiceTwo == "2")                                      //--- if "small" and "medium"...
 		{
-			med4x4();                                               //--- enter med4x4 function, etc.
+			med4x4();                                                                  //--- enter med4x4 function, etc.
 		}
 		if (choiceOne == "1" && choiceTwo == "3")
 		{
@@ -149,10 +149,10 @@ int main()
 		}
 
 
-		replay(choice);                                             //--- call replay function to ask if user wants to play again
-		if (choice == "N")                                          //--- if replay choice is NO...
+		replay(choice);                                                                //--- call replay function to ask if user wants to play again
+		if (choice == "N")                                                             //--- if replay choice is NO...
 		{
-			playAgain = false;                                      //--- set flag to false to end program
+			playAgain = false;                                                         //--- set flag to false to end program
 			cout << endl << "Thank you for playing!" << endl << endl << endl;
 		}
 	}
@@ -167,28 +167,21 @@ int main()
 void startMenu()
 {
 
-	// =========== This is just something I added for a fun little intro.
-	// =========== If anything, I plan to keep it for my solution transition,
-	// =========== but let me know if you guys want to keep it on the title!
 	string pose1 = "<(''<)";
 	string pose2 = "^('')^";
 	string pose3 = "(>'')>";
 	string pose4 = "^('')^";
 	for (int i = 0; i < 5; i++)
 	{
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose1 << "     " << "LOADING.";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose2 << "     " << "LOADING..";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose3 << "     " << "LOADING...";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose4 << "     " << "LOADING..";
 		Sleep(250);
 		system("CLS");
@@ -205,12 +198,7 @@ void startMenu()
 			system("CLS");
 		}
 	}
-	/*for (int i = 0; i < 30; i++)
-	{
-	cout << endl;
 
-	Sleep(50);
-	}*/
 	Sleep(50);
 	cout << endl;
 	Sleep(50);
@@ -459,55 +447,55 @@ void easy4x4()
 	string boardOne[rows][cols] =                                       //--- puzzle arrays
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " , "   " , "   " ,  num3 },
-		{ " 2 " , "   " ,  num2 ,  num1 , "   " },
-		{ " 3 " , "   " ,  num4 ,  num3 , "   " },
-		{ " 4 " ,  num2 , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " ,  num3 },
+	{ " 2 " , "   " ,  num2 ,  num1 , "   " },
+	{ " 3 " , "   " ,  num4 ,  num3 , "   " },
+	{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
 
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
-		{ " 2 " ,  num3 ,  num2 ,  num1 ,  num4 },
-		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
-		{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
+	{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
+	{ " 2 " ,  num3 ,  num2 ,  num1 ,  num4 },
+	{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
+	{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num4 ,  num1 , "   " },
-		{ " 2 " , "   " , "   " , "   " ,  num4 },
-		{ " 3 " ,  num2 , "   " , "   " , "   " },
-		{ " 4 " , "   " ,  num3 ,  num2 , "   " }
+	{ " 1 " , "   " ,  num4 ,  num1 , "   " },
+	{ " 2 " , "   " , "   " , "   " ,  num4 },
+	{ " 3 " ,  num2 , "   " , "   " , "   " },
+	{ " 4 " , "   " ,  num3 ,  num2 , "   " }
 	};
 
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num3 ,  num4 ,  num1 ,  num2 },
-		{ " 2 " ,  num1 ,  num2 ,  num3 ,  num4 },
-		{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
-		{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
+	{ " 1 " ,  num3 ,  num4 ,  num1 ,  num2 },
+	{ " 2 " ,  num1 ,  num2 ,  num3 ,  num4 },
+	{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
+	{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 , "   " , "   " ,  num2 },
-		{ " 2 " , "   " ,  num2 , "   " , "   " },
-		{ " 3 " , "   " , "   " ,  num3 , "   " },
-		{ " 4 " ,  num3 , "   " , "   " ,  num4 }
+	{ " 1 " ,  num1 , "   " , "   " ,  num2 },
+	{ " 2 " , "   " ,  num2 , "   " , "   " },
+	{ " 3 " , "   " , "   " ,  num3 , "   " },
+	{ " 4 " ,  num3 , "   " , "   " ,  num4 }
 	};
 
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
-		{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
-		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
+	{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
+	{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
+	{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
 
 
@@ -668,24 +656,24 @@ void easy4x4()
 	cout << "Select a puzzle to play (1-3): ";
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                       //--- check-input loop
+	while (valid == false)                                                                                 //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")      //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                                //--- if good input...
 		{
-			valid = true;                                                        //--- flag to true to leave loop
+			valid = true;                                                                                  //--- flag to true to leave loop
 		}
-		else                                                                     //--- otherwise...
+		else                                                                                               //--- otherwise...
 		{
-			cout << "Invalid input. Please enter a number 1-3: ";                //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                                          //--- ask again
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                      //--- if puzzle 1 is chosen...
+	if (boardChoice == "1")                                                                                //--- if puzzle 1 is chosen...
 	{
 		playSmallGame(boardOne, boardOneAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function along with board parameters
 	}
-	if (boardChoice == "2")                                                      //--- if puzzle 2 is chosen...
+	if (boardChoice == "2")                                                                                //--- if puzzle 2 is chosen...
 	{
 		playSmallGame(boardTwo, boardTwoAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function
 	}
@@ -715,55 +703,55 @@ void med4x4()
 	string MboardOne[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 , "   " , "   " , "   " },
-		{ " 2 " , "   " ,  num2 , "   " ,  num1 },
-		{ " 3 " , "   " ,  num4 , "   " ,  num2 },
-		{ " 4 " ,  num2 , "   " , "   " , "   " }
+	{ " 1 " ,  num4 , "   " , "   " , "   " },
+	{ " 2 " , "   " ,  num2 , "   " ,  num1 },
+	{ " 3 " , "   " ,  num4 , "   " ,  num2 },
+	{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
 
 	string MboardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
-		{ " 2 " ,  num3 ,  num2 ,  num4 ,  num1 },
-		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
-		{ " 4 " ,  num2 ,  num3 ,  num1 ,  num4 }
+	{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
+	{ " 2 " ,  num3 ,  num2 ,  num4 ,  num1 },
+	{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
+	{ " 4 " ,  num2 ,  num3 ,  num1 ,  num4 }
 	};
 
 	string MboardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num1 ,  num3 , "   " },
-		{ " 2 " , "   " , "   " , "   " ,  num1 },
-		{ " 3 " , "   " , "   " , "   " ,  num3 },
-		{ " 4 " , "   " ,  num3 ,  num4 , "   " }
+	{ " 1 " , "   " ,  num1 ,  num3 , "   " },
+	{ " 2 " , "   " , "   " , "   " ,  num1 },
+	{ " 3 " , "   " , "   " , "   " ,  num3 },
+	{ " 4 " , "   " ,  num3 ,  num4 , "   " }
 	};
 
 	string MboardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num2 ,  num1 ,  num3 ,  num4 },
-		{ " 2 " ,  num3 ,  num4 ,  num2 ,  num1 },
-		{ " 3 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 4 " ,  num1 ,  num3 ,  num4 ,  num2 }
+	{ " 1 " ,  num2 ,  num1 ,  num3 ,  num4 },
+	{ " 2 " ,  num3 ,  num4 ,  num2 ,  num1 },
+	{ " 3 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 4 " ,  num1 ,  num3 ,  num4 ,  num2 }
 	};
 
 	string MboardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num1 , "   " , "   " },
-		{ " 2 " ,  num3 , "   " ,  num1 , "   " },
-		{ " 3 " ,  num4 , "   " ,  num3 , "   " },
-		{ " 4 " , "   " ,  num3 , "   " , "   " }
+	{ " 1 " , "   " ,  num1 , "   " , "   " },
+	{ " 2 " ,  num3 , "   " ,  num1 , "   " },
+	{ " 3 " ,  num4 , "   " ,  num3 , "   " },
+	{ " 4 " , "   " ,  num3 , "   " , "   " }
 	};
 
 	string MboardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num2 ,  num1 ,  num4 ,  num3 },
-		{ " 2 " ,  num3 ,  num4 ,  num1 ,  num2 },
-		{ " 3 " ,  num4 ,  num2 ,  num3 ,  num1 },
-		{ " 4 " ,  num1 ,  num3 ,  num2 ,  num4 }
+	{ " 1 " ,  num2 ,  num1 ,  num4 ,  num3 },
+	{ " 2 " ,  num3 ,  num4 ,  num1 ,  num2 },
+	{ " 3 " ,  num4 ,  num2 ,  num3 ,  num1 },
+	{ " 4 " ,  num1 ,  num3 ,  num2 ,  num4 }
 	};
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
@@ -779,7 +767,7 @@ void med4x4()
 		cout << "|";                                                               //---- (puzzle 1) print left wall of puzzle 1 column 0
 		for (int j = 0; j < cols; j++)                                             //---- (puzzle 1) loop to print puzzle 1's contents
 		{
-			cout << MboardOne[i][j];                                                //---- (puzzle 1) print puzzle 1's elements
+			cout << MboardOne[i][j];                                               //---- (puzzle 1) print puzzle 1's elements
 			if (i == 0)                                                            //---- (puzzle 1) if first row...
 			{
 				cout << "|";                                                       //---- (puzzle 1) print right-side wall of each cell, will close last cell (prints column header dividers)
@@ -791,7 +779,7 @@ void med4x4()
 						cout << "|";                                                           //---- (puzzle 2) print left wall of puzzle 2 in column 0
 						for (int jj = 0; jj < cols; jj++)                                      //---- (puzzle 2) loop to print puzzle 2's first row
 						{
-							cout << MboardTwo[ii][jj];                                          //---- (puzzle 2) print puzzle 2's elements
+							cout << MboardTwo[ii][jj];                                         //---- (puzzle 2) print puzzle 2's elements
 							if (ii == 0)                                                       //---- (puzzle 2) if first row in puzzle 2...
 							{
 								cout << "|";                                                   //---- (puzzle 2) print column header dividers
@@ -803,7 +791,7 @@ void med4x4()
 										cout << "|";                                                       //---- (puzzle 3) print left wall of puzzle 3 in column 0
 										for (int jjj = 0; jjj < cols; jjj++)                               //---- (puzzle 3) loop to print puzzle 3's first row
 										{
-											cout << MboardThree[iii][jjj];                                  //---- (puzzle 3) print puzzle 3's elements
+											cout << MboardThree[iii][jjj];                                 //---- (puzzle 3) print puzzle 3's elements
 											if (iii == 0)                                                  //---- (puzzle 3) if first row...
 											{
 												cout << "|";                                               //---- (puzzle 3) print column header dividers
@@ -824,7 +812,7 @@ void med4x4()
 					cout << "    |";                                               //---- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
 					for (int jj = 0; jj < cols; jj++)                                          //---- (puzzle 2) loop for puzzle 2's contents
 					{
-						cout << MboardTwo[i][jj];                                               //---- (puzzle 2) print puzzle 2's elements
+						cout << MboardTwo[i][jj];                                              //---- (puzzle 2) print puzzle 2's elements
 						if (jj == 0 || jj == 2 || jj == 4)                                     //---- (puzzle 2) if column 0, 2, or 4...
 						{
 							cout << "|";                                                       //---- (puzzle 2) print wall
@@ -833,7 +821,7 @@ void med4x4()
 								cout << "    |";                                               //---- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
 								for (int jjj = 0; jjj < cols; jjj++)                                       //---- (puzzle 3) loop for puzzle 3's contents
 								{
-									cout << MboardThree[i][jjj];                                            //---- (puzzle 3) print puzzle 3's elements
+									cout << MboardThree[i][jjj];                                           //---- (puzzle 3) print puzzle 3's elements
 									if (jjj == 0 || jjj == 2 || jjj == 4)                                  //---- (puzzle 3) if column 0, 2, or 4...
 									{
 										cout << "|";                                                       //---- (puzzle 3) print wall
@@ -923,24 +911,24 @@ void med4x4()
 	cout << "Select a puzzle to play (1-3): ";
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                       //--- check-input loop
+	while (valid == false)                                                                                   //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")      //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                                  //--- if good input...
 		{
-			valid = true;                                                        //--- flag to true to leave loop
+			valid = true;                                                                                    //--- flag to true to leave loop
 		}
-		else                                                                     //--- otherwise...
+		else                                                                                                 //--- otherwise...
 		{
-			cout << "Invalid input. Please enter a number 1-3: ";                //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                                            //--- ask again
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                      //--- if puzzle 1 is chosen...
+	if (boardChoice == "1")                                                                                  //--- if puzzle 1 is chosen...
 	{
 		playSmallGame(MboardOne, MboardOneAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function along with board parameters
 	}
-	if (boardChoice == "2")                                                      //--- if puzzle 2 is chosen...
+	if (boardChoice == "2")                                                                                  //--- if puzzle 2 is chosen...
 	{
 		playSmallGame(MboardTwo, MboardTwoAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function
 	}
@@ -969,55 +957,55 @@ void hard4x4()
 	string HboardOne[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num3 , "   " , "   " },
-		{ " 2 " ,  num4 , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , "   " ,  num1 },
-		{ " 4 " ,  num3 , "   " ,  num2 , "   " }
+	{ " 1 " , "   " ,  num3 , "   " , "   " },
+	{ " 2 " ,  num4 , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , "   " ,  num1 },
+	{ " 4 " ,  num3 , "   " ,  num2 , "   " }
 	};
 
 	string HboardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
-		{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
-		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
+	{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
+	{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
+	{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
 
 	string HboardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num2 ,  num4 , "   " },
-		{ " 2 " ,  num1 , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , "   " ,  num4 },
-		{ " 4 " , "   " , "   " ,  num3 , "   " }
+	{ " 1 " , "   " ,  num2 ,  num4 , "   " },
+	{ " 2 " ,  num1 , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , "   " ,  num4 },
+	{ " 4 " , "   " , "   " ,  num3 , "   " }
 	};
 
 	string HboardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num3 ,  num2 ,  num4 ,  num1 },
-		{ " 2 " ,  num1 ,  num4 ,  num2 ,  num3 },
-		{ " 3 " ,  num2 ,  num3 ,  num1 ,  num4 },
-		{ " 4 " ,  num4 ,  num1 ,  num3 ,  num2 }
+	{ " 1 " ,  num3 ,  num2 ,  num4 ,  num1 },
+	{ " 2 " ,  num1 ,  num4 ,  num2 ,  num3 },
+	{ " 3 " ,  num2 ,  num3 ,  num1 ,  num4 },
+	{ " 4 " ,  num4 ,  num1 ,  num3 ,  num2 }
 	};
 
 	string HboardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 , "   " , "   " ,  num2 },
-		{ " 2 " , "   " ,  num2 , "   " , "   " },
-		{ " 3 " , "   " , "   " ,  num3 , "   " },
-		{ " 4 " , "   " , "   " , "   " ,  num1 }
+	{ " 1 " ,  num4 , "   " , "   " ,  num2 },
+	{ " 2 " , "   " ,  num2 , "   " , "   " },
+	{ " 3 " , "   " , "   " ,  num3 , "   " },
+	{ " 4 " , "   " , "   " , "   " ,  num1 }
 	};
 
 	string HboardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num3 ,  num1 ,  num2 },
-		{ " 2 " ,  num1 ,  num2 ,  num4 ,  num3 },
-		{ " 3 " ,  num2 ,  num1 ,  num3 ,  num4 },
-		{ " 4 " ,  num3 ,  num4 ,  num2 ,  num1 }
+	{ " 1 " ,  num4 ,  num3 ,  num1 ,  num2 },
+	{ " 2 " ,  num1 ,  num2 ,  num4 ,  num3 },
+	{ " 3 " ,  num2 ,  num1 ,  num3 ,  num4 },
+	{ " 4 " ,  num3 ,  num4 ,  num2 ,  num1 }
 	};
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
@@ -1033,7 +1021,7 @@ void hard4x4()
 		cout << "|";                                                               //---- (puzzle 1) print left wall of puzzle 1 column 0
 		for (int j = 0; j < cols; j++)                                             //---- (puzzle 1) loop to print puzzle 1's contents
 		{
-			cout << HboardOne[i][j];                                                //---- (puzzle 1) print puzzle 1's elements
+			cout << HboardOne[i][j];                                               //---- (puzzle 1) print puzzle 1's elements
 			if (i == 0)                                                            //---- (puzzle 1) if first row...
 			{
 				cout << "|";                                                       //---- (puzzle 1) print right-side wall of each cell, will close last cell (prints column header dividers)
@@ -1045,7 +1033,7 @@ void hard4x4()
 						cout << "|";                                                           //---- (puzzle 2) print left wall of puzzle 2 in column 0
 						for (int jj = 0; jj < cols; jj++)                                      //---- (puzzle 2) loop to print puzzle 2's first row
 						{
-							cout << HboardTwo[ii][jj];                                          //---- (puzzle 2) print puzzle 2's elements
+							cout << HboardTwo[ii][jj];                                         //---- (puzzle 2) print puzzle 2's elements
 							if (ii == 0)                                                       //---- (puzzle 2) if first row in puzzle 2...
 							{
 								cout << "|";                                                   //---- (puzzle 2) print column header dividers
@@ -1057,7 +1045,7 @@ void hard4x4()
 										cout << "|";                                                       //---- (puzzle 3) print left wall of puzzle 3 in column 0
 										for (int jjj = 0; jjj < cols; jjj++)                               //---- (puzzle 3) loop to print puzzle 3's first row
 										{
-											cout << HboardThree[iii][jjj];                                  //---- (puzzle 3) print puzzle 3's elements
+											cout << HboardThree[iii][jjj];                                 //---- (puzzle 3) print puzzle 3's elements
 											if (iii == 0)                                                  //---- (puzzle 3) if first row...
 											{
 												cout << "|";                                               //---- (puzzle 3) print column header dividers
@@ -1078,7 +1066,7 @@ void hard4x4()
 					cout << "    |";                                               //---- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
 					for (int jj = 0; jj < cols; jj++)                                          //---- (puzzle 2) loop for puzzle 2's contents
 					{
-						cout << HboardTwo[i][jj];                                               //---- (puzzle 2) print puzzle 2's elements
+						cout << HboardTwo[i][jj];                                              //---- (puzzle 2) print puzzle 2's elements
 						if (jj == 0 || jj == 2 || jj == 4)                                     //---- (puzzle 2) if column 0, 2, or 4...
 						{
 							cout << "|";                                                       //---- (puzzle 2) print wall
@@ -1087,7 +1075,7 @@ void hard4x4()
 								cout << "    |";                                               //---- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
 								for (int jjj = 0; jjj < cols; jjj++)                                       //---- (puzzle 3) loop for puzzle 3's contents
 								{
-									cout << HboardThree[i][jjj];                                            //---- (puzzle 3) print puzzle 3's elements
+									cout << HboardThree[i][jjj];                                           //---- (puzzle 3) print puzzle 3's elements
 									if (jjj == 0 || jjj == 2 || jjj == 4)                                  //---- (puzzle 3) if column 0, 2, or 4...
 									{
 										cout << "|";                                                       //---- (puzzle 3) print wall
@@ -1176,24 +1164,24 @@ void hard4x4()
 	cout << "Select a puzzle to play (1-3): ";
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                       //--- check-input loop
+	while (valid == false)                                                                                   //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")      //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                                  //--- if good input...
 		{
-			valid = true;                                                        //--- flag to true to leave loop
+			valid = true;                                                                                    //--- flag to true to leave loop
 		}
-		else                                                                     //--- otherwise...
+		else                                                                                                 //--- otherwise...
 		{
-			cout << "Invalid input. Please enter a number 1-3: ";                //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                                            //--- ask again
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                      //--- if puzzle 1 is chosen...
+	if (boardChoice == "1")                                                                                  //--- if puzzle 1 is chosen...
 	{
 		playSmallGame(HboardOne, HboardOneAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function along with board parameters
 	}
-	if (boardChoice == "2")                                                      //--- if puzzle 2 is chosen...
+	if (boardChoice == "2")                                                                                  //--- if puzzle 2 is chosen...
 	{
 		playSmallGame(HboardTwo, HboardTwoAnswer, boardTop, boardMid, boardChoice, rows, cols);              //--- send it to playSmallGame function
 	}
@@ -1216,57 +1204,57 @@ void easy6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+	{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
+	{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
+	{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
+	{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
+	{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
+	{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+	{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
+	{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
+	{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
+	{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
+	{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
+	{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num1 , num6 , num5 , "   " },
-		{ " 2 ", num3 , num6 , num5 , "   ", "   ", num2 },
-		{ " 3 ", "   ", num5 , "   ", "   ", num2 , num6 },
-		{ " 4 ", "   ", num2 , num4 , num3 , num1 , num5 },
-		{ " 5 ", num4 , num3 , num2 , "   ", "   ", "   " },
-		{ " 6 ", "   ", num1 , "   ", num2 , num3 , num4 } };
+	{ " 1 ", "   ", "   ", num1 , num6 , num5 , "   " },
+	{ " 2 ", num3 , num6 , num5 , "   ", "   ", num2 },
+	{ " 3 ", "   ", num5 , "   ", "   ", num2 , num6 },
+	{ " 4 ", "   ", num2 , num4 , num3 , num1 , num5 },
+	{ " 5 ", num4 , num3 , num2 , "   ", "   ", "   " },
+	{ " 6 ", "   ", num1 , "   ", num2 , num3 , num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 2 ", " 4 ", num1 , num6 , num5 , " 3 " },
-		{ " 2 ", num3 , num6 , num5 , " 1 ", " 4 ", num2 },
-		{ " 3 ", " 1 ", num5 , " 3 ", " 4 ", num2 , num6 },
-		{ " 4 ", " 6 ", num2 , num4 , num3 , num1 , num5 },
-		{ " 5 ", num4 , num3 , num2 , " 5 ", " 6 ", " 1 " },
-		{ " 6 ", " 5 ", num1 , " 6 ", num2 , num3 , num4 } };
+	{ " 1 ", " 2 ", " 4 ", num1 , num6 , num5 , " 3 " },
+	{ " 2 ", num3 , num6 , num5 , " 1 ", " 4 ", num2 },
+	{ " 3 ", " 1 ", num5 , " 3 ", " 4 ", num2 , num6 },
+	{ " 4 ", " 6 ", num2 , num4 , num3 , num1 , num5 },
+	{ " 5 ", num4 , num3 , num2 , " 5 ", " 6 ", " 1 " },
+	{ " 6 ", " 5 ", num1 , " 6 ", num2 , num3 , num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num2 , num6 , "   ", "   ", num5 },
-		{ " 2 ", num3 , "   ", "   ", "   ", num6 , num2 },
-		{ " 3 ", "   ", "   ", num3 , num5 , "   ", num6 },
-		{ " 4 ", num5 , num6 , num1 , num3 , "   ", "   " },
-		{ " 5 ", num4 , "   ", "   ", "   ", num5 , num3 },
-		{ " 6 ", "   ", num3 , num5 , num2 , num4 , num1 } };
+	{ " 1 ", num1 , num2 , num6 , "   ", "   ", num5 },
+	{ " 2 ", num3 , "   ", "   ", "   ", num6 , num2 },
+	{ " 3 ", "   ", "   ", num3 , num5 , "   ", num6 },
+	{ " 4 ", num5 , num6 , num1 , num3 , "   ", "   " },
+	{ " 5 ", num4 , "   ", "   ", "   ", num5 , num3 },
+	{ " 6 ", "   ", num3 , num5 , num2 , num4 , num1 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num2 , num6 , " 4 ", " 3 ", num5 },
-		{ " 2 ", num3 , " 5 ", " 4 ", " 1 ", num6 , num2 },
-		{ " 3 ", " 2 ", " 4 ", num3 , num5 , " 1 ", num6 },
-		{ " 4 ", num5 , num6 , num1 , num3 , " 2 ", " 4 " },
-		{ " 5 ", num4 , " 1 ", " 2 ", " 6 ", num5 , num3 },
-		{ " 6 ", " 6 ", num3 , num5 , num2 , num4 , num1 } };
+	{ " 1 ", num1 , num2 , num6 , " 4 ", " 3 ", num5 },
+	{ " 2 ", num3 , " 5 ", " 4 ", " 1 ", num6 , num2 },
+	{ " 3 ", " 2 ", " 4 ", num3 , num5 , " 1 ", num6 },
+	{ " 4 ", num5 , num6 , num1 , num3 , " 2 ", " 4 " },
+	{ " 5 ", num4 , " 1 ", " 2 ", " 6 ", num5 , num3 },
+	{ " 6 ", " 6 ", num3 , num5 , num2 , num4 , num1 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1284,33 +1272,33 @@ void easy6x6()
 	for (int i = 0; i < row; i++)                                              //--- main rows loop (do the following per entire row)
 	{
 		cout << "|";                                                            //--- (puzzle 1) print left wall of puzzle 1 column 0
-		for (int j = 0; j < col; j++)                                          //--- (puzzle 1) loop to print puzzle 1's contents
+		for (int j = 0; j < col; j++)                                           //--- (puzzle 1) loop to print puzzle 1's contents
 		{
-			cout << board_One[i][j];                                             //--- (puzzle 1) print elements
+			cout << board_One[i][j];                                            //--- (puzzle 1) print elements
 			if (i == 0)                                                         //--- (puzzle 1) if first row...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print right-side wall of each cell, will close last cell (column header dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                    //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print puzzle 2's first row
 						{
-							cout << board_Two[ii][jj];                                       //--- (puzzle 2) print puzzle 2's elements
+							cout << board_Two[ii][jj];                                      //--- (puzzle 2) print puzzle 2's elements
 							if (ii == 0)                                                    //--- (puzzle 2) if first row in puzzle 2...
 							{
 								cout << "|";                                                //--- (puzzle 2) print column header dividers
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                             //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
-										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
+										for (int jjj = 0; jjj < col; jjj++)                             //--- (puzzle 3) loop to print puzzle 3's first row
 										{
-											cout << board_Three[iii][jjj];                               //--- (puzzle 3) print puzzle 3's elements
+											cout << board_Three[iii][jjj];                              //--- (puzzle 3) print puzzle 3's elements
 											if (iii == 0)                                               //--- (puzzle 3) if first row...
 											{
 												cout << "|";                                            //--- (puzzle 3) print column header dividers
@@ -1323,25 +1311,25 @@ void easy6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6)                                //--- (puzzle 1) if not first row, but is column 0, 3, or 6...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
 				{
 					cout << "       |";                                         //--- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
-					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
+					for (int jj = 0; jj < col; jj++)                                        //--- (puzzle 2) loop for puzzle 2's contents
 					{
-						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						cout << board_Two[i][jj];                                           //--- (puzzle 2) print puzzle 2's elements
+						if (jj == 0 || jj == 3 || jj == 6)                                  //--- (puzzle 2) if column 0, 3, or 6...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
 							{
 								cout << "       |";                                         //--- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
-								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
+								for (int jjj = 0; jjj < col; jjj++)                                     //--- (puzzle 3) loop for puzzle 3's contents
 								{
-									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									cout << board_Three[i][jjj];                                        //--- (puzzle 3) print puzzle 3's elements
+									if (jjj == 0 || jjj == 3 || jjj == 6)                               //--- (puzzle 3) if column 0, 3, or 6...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1379,37 +1367,37 @@ void easy6x6()
 		else                                                       //--- otherwise...
 		{
 			cout << endl;                                          //--- start new line for empty space rows
-			for (int j = 0; j < col; j++)                                      //--- (puzzle 1) loop to print empty rows
+			for (int j = 0; j < col; j++)                                       //--- (puzzle 1) loop to print empty rows
 			{
 				if (j == 0)                                                     //--- (puzzle 1) if at column 0...
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6)                                      //--- (puzzle 1) if column 3 or 6...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
 					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
 					{
 						cout << "       ";                                      //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print empty rows
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print empty rows
 						{
 							if (jj == 0)                                                    //--- (puzzle 2) if at column 0...
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6)                                    //--- (puzzle 2) if at column 3 or 6...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int jjj = 0; jjj < col; jjj++)                                //--- (puzzle 3) loop to print empty rows
+									for (int jjj = 0; jjj < col; jjj++)                                 //--- (puzzle 3) loop to print empty rows
 									{
 										if (jjj == 0)                                                   //--- (puzzle 3) if at column 0...
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6)                                  //--- (puzzle 3) if at column 3, or 6...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -1470,59 +1458,59 @@ void med6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num4 , num2 , "   ", num6 , "   " },
-		{ " 2 ", "   ", "   ", "   ", num2 , "   ", "   " },
-		{ " 3 ", num2 , "   ", "   ", num5 , num1 , num3 },
-		{ " 4 ", "   ", "   ", num1 , num4 , num2 , "   " },
-		{ " 5 ", num4 , num1 , "   ", "   ", "   ", "   " },
-		{ " 6 ", num6 , "   ", "   ", num1 , num5 , num4 }
+	{ " 1 ", num1 , num4 , num2 , "   ", num6 , "   " },
+	{ " 2 ", "   ", "   ", "   ", num2 , "   ", "   " },
+	{ " 3 ", num2 , "   ", "   ", num5 , num1 , num3 },
+	{ " 4 ", "   ", "   ", num1 , num4 , num2 , "   " },
+	{ " 5 ", num4 , num1 , "   ", "   ", "   ", "   " },
+	{ " 6 ", num6 , "   ", "   ", num1 , num5 , num4 }
 	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num4 , num2 , " 3 ", num6 , " 5 " },
-		{ " 2 ", " 3 ", " 5 ", " 6 ", num2 , " 4 ", " 1 " },
-		{ " 3 ", num2 , " 6 ", " 4 ", num5 , num1 , num3 },
-		{ " 4 ", " 5 ", " 3 ", num1 , num4 , num2 , " 6 " },
-		{ " 5 ", num4 , num1 , " 5 ", " 6 ", " 3 ", " 2 " },
-		{ " 6 ", num6 , " 2 ", " 3 ", num1 , num5 , num4 }
+	{ " 1 ", num1 , num4 , num2 , " 3 ", num6 , " 5 " },
+	{ " 2 ", " 3 ", " 5 ", " 6 ", num2 , " 4 ", " 1 " },
+	{ " 3 ", num2 , " 6 ", " 4 ", num5 , num1 , num3 },
+	{ " 4 ", " 5 ", " 3 ", num1 , num4 , num2 , " 6 " },
+	{ " 5 ", num4 , num1 , " 5 ", " 6 ", " 3 ", " 2 " },
+	{ " 6 ", num6 , " 2 ", " 3 ", num1 , num5 , num4 }
 	};
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
-		{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
-		{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
-		{ " 4 ", num3 , "   ", "   ", num2 , num5 , "   " },
-		{ " 5 ", "   ", num5 , num6 , "   ", "   ", num2 },
-		{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
+	{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
+	{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
+	{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
+	{ " 4 ", num3 , "   ", "   ", num2 , num5 , "   " },
+	{ " 5 ", "   ", num5 , num6 , "   ", "   ", num2 },
+	{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
-		{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
-		{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
-		{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
-		{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
-		{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
+	{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
+	{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
+	{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
+	{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
+	{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
+	{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
-		{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
-		{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
-		{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
-		{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
-		{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
+	{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
+	{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
+	{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
+	{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
+	{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
+	{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
-		{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
-		{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
-		{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
-		{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
-		{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
+	{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
+	{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
+	{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
+	{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
+	{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
+	{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1537,36 +1525,36 @@ void med6x6()
 	cout << "           PUZZLE 1                           PUZZLE 2                             PUZZLE 3             " << endl;  //--- puzzle headers
 	cout << boardTop << "       " << boardTop << "       " << boardTop << endl;     //--- print top of each board
 
-	for (int i = 0; i < row; i++)                                              //--- main rows loop (do the following per entire row)
+	for (int i = 0; i < row; i++)                                            //--- main rows loop (do the following per entire row)
 	{
 		cout << "|";                                                            //--- (puzzle 1) print left wall of puzzle 1 column 0
-		for (int j = 0; j < col; j++)                                          //--- (puzzle 1) loop to print puzzle 1's contents
+		for (int j = 0; j < col; j++)                                           //--- (puzzle 1) loop to print puzzle 1's contents
 		{
-			cout << board_One[i][j];                                             //--- (puzzle 1) print elements
+			cout << board_One[i][j];                                            //--- (puzzle 1) print elements
 			if (i == 0)                                                         //--- (puzzle 1) if first row...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print right-side wall of each cell, will close last cell (column header dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                    //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print puzzle 2's first row
 						{
-							cout << board_Two[ii][jj];                                       //--- (puzzle 2) print puzzle 2's elements
+							cout << board_Two[ii][jj];                                      //--- (puzzle 2) print puzzle 2's elements
 							if (ii == 0)                                                    //--- (puzzle 2) if first row in puzzle 2...
 							{
 								cout << "|";                                                //--- (puzzle 2) print column header dividers
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                             //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
-										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
+										for (int jjj = 0; jjj < col; jjj++)                             //--- (puzzle 3) loop to print puzzle 3's first row
 										{
-											cout << board_Three[iii][jjj];                               //--- (puzzle 3) print puzzle 3's elements
+											cout << board_Three[iii][jjj];                              //--- (puzzle 3) print puzzle 3's elements
 											if (iii == 0)                                               //--- (puzzle 3) if first row...
 											{
 												cout << "|";                                            //--- (puzzle 3) print column header dividers
@@ -1579,25 +1567,25 @@ void med6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6)                                //--- (puzzle 1) if not first row, but is column 0, 3, or 6...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
 				{
 					cout << "       |";                                         //--- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
-					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
+					for (int jj = 0; jj < col; jj++)                                        //--- (puzzle 2) loop for puzzle 2's contents
 					{
-						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						cout << board_Two[i][jj];                                           //--- (puzzle 2) print puzzle 2's elements
+						if (jj == 0 || jj == 3 || jj == 6)                                  //--- (puzzle 2) if column 0, 3, or 6...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
 							{
 								cout << "       |";                                         //--- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
-								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
+								for (int jjj = 0; jjj < col; jjj++)                                     //--- (puzzle 3) loop for puzzle 3's contents
 								{
-									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									cout << board_Three[i][jjj];                                        //--- (puzzle 3) print puzzle 3's elements
+									if (jjj == 0 || jjj == 3 || jjj == 6)                               //--- (puzzle 3) if column 0, 3, or 6...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1635,37 +1623,37 @@ void med6x6()
 		else                                                       //--- otherwise...
 		{
 			cout << endl;                                          //--- start new line for empty space rows
-			for (int j = 0; j < col; j++)                                      //--- (puzzle 1) loop to print empty rows
+			for (int j = 0; j < col; j++)                                       //--- (puzzle 1) loop to print empty rows
 			{
 				if (j == 0)                                                     //--- (puzzle 1) if at column 0...
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6)                                      //--- (puzzle 1) if column 3 or 6...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
 					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
 					{
 						cout << "       ";                                      //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print empty rows
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print empty rows
 						{
 							if (jj == 0)                                                    //--- (puzzle 2) if at column 0...
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6)                                    //--- (puzzle 2) if at colum 3 or 6...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int jjj = 0; jjj < col; jjj++)                                //--- (puzzle 3) loop to print empty rows
+									for (int jjj = 0; jjj < col; jjj++)                                 //--- (puzzle 3) loop to print empty rows
 									{
 										if (jjj == 0)                                                   //--- (puzzle 3) if at column 0...
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6)                                  //--- (puzzle 3) if at column 3 or 6...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -1727,59 +1715,59 @@ void hard6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num2 , num6 , "   ", num5 },
-		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
-		{ " 3 ", num6 , num3 , "   ", "   ", "   ", num2 },
-		{ " 4 ", num2 , "   ", "   ", "   ", num3 , num6 },
-		{ " 5 ", "   ", "   ", num3 , "   ", "   ", num1 },
-		{ " 6 ", "   ", num2 , num1 , num3 , "   ", "   " }
+	{ " 1 ", "   ", "   ", num2 , num6 , "   ", num5 },
+	{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+	{ " 3 ", num6 , num3 , "   ", "   ", "   ", num2 },
+	{ " 4 ", num2 , "   ", "   ", "   ", num3 , num6 },
+	{ " 5 ", "   ", "   ", num3 , "   ", "   ", num1 },
+	{ " 6 ", "   ", num2 , num1 , num3 , "   ", "   " }
 	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 3 ", " 4 ", num2 , num6 , " 1 ", num5 },
-		{ " 2 ", " 1 ", " 5 ", " 6 ", " 2 ", " 4 ", " 3 " },
-		{ " 3 ", num6 , num3 , " 4 ", " 1 ", " 5 ", num2 },
-		{ " 4 ", num2 , " 1 ", " 5 ", " 4 ", num3 , num6 },
-		{ " 5 ", " 4 ", " 6 ", num3 , " 5 ", " 2 ", num1 },
-		{ " 6 ", " 5 ", num2 , num1 , num3 , " 6 ", " 4 " }
+	{ " 1 ", " 3 ", " 4 ", num2 , num6 , " 1 ", num5 },
+	{ " 2 ", " 1 ", " 5 ", " 6 ", " 2 ", " 4 ", " 3 " },
+	{ " 3 ", num6 , num3 , " 4 ", " 1 ", " 5 ", num2 },
+	{ " 4 ", num2 , " 1 ", " 5 ", " 4 ", num3 , num6 },
+	{ " 5 ", " 4 ", " 6 ", num3 , " 5 ", " 2 ", num1 },
+	{ " 6 ", " 5 ", num2 , num1 , num3 , " 6 ", " 4 " }
 	};
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num3 , "   ", num1 , "   ", num4 , "   " },
-		{ " 2 ", "   ", num5 , num6 , "   ", "   ", num3 },
-		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
-		{ " 4 ", "   ", "   ", num4 , num2 , "   ", "   " },
-		{ " 5 ", num1 , "   ", "   ", "   ", num6 , "   " },
-		{ " 6 ", "   ", num4, "   ", num3 , num1 , num2 } };
+	{ " 1 ", num3 , "   ", num1 , "   ", num4 , "   " },
+	{ " 2 ", "   ", num5 , num6 , "   ", "   ", num3 },
+	{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+	{ " 4 ", "   ", "   ", num4 , num2 , "   ", "   " },
+	{ " 5 ", num1 , "   ", "   ", "   ", num6 , "   " },
+	{ " 6 ", "   ", num4, "   ", num3 , num1 , num2 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num3 , " 2 ", num1 , " 5 ", num4 , " 6 " },
-		{ " 2 ", " 4 ", num5 , num6 , " 1 ", " 2 ", num3 },
-		{ " 3 ", " 2 ", " 1 ", " 3 ", " 6 ", " 5 ", " 4 " },
-		{ " 4 ", " 5 ", " 6 ", num4 , num2 , " 3 ", " 1 " },
-		{ " 5 ", num1 , " 3 ", " 2 ", " 4 ", num6 , " 5 " },
-		{ " 6 ", " 6 ", num4, " 5 ", num3 , num1 , num2 } };
+	{ " 1 ", num3 , " 2 ", num1 , " 5 ", num4 , " 6 " },
+	{ " 2 ", " 4 ", num5 , num6 , " 1 ", " 2 ", num3 },
+	{ " 3 ", " 2 ", " 1 ", " 3 ", " 6 ", " 5 ", " 4 " },
+	{ " 4 ", " 5 ", " 6 ", num4 , num2 , " 3 ", " 1 " },
+	{ " 5 ", num1 , " 3 ", " 2 ", " 4 ", num6 , " 5 " },
+	{ " 6 ", " 6 ", num4, " 5 ", num3 , num1 , num2 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
-		{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
-		{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
-		{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
-		{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
-		{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
+	{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
+	{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
+	{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
+	{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
+	{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
+	{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
-		{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
-		{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
-		{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
-		{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
-		{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
+	{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
+	{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
+	{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
+	{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
+	{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
+	{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
 
 
 
@@ -1798,33 +1786,33 @@ void hard6x6()
 	for (int i = 0; i < row; i++)                                              //--- main rows loop (do the following per entire row)
 	{
 		cout << "|";                                                            //--- (puzzle 1) print left wall of puzzle 1 column 0
-		for (int j = 0; j < col; j++)                                          //--- (puzzle 1) loop to print puzzle 1's contents
+		for (int j = 0; j < col; j++)                                           //--- (puzzle 1) loop to print puzzle 1's contents
 		{
-			cout << board_One[i][j];                                             //--- (puzzle 1) print elements
+			cout << board_One[i][j];                                            //--- (puzzle 1) print elements
 			if (i == 0)                                                         //--- (puzzle 1) if first row...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print right-side wall of each cell, will close last cell (column header dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last element in current row...
 				{
 					cout << "       ";                                          //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-					for (int ii = 0; ii < row - 6; ii++)                                   //--- (puzzle 2) loop for puzzle 2's first row
+					for (int ii = 0; ii < row - 6; ii++)                                    //--- (puzzle 2) loop for puzzle 2's first row
 					{
 						cout << "|";                                                        //--- (puzzle 2) print left wall of puzzle 2 in column 0
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print puzzle 2's first row
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print puzzle 2's first row
 						{
-							cout << board_Two[ii][jj];                                       //--- (puzzle 2) print puzzle 2's elements
+							cout << board_Two[ii][jj];                                      //--- (puzzle 2) print puzzle 2's elements
 							if (ii == 0)                                                    //--- (puzzle 2) if first row in puzzle 2...
 							{
 								cout << "|";                                                //--- (puzzle 2) print column header dividers
 								if (jj == 6)                                                //--- (puzzle 2) if last element in first row...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int iii = 0; iii < row - 6; iii++)                            //--- (puzzle 3) loop for puzzle 3's first row
+									for (int iii = 0; iii < row - 6; iii++)                             //--- (puzzle 3) loop for puzzle 3's first row
 									{
 										cout << "|";                                                    //--- (puzzle 3) print left wall of puzzle 3 in column 0
-										for (int jjj = 0; jjj < col; jjj++)                            //--- (puzzle 3) loop to print puzzle 3's first row
+										for (int jjj = 0; jjj < col; jjj++)                             //--- (puzzle 3) loop to print puzzle 3's first row
 										{
-											cout << board_Three[iii][jjj];                               //--- (puzzle 3) print puzzle 3's elements
+											cout << board_Three[iii][jjj];                              //--- (puzzle 3) print puzzle 3's elements
 											if (iii == 0)                                               //--- (puzzle 3) if first row...
 											{
 												cout << "|";                                            //--- (puzzle 3) print column header dividers
@@ -1837,25 +1825,25 @@ void hard6x6()
 					}
 				}
 			}
-			else if (j == 0 || j == 3 || j == 6)                      //--- (puzzle 1) if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6)                                //--- (puzzle 1) if not first row, but is column 0, 3, or 6...
 			{
 				cout << "|";                                                    //--- (puzzle 1) print divider (this will close off row headers as well as become block dividers)
 				if (j == 6)                                                     //--- (puzzle 1) if last column in current row of puzzle 1...
 				{
 					cout << "       |";                                         //--- (puzzle 1 to puzzle 2) print space and left wall of puzzle 2
-					for (int jj = 0; jj < col; jj++)                                       //--- (puzzle 2) loop for puzzle 2's contents
+					for (int jj = 0; jj < col; jj++)                                        //--- (puzzle 2) loop for puzzle 2's contents
 					{
-						cout << board_Two[i][jj];                                            //--- (puzzle 2) print puzzle 2's elements
-						if (jj == 0 || jj == 3 || jj == 6)                       //--- (puzzle 2) if column 0, 3, 6, or 9...
+						cout << board_Two[i][jj];                                           //--- (puzzle 2) print puzzle 2's elements
+						if (jj == 0 || jj == 3 || jj == 6)                                  //--- (puzzle 2) if column 0, 3, or 6...
 						{
 							cout << "|";                                                    //--- (puzzle 2) print wall
 							if (jj == 6)                                                    //--- (puzzle 2) if column 9...
 							{
 								cout << "       |";                                         //--- (puzzle 2 to puzzle 3) print space and puzzle 3's left wall
-								for (int jjj = 0; jjj < col; jjj++)                                    //--- (puzzle 3) loop for puzzle 3's contents
+								for (int jjj = 0; jjj < col; jjj++)                                     //--- (puzzle 3) loop for puzzle 3's contents
 								{
-									cout << board_Three[i][jjj];                                         //--- (puzzle 3) print puzzle 3's elements
-									if (jjj == 0 || jjj == 3 || jjj == 6)                   //--- (puzzle 3) if column 0, 3, 6, or 9...
+									cout << board_Three[i][jjj];                                        //--- (puzzle 3) print puzzle 3's elements
+									if (jjj == 0 || jjj == 3 || jjj == 6)                               //--- (puzzle 3) if column 0, 3, or 6...
 									{
 										cout << "|";                                                    //--- (puzzle 3) print wall
 									}
@@ -1873,7 +1861,7 @@ void hard6x6()
 					}
 				}
 			}
-			else                                                                //--- (puzzle 1) if not first row, or columns 0, 3, 6, or 9...
+			else                                                                //--- (puzzle 1) if not first row, or columns 0, 3, or 6...
 			{
 				cout << " ";                                                    //--- (puzzle 1) print space to even out the rows
 			}
@@ -1893,37 +1881,37 @@ void hard6x6()
 		else                                                       //--- otherwise...
 		{
 			cout << endl;                                          //--- start new line for empty space rows
-			for (int j = 0; j < col; j++)                                      //--- (puzzle 1) loop to print empty rows
+			for (int j = 0; j < col; j++)                                       //--- (puzzle 1) loop to print empty rows
 			{
 				if (j == 0)                                                     //--- (puzzle 1) if at column 0...
 				{
 					cout << "|---|";                                            //--- (puzzle 1) print row-header divider
 				}
-				else if (j == 3 || j == 6)                            //--- (puzzle 1) if column 3, 6, or 9...
+				else if (j == 3 || j == 6)                                      //--- (puzzle 1) if column 3 or 6...
 				{
 					cout << "           |";                                     //--- (puzzle 1) print gap and wall to form borders
-					if (j == 6)                                                 //--- (puzzle 1) if at column 9...
+					if (j == 6)                                                 //--- (puzzle 1) if at column 6...
 					{
 						cout << "       ";                                      //--- (puzzle 1 to puzzle 2) print space between puzzle 1 and puzzle 2
-						for (int jj = 0; jj < col; jj++)                                   //--- (puzzle 2) loop to print empty rows
+						for (int jj = 0; jj < col; jj++)                                    //--- (puzzle 2) loop to print empty rows
 						{
 							if (jj == 0)                                                    //--- (puzzle 2) if at column 0...
 							{
 								cout << "|---|";                                            //--- (puzzle 2) print row header divider
 							}
-							else if (jj == 3 || jj == 6)                         //--- (puzzle 2) if at colum 3, 6, or 9...
+							else if (jj == 3 || jj == 6)                                    //--- (puzzle 2) if at colum 3 or 6...
 							{
 								cout << "           |";                                     //--- (puzzle 2) print gap and wall to form borders
 								if (jj == 6)                                                //--- (puzzle 2) if at column 9...
 								{
 									cout << "       ";                                      //--- (puzzle 2 to puzzle 3) print space between puzzle 2 and puzzle 3
-									for (int jjj = 0; jjj < col; jjj++)                                //--- (puzzle 3) loop to print empty rows
+									for (int jjj = 0; jjj < col; jjj++)                                 //--- (puzzle 3) loop to print empty rows
 									{
 										if (jjj == 0)                                                   //--- (puzzle 3) if at column 0...
 										{
 											cout << "|---|";                                            //--- (puzzle 3) print row header divider
 										}
-										else if (jjj == 3 || jjj == 6)                      //--- (puzzle 3) if at column 3, 6, or 9...
+										else if (jjj == 3 || jjj == 6)                                  //--- (puzzle 3) if at column 3 or 6...
 										{
 											cout << "           |";                                     //--- (puzzle 3) print gap and wall to form borders
 										}
@@ -1979,14 +1967,14 @@ void hard6x6()
 //======================== MICHAEL APPERSON START =============================
 void easy9x9()
 {
-	system("CLS");                                                               //--- clear screen
-	string boardChoice;                                                          //--- user's puzzle choice
-	bool valid = false;                                                          //--- check-input flag
+	system("CLS");                                                                            //--- clear screen
+	string boardChoice;                                                                       //--- user's puzzle choice
+	bool valid = false;                                                                       //--- check-input flag
 
-	const int rows = 10;                                                         //--- large board dimensions
+	const int rows = 10;                                                                      //--- large board dimensions
 	const int cols = 10;
 
-	const string num1 = "[1]";                                                   //--- constants
+	const string num1 = "[1]";                                                                //--- constants
 	const string num2 = "[2]";
 	const string num3 = "[3]";
 	const string num4 = "[4]";
@@ -1998,82 +1986,82 @@ void easy9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num4  , "   " , num1  , num2  , num9  , "   " , "   " , num7  , num5 },
-		{ " 2 " , num2  , "   " , "   " , num3  , "   " , "   " , num8  , "   " , "   " },
-		{ " 3 " , "   " , num7  , "   " , "   " , num8  , "   " , "   " , "   " , num6 },
-		{ " 4 " , "   " , "   " , "   " , num1  , "   " , num3  , "   " , num6  , num2 },
-		{ " 5 " , num1  , "   " , num5  , "   " , "   " , "   " , num4  , "   " , num3 },
-		{ " 6 " , num7  , num3  , "   " , num6  , "   " , num8  , "   " , "   " , "   " },
-		{ " 7 " , num6  , "   " , "   " , "   " , num2  , "   " , "   " , num3  , "   " },
-		{ " 8 " , "   " , "   " , num7  , "   " , "   " , num1  , "   " , "   " , num4 },
-		{ " 9 " , num8  , num9  , "   " , "   " , num6  , num5  , num1  , "   " , num7 }
+	{ " 1 " , num4  , "   " , num1  , num2  , num9  , "   " , "   " , num7  , num5 },
+	{ " 2 " , num2  , "   " , "   " , num3  , "   " , "   " , num8  , "   " , "   " },
+	{ " 3 " , "   " , num7  , "   " , "   " , num8  , "   " , "   " , "   " , num6 },
+	{ " 4 " , "   " , "   " , "   " , num1  , "   " , num3  , "   " , num6  , num2 },
+	{ " 5 " , num1  , "   " , num5  , "   " , "   " , "   " , num4  , "   " , num3 },
+	{ " 6 " , num7  , num3  , "   " , num6  , "   " , num8  , "   " , "   " , "   " },
+	{ " 7 " , num6  , "   " , "   " , "   " , num2  , "   " , "   " , num3  , "   " },
+	{ " 8 " , "   " , "   " , num7  , "   " , "   " , num1  , "   " , "   " , num4 },
+	{ " 9 " , num8  , num9  , "   " , "   " , num6  , num5  , num1  , "   " , num7 }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num4  , " 8 " , num1  , num2  , num9  , " 6 " , " 3 " , num7  , num5 },
-		{ " 2 " , num2  , " 5 " , " 6 " , num3  , " 1 " , " 7 " , num8  , " 4 " , " 9 " },
-		{ " 3 " , " 3 " , num7  , " 9 " , " 5 " , num8  , " 4 " , " 2 " , " 1 " , num6 },
-		{ " 4 " , " 9 " , " 4 " , " 8 " , num1  , " 5 " , num3  , " 7 " , num6  , num2 },
-		{ " 5 " , num1  , " 6 " , num5  , " 9 " , " 7 " , " 2 " , num4  , " 8 " , num3 },
-		{ " 6 " , num7  , num3  , " 2 " , num6  , " 4 " , num8  , " 9 " , " 5 " , " 1 " },
-		{ " 7 " , num6  , " 1 " , " 4 " , " 7 " , num2  , " 9 " , " 5 " , num3  , " 8 " },
-		{ " 8 " , " 5 " , " 2 " , num7  , " 8 " , " 3 " , num1  , " 6 " , " 9 " , num4 },
-		{ " 9 " , num8  , num9  , " 3 " , " 4 " , num6  , num5  , num1  , " 2 " , num7 }
+	{ " 1 " , num4  , " 8 " , num1  , num2  , num9  , " 6 " , " 3 " , num7  , num5 },
+	{ " 2 " , num2  , " 5 " , " 6 " , num3  , " 1 " , " 7 " , num8  , " 4 " , " 9 " },
+	{ " 3 " , " 3 " , num7  , " 9 " , " 5 " , num8  , " 4 " , " 2 " , " 1 " , num6 },
+	{ " 4 " , " 9 " , " 4 " , " 8 " , num1  , " 5 " , num3  , " 7 " , num6  , num2 },
+	{ " 5 " , num1  , " 6 " , num5  , " 9 " , " 7 " , " 2 " , num4  , " 8 " , num3 },
+	{ " 6 " , num7  , num3  , " 2 " , num6  , " 4 " , num8  , " 9 " , " 5 " , " 1 " },
+	{ " 7 " , num6  , " 1 " , " 4 " , " 7 " , num2  , " 9 " , " 5 " , num3  , " 8 " },
+	{ " 8 " , " 5 " , " 2 " , num7  , " 8 " , " 3 " , num1  , " 6 " , " 9 " , num4 },
+	{ " 9 " , num8  , num9  , " 3 " , " 4 " , num6  , num5  , num1  , " 2 " , num7 }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num9  , "   " , num2  , "   " , num1  , num7  , num4  , num6  , "   " },
-		{ " 2 " , "   " , num1  , "   " , num9  , num4  , "   " , "   " , "   " , "   " },
-		{ " 3 " , num3  , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , "   " , "   " , num5  , num8  , "   " , "   " , num6  , "   " , num4 },
-		{ " 5 " , "   " , num4  , num9  , num3  , "   " , num5  , num7  , num2  , "   " },
-		{ " 6 " , num1  , "   " , num3  , "   " , "   " , num4  , num9  , "   " , "   " },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num5 },
-		{ " 8 " , "   " , "   " , "   " , "   " , num3  , num2  , "   " , num4  , "   " },
-		{ " 9 " , "   " , num3  , num1  , num6  , num5  , "   " , num2  , "   " , num7 }
+	{ " 1 " , num9  , "   " , num2  , "   " , num1  , num7  , num4  , num6  , "   " },
+	{ " 2 " , "   " , num1  , "   " , num9  , num4  , "   " , "   " , "   " , "   " },
+	{ " 3 " , num3  , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , "   " , "   " , num5  , num8  , "   " , "   " , num6  , "   " , num4 },
+	{ " 5 " , "   " , num4  , num9  , num3  , "   " , num5  , num7  , num2  , "   " },
+	{ " 6 " , num1  , "   " , num3  , "   " , "   " , num4  , num9  , "   " , "   " },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num5 },
+	{ " 8 " , "   " , "   " , "   " , "   " , num3  , num2  , "   " , num4  , "   " },
+	{ " 9 " , "   " , num3  , num1  , num6  , num5  , "   " , num2  , "   " , num7 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num9  , " 8 " , num2  , " 5 " , num1  , num7  , num4  , num6  , " 3 " },
-		{ " 2 " , " 7 " , num1  , " 6 " , num9  , num4  , " 3 " , " 5 " , " 8 " , " 2 " },
-		{ " 3 " , num3  , " 5 " , " 4 " , " 2 " , " 8 " , " 6 " , " 1 " , " 7 " , " 9 " },
-		{ " 4 " , " 2 " , " 7 " , num5  , num8  , " 9 " , " 1 " , num6  , " 3 " , num4 },
-		{ " 5 " , " 8 " , num4  , num9  , num3  , " 6 " , num5  , num7  , num2  , " 1 " },
-		{ " 6 " , num1  , " 6 " , num3  , " 7 " , " 2 " , num4  , num9  , " 5 " , " 8 " },
-		{ " 7 " , " 6 " , " 2 " , " 8 " , " 4 " , " 7 " , " 9 " , " 3 " , " 1 " , num5 },
-		{ " 8 " , " 5 " , " 9 " , " 7 " , " 1 " , num3  , num2  , " 8 " , num4  , " 6 " },
-		{ " 9 " , " 4 " , num3  , num1  , num6  , num5  , " 8 " , num2  , " 9 " , num7 }
+	{ " 1 " , num9  , " 8 " , num2  , " 5 " , num1  , num7  , num4  , num6  , " 3 " },
+	{ " 2 " , " 7 " , num1  , " 6 " , num9  , num4  , " 3 " , " 5 " , " 8 " , " 2 " },
+	{ " 3 " , num3  , " 5 " , " 4 " , " 2 " , " 8 " , " 6 " , " 1 " , " 7 " , " 9 " },
+	{ " 4 " , " 2 " , " 7 " , num5  , num8  , " 9 " , " 1 " , num6  , " 3 " , num4 },
+	{ " 5 " , " 8 " , num4  , num9  , num3  , " 6 " , num5  , num7  , num2  , " 1 " },
+	{ " 6 " , num1  , " 6 " , num3  , " 7 " , " 2 " , num4  , num9  , " 5 " , " 8 " },
+	{ " 7 " , " 6 " , " 2 " , " 8 " , " 4 " , " 7 " , " 9 " , " 3 " , " 1 " , num5 },
+	{ " 8 " , " 5 " , " 9 " , " 7 " , " 1 " , num3  , num2  , " 8 " , num4  , " 6 " },
+	{ " 9 " , " 4 " , num3  , num1  , num6  , num5  , " 8 " , num2  , " 9 " , num7 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num8  , "   " , "   " , "   " , num9  , "   " , num6  , "   " , "   " },
-		{ " 2 " , "   " , "   " , num4  , num1  , num5  , num6  , num8  , "   " , "   " },
-		{ " 3 " , "   " , num6  , num5  , "   " , "   " , num8  , "   " , "   " , "   " },
-		{ " 4 " , num5  , "   " , "   " , num3  , num6  , "   " , num2  , "   " , "   " },
-		{ " 5 " , num9  , "   " , num8  , "   " , "   " , "   " , num1  , "   " , num6 },
-		{ " 6 " , "   " , "   " , num7  , "   " , num1  , num9  , "   " , "   " , num4 },
-		{ " 7 " , "   " , "   " , "   " , num9  , "   " , "   " , num7  , num1  , "   " },
-		{ " 8 " , "   " , "   " , num9  , num2  , num7  , num5  , num4  , "   " , "   " },
-		{ " 9 " , "   " , "   " , num2  , "   " , num4  , "   " , "   " , "   " , num9 }
+	{ " 1 " , num8  , "   " , "   " , "   " , num9  , "   " , num6  , "   " , "   " },
+	{ " 2 " , "   " , "   " , num4  , num1  , num5  , num6  , num8  , "   " , "   " },
+	{ " 3 " , "   " , num6  , num5  , "   " , "   " , num8  , "   " , "   " , "   " },
+	{ " 4 " , num5  , "   " , "   " , num3  , num6  , "   " , num2  , "   " , "   " },
+	{ " 5 " , num9  , "   " , num8  , "   " , "   " , "   " , num1  , "   " , num6 },
+	{ " 6 " , "   " , "   " , num7  , "   " , num1  , num9  , "   " , "   " , num4 },
+	{ " 7 " , "   " , "   " , "   " , num9  , "   " , "   " , num7  , num1  , "   " },
+	{ " 8 " , "   " , "   " , num9  , num2  , num7  , num5  , num4  , "   " , "   " },
+	{ " 9 " , "   " , "   " , num2  , "   " , num4  , "   " , "   " , "   " , num9 }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num8  , " 1 " , " 3 " , " 7 " , num9  , " 2 " , num6  , " 4 " , " 5 " },
-		{ " 2 " , " 2 " , " 9 " , num4  , num1  , num5  , num6  , num8  , " 3 " , " 7 " },
-		{ " 3 " , " 7 " , num6  , num5  , " 4 " , " 3 " , num8  , " 9 " , " 2 " , " 1 " },
-		{ " 4 " , num5  , " 4 " , " 1 " , num3  , num6  , " 7 " , num2  , " 9 " , " 8 " },
-		{ " 5 " , num9  , " 3 " , num8  , " 5 " , " 2 " , " 4 " , num1  , " 7 " , num6 },
-		{ " 6 " , " 6 " , " 2 " , num7  , " 8 " , num1  , num9  , " 3 " , " 5 " , num4 },
-		{ " 7 " , " 4 " , " 5 " , " 6 " , num9  , " 8 " , " 3 " , num7  , num1  , " 2 " },
-		{ " 8 " , " 1 " , " 8 " , num9  , num2  , num7  , num5  , num4  , " 6 " , " 3 " },
-		{ " 9 " , " 3 " , " 7 " , num2  , " 6 " , num4  , " 1 " , " 5 " , " 8 " , num9 }
+	{ " 1 " , num8  , " 1 " , " 3 " , " 7 " , num9  , " 2 " , num6  , " 4 " , " 5 " },
+	{ " 2 " , " 2 " , " 9 " , num4  , num1  , num5  , num6  , num8  , " 3 " , " 7 " },
+	{ " 3 " , " 7 " , num6  , num5  , " 4 " , " 3 " , num8  , " 9 " , " 2 " , " 1 " },
+	{ " 4 " , num5  , " 4 " , " 1 " , num3  , num6  , " 7 " , num2  , " 9 " , " 8 " },
+	{ " 5 " , num9  , " 3 " , num8  , " 5 " , " 2 " , " 4 " , num1  , " 7 " , num6 },
+	{ " 6 " , " 6 " , " 2 " , num7  , " 8 " , num1  , num9  , " 3 " , " 5 " , num4 },
+	{ " 7 " , " 4 " , " 5 " , " 6 " , num9  , " 8 " , " 3 " , num7  , num1  , " 2 " },
+	{ " 8 " , " 1 " , " 8 " , num9  , num2  , num7  , num5  , num4  , " 6 " , " 3 " },
+	{ " 9 " , " 3 " , " 7 " , num2  , " 6 " , num4  , " 1 " , " 5 " , " 8 " , num9 }
 	};
 
 
@@ -2234,31 +2222,31 @@ void easy9x9()
 
 	cout << endl << endl;
 
-	cout << "Select a puzzle to play (1-3): ";                                  //--- user selects a puzzle
+	cout << "Select a puzzle to play (1-3): ";                                                //--- user selects a puzzle
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                      //--- check-input loop
+	while (valid == false)                                                                    //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")     //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                   //--- if good input...
 		{
-			valid = true;                                                       //--- set flag to true
+			valid = true;                                                                     //--- set flag to true
 		}
-		else                                                                    //--- otherwise...
+		else                                                                                  //--- otherwise...
 		{
 			cout << lightred;
-			cout << "Invalid input. Please enter a number 1-3: ";               //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                             //--- ask again
 			cout << lightcyan;
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                     //--- if puzzle 1 chosen...
+	if (boardChoice == "1")                                                                   //--- if puzzle 1 chosen...
 	{
-		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function
+		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function
 	}
-	if (boardChoice == "2")                                                     //--- if puzzle 2...
+	if (boardChoice == "2")                                                                   //--- if puzzle 2...
 	{
-		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function, etc.
+		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function, etc.
 	}
 	if (boardChoice == "3")
 	{
@@ -2268,14 +2256,14 @@ void easy9x9()
 }
 void med9x9()
 {
-	system("CLS");                                                               //--- clear screen
-	string boardChoice;                                                          //--- user's puzzle choice
-	bool valid = false;                                                          //--- check-input flag
+	system("CLS");                                                                            //--- clear screen
+	string boardChoice;                                                                       //--- user's puzzle choice
+	bool valid = false;                                                                       //--- check-input flag
 
-	const int rows = 10;                                                         //--- large board dimensions
+	const int rows = 10;                                                                      //--- large board dimensions
 	const int cols = 10;
 
-	const string num1 = "[1]";                                                   //--- constants
+	const string num1 = "[1]";                                                                //--- constants
 	const string num2 = "[2]";
 	const string num3 = "[3]";
 	const string num4 = "[4]";
@@ -2287,82 +2275,82 @@ void med9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , num9  , "   " , "   " , num5  , "   " , "   " },
-		{ " 2 " , "   " , "   " , num2  , "   " , num3  , "   " , num9  , num1  , "   " },
-		{ " 3 " , num9  , "   " , "   " , "   " , num8  , num5  , num2  , "   " , num6 },
-		{ " 4 " , num8  , "   " , "   " , "   " , num7  , "   " , "   " , "   " , num4 },
-		{ " 5 " , "   " , "   " , num4  , num3  , "   " , num6  , num1  , "   " , "   " },
-		{ " 6 " , num6  , "   " , "   " , "   " , num9  , "   " , "   " , "   " , num5 },
-		{ " 7 " , num2  , "   " , num5  , num8  , num6  , "   " , "   " , "   " , num1 },
-		{ " 8 " , "   " , num6  , num7  , "   " , num1  , "   " , num8  , "   " , "   " },
-		{ " 9 " , "   " , "   " , num8  , "   " , "   " , num2  , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , num9  , "   " , "   " , num5  , "   " , "   " },
+	{ " 2 " , "   " , "   " , num2  , "   " , num3  , "   " , num9  , num1  , "   " },
+	{ " 3 " , num9  , "   " , "   " , "   " , num8  , num5  , num2  , "   " , num6 },
+	{ " 4 " , num8  , "   " , "   " , "   " , num7  , "   " , "   " , "   " , num4 },
+	{ " 5 " , "   " , "   " , num4  , num3  , "   " , num6  , num1  , "   " , "   " },
+	{ " 6 " , num6  , "   " , "   " , "   " , num9  , "   " , "   " , "   " , num5 },
+	{ " 7 " , num2  , "   " , num5  , num8  , num6  , "   " , "   " , "   " , num1 },
+	{ " 8 " , "   " , num6  , num7  , "   " , num1  , "   " , num8  , "   " , "   " },
+	{ " 9 " , "   " , "   " , num8  , "   " , "   " , num2  , "   " , "   " , "   " }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 1 " , " 4 " , " 6 " , num9  , " 2 " , " 7 " , num5  , " 8 " , " 3 " },
-		{ " 2 " , " 5 " , " 8 " , num2  , " 6 " , num3  , " 4 " , num9  , num1  , " 7 " },
-		{ " 3 " , num9  , " 7 " , " 3 " , " 1 " , num8  , num5  , num2  , " 4 " , num6 },
-		{ " 4 " , num8  , " 5 " , " 9 " , " 2 " , num7  , " 1 " , " 3 " , " 6 " , num4 },
-		{ " 5 " , " 7 " , " 2 " , num4  , num3  , " 5 " , num6  , num1  , " 9 " , " 8 " },
-		{ " 6 " , num6  , " 3 " , " 1 " , " 4 " , num9  , " 8 " , " 7 " , " 2 " , num5 },
-		{ " 7 " , num2  , " 9 " , num5  , num8  , num6  , " 3 " , " 4 " , " 7 " , num1 },
-		{ " 8 " , " 4 " , num6  , num7  , " 5 " , num1  , " 9 " , num8  , " 3 " , " 2 " },
-		{ " 9 " , " 3 " , " 1 " , num8  , " 7 " , " 4 " , num2  , " 6 " , " 5 " , " 9 " }
+	{ " 1 " , " 1 " , " 4 " , " 6 " , num9  , " 2 " , " 7 " , num5  , " 8 " , " 3 " },
+	{ " 2 " , " 5 " , " 8 " , num2  , " 6 " , num3  , " 4 " , num9  , num1  , " 7 " },
+	{ " 3 " , num9  , " 7 " , " 3 " , " 1 " , num8  , num5  , num2  , " 4 " , num6 },
+	{ " 4 " , num8  , " 5 " , " 9 " , " 2 " , num7  , " 1 " , " 3 " , " 6 " , num4 },
+	{ " 5 " , " 7 " , " 2 " , num4  , num3  , " 5 " , num6  , num1  , " 9 " , " 8 " },
+	{ " 6 " , num6  , " 3 " , " 1 " , " 4 " , num9  , " 8 " , " 7 " , " 2 " , num5 },
+	{ " 7 " , num2  , " 9 " , num5  , num8  , num6  , " 3 " , " 4 " , " 7 " , num1 },
+	{ " 8 " , " 4 " , num6  , num7  , " 5 " , num1  , " 9 " , num8  , " 3 " , " 2 " },
+	{ " 9 " , " 3 " , " 1 " , num8  , " 7 " , " 4 " , num2  , " 6 " , " 5 " , " 9 " }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num2  , "   " , num3  , "   " , num9  , num7  , "   " , "   " , num8 },
-		{ " 2 " , "   " , num7  , "   " , num6  , num8  , "   " , "   " , num2  , "   " },
-		{ " 3 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , "   " , "   " , "   " , "   " , num2  , num3  , num1  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num9  , num1  , num4  , num6  , num8  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num4  , num9  , num5  , "   " , "   " , "   " , "   " },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 8 " , "   " , num9  , "   " , "   " , num7  , num5  , "   " , num6  , "   " },
-		{ " 9 " , num8  , "   " , "   " , num2  , num1  , "   " , num5  , "   " , num4 }
+	{ " 1 " , num2  , "   " , num3  , "   " , num9  , num7  , "   " , "   " , num8 },
+	{ " 2 " , "   " , num7  , "   " , num6  , num8  , "   " , "   " , num2  , "   " },
+	{ " 3 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , "   " , "   " , "   " , "   " , num2  , num3  , num1  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num9  , num1  , num4  , num6  , num8  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num4  , num9  , num5  , "   " , "   " , "   " , "   " },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 8 " , "   " , num9  , "   " , "   " , num7  , num5  , "   " , num6  , "   " },
+	{ " 9 " , num8  , "   " , "   " , num2  , num1  , "   " , num5  , "   " , num4 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num2  , " 4 " , num3  , " 5 " , num9  , num7  , " 6 " , " 1 " , num8 },
-		{ " 2 " , " 9 " , num7  , " 5 " , num6  , num8  , " 1 " , " 4 " , num2  , " 3 " },
-		{ " 3 " , " 6 " , " 8 " , " 1 " , " 4 " , " 3 " , " 2 " , " 7 " , " 9 " , " 5 " },
-		{ " 4 " , " 5 " , " 6 " , " 8 " , " 7 " , num2  , num3  , num1  , " 4 " , " 9 " },
-		{ " 5 " , " 3 " , " 2 " , num9  , num1  , num4  , num6  , num8  , " 5 " , " 7 " },
-		{ " 6 " , " 7 " , " 1 " , num4  , num9  , num5  , " 8 " , " 2 " , " 3 " , " 6 " },
-		{ " 7 " , " 1 " , " 5 " , " 7 " , " 3 " , " 6 " , " 4 " , " 9 " , " 8 " , " 2 " },
-		{ " 8 " , " 4 " , num9  , " 2 " , " 8 " , num7  , num5  , " 3 " , num6  , " 1 " },
-		{ " 9 " , num8  , " 3 " , " 6 " , num2  , num1  , " 9 " , num5  , " 7 " , num4 }
+	{ " 1 " , num2  , " 4 " , num3  , " 5 " , num9  , num7  , " 6 " , " 1 " , num8 },
+	{ " 2 " , " 9 " , num7  , " 5 " , num6  , num8  , " 1 " , " 4 " , num2  , " 3 " },
+	{ " 3 " , " 6 " , " 8 " , " 1 " , " 4 " , " 3 " , " 2 " , " 7 " , " 9 " , " 5 " },
+	{ " 4 " , " 5 " , " 6 " , " 8 " , " 7 " , num2  , num3  , num1  , " 4 " , " 9 " },
+	{ " 5 " , " 3 " , " 2 " , num9  , num1  , num4  , num6  , num8  , " 5 " , " 7 " },
+	{ " 6 " , " 7 " , " 1 " , num4  , num9  , num5  , " 8 " , " 2 " , " 3 " , " 6 " },
+	{ " 7 " , " 1 " , " 5 " , " 7 " , " 3 " , " 6 " , " 4 " , " 9 " , " 8 " , " 2 " },
+	{ " 8 " , " 4 " , num9  , " 2 " , " 8 " , num7  , num5  , " 3 " , num6  , " 1 " },
+	{ " 9 " , num8  , " 3 " , " 6 " , num2  , num1  , " 9 " , num5  , " 7 " , num4 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , "   " , "   " , num7  , num9  , num5  , "   " },
-		{ " 2 " , num7  , "   " , num3  , "   " , num5  , "   " , "   " , "   " , num2 },
-		{ " 3 " , "   " , "   " , "   " , "   " , num6  , num4  , "   " , num3  , "   " },
-		{ " 4 " , "   " , num9  , "   " , "   " , "   " , "   " , num2  , "   " , num8 },
-		{ " 5 " , "   " , num6  , "   " , "   " , "   " , "   " , "   " , num9  , "   " },
-		{ " 6 " , num4  , "   " , num7  , "   " , "   " , "   " , "   " , num1  , "   " },
-		{ " 7 " , "   " , num3  , "   " , num8  , num4  , "   " , "   " , "   " , "   " },
-		{ " 8 " , num5  , "   " , "   " , "   " , num1  , "   " , num4  , "   " , num3 },
-		{ " 9 " , "   " , num4  , num1  , num7  , "   " , "   " , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , "   " , "   " , num7  , num9  , num5  , "   " },
+	{ " 2 " , num7  , "   " , num3  , "   " , num5  , "   " , "   " , "   " , num2 },
+	{ " 3 " , "   " , "   " , "   " , "   " , num6  , num4  , "   " , num3  , "   " },
+	{ " 4 " , "   " , num9  , "   " , "   " , "   " , "   " , num2  , "   " , num8 },
+	{ " 5 " , "   " , num6  , "   " , "   " , "   " , "   " , "   " , num9  , "   " },
+	{ " 6 " , num4  , "   " , num7  , "   " , "   " , "   " , "   " , num1  , "   " },
+	{ " 7 " , "   " , num3  , "   " , num8  , num4  , "   " , "   " , "   " , "   " },
+	{ " 8 " , num5  , "   " , "   " , "   " , num1  , "   " , num4  , "   " , num3 },
+	{ " 9 " , "   " , num4  , num1  , num7  , "   " , "   " , "   " , "   " , "   " }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 6 " , " 8 " , " 4 " , " 3 " , " 2 " , num7  , num9  , num5  , " 1 " },
-		{ " 2 " , num7  , " 1 " , num3  , " 9 " , num5  , " 8 " , " 6 " , " 4 " , num2 },
-		{ " 3 " , " 9 " , " 5 " , " 2 " , " 1 " , num6  , num4  , " 8 " , num3  , " 7 " },
-		{ " 4 " , " 3 " , num9  , " 5 " , " 4 " , " 7 " , " 1 " , num2  , " 6 " , num8 },
-		{ " 5 " , " 1 " , num6  , " 8 " , " 5 " , " 3 " , " 2 " , " 7 " , num9  , " 4 " },
-		{ " 6 " , num4  , " 2 " , num7  , " 6 " , " 8 " , " 9 " , " 3 " , num1  , " 5 " },
-		{ " 7 " , " 2 " , num3  , " 6 " , num8  , num4  , " 5 " , " 1 " , " 7 " , " 9 " },
-		{ " 8 " , num5  , " 7 " , " 9 " , " 2 " , num1  , " 6 " , num4  , " 8 " , num3 },
-		{ " 9 " , " 8 " , num4  , num1  , num7  , " 9 " , " 3 " , " 5 " , " 2 " , " 6 " }
+	{ " 1 " , " 6 " , " 8 " , " 4 " , " 3 " , " 2 " , num7  , num9  , num5  , " 1 " },
+	{ " 2 " , num7  , " 1 " , num3  , " 9 " , num5  , " 8 " , " 6 " , " 4 " , num2 },
+	{ " 3 " , " 9 " , " 5 " , " 2 " , " 1 " , num6  , num4  , " 8 " , num3  , " 7 " },
+	{ " 4 " , " 3 " , num9  , " 5 " , " 4 " , " 7 " , " 1 " , num2  , " 6 " , num8 },
+	{ " 5 " , " 1 " , num6  , " 8 " , " 5 " , " 3 " , " 2 " , " 7 " , num9  , " 4 " },
+	{ " 6 " , num4  , " 2 " , num7  , " 6 " , " 8 " , " 9 " , " 3 " , num1  , " 5 " },
+	{ " 7 " , " 2 " , num3  , " 6 " , num8  , num4  , " 5 " , " 1 " , " 7 " , " 9 " },
+	{ " 8 " , num5  , " 7 " , " 9 " , " 2 " , num1  , " 6 " , num4  , " 8 " , num3 },
+	{ " 9 " , " 8 " , num4  , num1  , num7  , " 9 " , " 3 " , " 5 " , " 2 " , " 6 " }
 	};
 
 
@@ -2523,31 +2511,31 @@ void med9x9()
 
 	cout << endl << endl;
 
-	cout << "Select a puzzle to play (1-3): ";                                  //--- user selects a puzzle
+	cout << "Select a puzzle to play (1-3): ";                                                //--- user selects a puzzle
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                      //--- check-input loop
+	while (valid == false)                                                                    //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")     //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                   //--- if good input...
 		{
-			valid = true;                                                       //--- set flag to true
+			valid = true;                                                                     //--- set flag to true
 		}
-		else                                                                    //--- otherwise...
+		else                                                                                  //--- otherwise...
 		{
 			cout << lightred;
-			cout << "Invalid input. Please enter a number 1-3: ";               //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                             //--- ask again
 			cout << lightcyan;
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                     //--- if puzzle 1 chosen...
+	if (boardChoice == "1")                                                                   //--- if puzzle 1 chosen...
 	{
-		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function
+		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function
 	}
-	if (boardChoice == "2")                                                     //--- if puzzle 2...
+	if (boardChoice == "2")                                                                   //--- if puzzle 2...
 	{
-		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function, etc.
+		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function, etc.
 	}
 	if (boardChoice == "3")
 	{
@@ -2556,14 +2544,14 @@ void med9x9()
 }
 void hard9x9()
 {
-	system("CLS");                                                               //--- clear screen
-	string boardChoice;                                                          //--- user's puzzle choice
-	bool valid = false;                                                          //--- check-input flag
+	system("CLS");                                                                            //--- clear screen
+	string boardChoice;                                                                       //--- user's puzzle choice
+	bool valid = false;                                                                       //--- check-input flag
 
-	const int rows = 10;                                                         //--- large board dimensions
+	const int rows = 10;                                                                      //--- large board dimensions
 	const int cols = 10;
 
-	const string num1 = "[1]";                                                   //--- constants
+	const string num1 = "[1]";                                                                //--- constants
 	const string num2 = "[2]";
 	const string num3 = "[3]";
 	const string num4 = "[4]";
@@ -2575,86 +2563,86 @@ void hard9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , num3  , num9  , num6  , "   " , "   " , num4  , "   " },
-		{ " 2 " , "   " , num7  , "   " , "   " , "   " , "   " , "   " , num2  , num9 },
-		{ " 3 " , "   " , "   " , "   " , "   " , num8  , "   " , num1  , "   " , "   " },
-		{ " 4 " , "   " , "   " , "   " , "   " , "   " , num6  , "   " , "   " , "   " },
-		{ " 5 " , num1  , "   " , num2  , "   " , num5  , "   " , num6  , "   " , num4 },
-		{ " 6 " , "   " , "   " , "   " , num7  , "   " , "   " , "   " , "   " , "   " },
-		{ " 7 " , "   " , "   " , num7  , "   " , num3  , "   " , "   " , "   " , "   " },
-		{ " 8 " , num2  , num5  , "   " , "   " , "   " , "   " , "   " , num1  , "   " },
-		{ " 9 " , "   " , num3  , "   " , "   " , num4  , num9  , num8  , "   " , "   " }
+	{ " 1 " , "   " , "   " , num3  , num9  , num6  , "   " , "   " , num4  , "   " },
+	{ " 2 " , "   " , num7  , "   " , "   " , "   " , "   " , "   " , num2  , num9 },
+	{ " 3 " , "   " , "   " , "   " , "   " , num8  , "   " , num1  , "   " , "   " },
+	{ " 4 " , "   " , "   " , "   " , "   " , "   " , num6  , "   " , "   " , "   " },
+	{ " 5 " , num1  , "   " , num2  , "   " , num5  , "   " , num6  , "   " , num4 },
+	{ " 6 " , "   " , "   " , "   " , num7  , "   " , "   " , "   " , "   " , "   " },
+	{ " 7 " , "   " , "   " , num7  , "   " , num3  , "   " , "   " , "   " , "   " },
+	{ " 8 " , num2  , num5  , "   " , "   " , "   " , "   " , "   " , num1  , "   " },
+	{ " 9 " , "   " , num3  , "   " , "   " , num4  , num9  , num8  , "   " , "   " }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 5 " , " 1 " , num3  , num9  , num6  , " 2 " , " 7 " , num4  , " 8 " },
-		{ " 2 " , " 8 " , num7  , " 6 " , " 4 " , " 1 " , " 5 " , " 3 " , num2  , num9 },
-		{ " 3 " , " 9 " , " 2 " , " 4 " , " 3 " , num8  , " 7 " , num1  , " 6 " , " 5 " },
-		{ " 4 " , " 7 " , " 4 " , " 8 " , " 1 " , " 9 " , num6  , " 5 " , " 3 " , " 2 " },
-		{ " 5 " , num1  , " 9 " , num2  , " 8 " , num5  , " 3 " , num6  , " 7 " , num4 },
-		{ " 6 " , " 3 " , " 6 " , " 5 " , num7  , " 2 " , " 4 " , " 9 " , " 8 " , " 1 " },
-		{ " 7 " , " 4 " , " 8 " , num7  , " 5 " , num3  , " 1 " , " 2 " , " 9 " , " 6 " },
-		{ " 8 " , num2  , num5  , " 9 " , " 6 " , " 7 " , " 8 " , " 4 " , num1  , " 3 " },
-		{ " 9 " , " 6 " , num3  , " 1 " , " 2 " , num4  , num9  , num8  , " 5 " , " 7 " }
+	{ " 1 " , " 5 " , " 1 " , num3  , num9  , num6  , " 2 " , " 7 " , num4  , " 8 " },
+	{ " 2 " , " 8 " , num7  , " 6 " , " 4 " , " 1 " , " 5 " , " 3 " , num2  , num9 },
+	{ " 3 " , " 9 " , " 2 " , " 4 " , " 3 " , num8  , " 7 " , num1  , " 6 " , " 5 " },
+	{ " 4 " , " 7 " , " 4 " , " 8 " , " 1 " , " 9 " , num6  , " 5 " , " 3 " , " 2 " },
+	{ " 5 " , num1  , " 9 " , num2  , " 8 " , num5  , " 3 " , num6  , " 7 " , num4 },
+	{ " 6 " , " 3 " , " 6 " , " 5 " , num7  , " 2 " , " 4 " , " 9 " , " 8 " , " 1 " },
+	{ " 7 " , " 4 " , " 8 " , num7  , " 5 " , num3  , " 1 " , " 2 " , " 9 " , " 6 " },
+	{ " 8 " , num2  , num5  , " 9 " , " 6 " , " 7 " , " 8 " , " 4 " , num1  , " 3 " },
+	{ " 9 " , " 6 " , num3  , " 1 " , " 2 " , num4  , num9  , num8  , " 5 " , " 7 " }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num1  , num6  , "   " , num3  , num2  , "   " , num4  , "   " , "   " },
-		{ " 2 " , "   " , "   " , "   " , "   " , num4  , "   " , "   " , num2  , num9 },
-		{ " 3 " , "   " , num2  , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , num9  , "   " , num3  , num4  , "   " , "   " , num7  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num4  , "   " , "   " , "   " , num6  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num2  , "   " , "   " , num5  , num3  , "   " , num8 },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num6  , "   " },
-		{ " 8 " , num2  , num3  , "   " , "   " , num9  , "   " , "   " , "   " , "   " },
-		{ " 9 " , "   " , "   " , num6  , "   " , num1  , num7  , "   " , num5  , num3 }
+	{ " 1 " , num1  , num6  , "   " , num3  , num2  , "   " , num4  , "   " , "   " },
+	{ " 2 " , "   " , "   " , "   " , "   " , num4  , "   " , "   " , num2  , num9 },
+	{ " 3 " , "   " , num2  , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , num9  , "   " , num3  , num4  , "   " , "   " , num7  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num4  , "   " , "   " , "   " , num6  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num2  , "   " , "   " , num5  , num3  , "   " , num8 },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num6  , "   " },
+	{ " 8 " , num2  , num3  , "   " , "   " , num9  , "   " , "   " , "   " , "   " },
+	{ " 9 " , "   " , "   " , num6  , "   " , num1  , num7  , "   " , num5  , num3 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num1  , num6  , " 5 " , num3  , num2  , " 9 " , num4  , " 8 " , " 7 " },
-		{ " 2 " , " 3 " , " 7 " , " 8 " , " 6 " , num4  , " 1 " , " 5 " , num2  , num9 },
-		{ " 3 " , " 4 " , num2  , " 9 " , " 7 " , " 5 " , " 8 " , " 1 " , " 3 " , " 6 " },
-		{ " 4 " , num9  , " 8 " , num3  , num4  , " 6 " , " 2 " , num7  , " 1 " , " 5 " },
-		{ " 5 " , " 7 " , " 5 " , num4  , " 1 " , " 8 " , " 3 " , num6  , " 9 " , " 2 " },
-		{ " 6 " , " 6 " , " 1 " , num2  , " 9 " , " 7 " , num5  , num3  , " 4 " , num8 },
-		{ " 7 " , " 5 " , " 9 " , " 7 " , " 8 " , " 3 " , " 4 " , " 2 " , num6  , " 1 " },
-		{ " 8 " , num2  , num3  , " 1 " , " 5 " , num9  , " 6 " , " 8 " , " 7 " , " 4 " },
-		{ " 9 " , " 8 " , " 4 " , num6  , " 2 " , num1  , num7  , " 9 " , num5  , num3 }
+	{ " 1 " , num1  , num6  , " 5 " , num3  , num2  , " 9 " , num4  , " 8 " , " 7 " },
+	{ " 2 " , " 3 " , " 7 " , " 8 " , " 6 " , num4  , " 1 " , " 5 " , num2  , num9 },
+	{ " 3 " , " 4 " , num2  , " 9 " , " 7 " , " 5 " , " 8 " , " 1 " , " 3 " , " 6 " },
+	{ " 4 " , num9  , " 8 " , num3  , num4  , " 6 " , " 2 " , num7  , " 1 " , " 5 " },
+	{ " 5 " , " 7 " , " 5 " , num4  , " 1 " , " 8 " , " 3 " , num6  , " 9 " , " 2 " },
+	{ " 6 " , " 6 " , " 1 " , num2  , " 9 " , " 7 " , num5  , num3  , " 4 " , num8 },
+	{ " 7 " , " 5 " , " 9 " , " 7 " , " 8 " , " 3 " , " 4 " , " 2 " , num6  , " 1 " },
+	{ " 8 " , num2  , num3  , " 1 " , " 5 " , num9  , " 6 " , " 8 " , " 7 " , " 4 " },
+	{ " 9 " , " 8 " , " 4 " , num6  , " 2 " , num1  , num7  , " 9 " , num5  , num3 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , "   " , num9  , "   " , num5  , "   " , "   " },
-		{ " 2 " , "   " , num5  , num9  , num8  , "   " , num1  , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , num8  , num2  , "   " , "   " , "   " , num6  , "   " },
-		{ " 4 " , "   " , num7  , "   " , "   " , num5  , "   " , num3  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num5  , "   " , num3  , "   " , num4  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num1  , "   " , num8  , "   " , "   " , num9  , "   " },
-		{ " 7 " , "   " , num9  , "   " , "   " , "   " , num8  , num2  , "   " , "   " },
-		{ " 8 " , "   " , "   " , "   " , num6  , "   " , num4  , num9  , num1  , "   " },
-		{ " 9 " , "   " , "   " , num6  , "   " , num7  , "   " , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , "   " , num9  , "   " , num5  , "   " , "   " },
+	{ " 2 " , "   " , num5  , num9  , num8  , "   " , num1  , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , num8  , num2  , "   " , "   " , "   " , num6  , "   " },
+	{ " 4 " , "   " , num7  , "   " , "   " , num5  , "   " , num3  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num5  , "   " , num3  , "   " , num4  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num1  , "   " , num8  , "   " , "   " , num9  , "   " },
+	{ " 7 " , "   " , num9  , "   " , "   " , "   " , num8  , num2  , "   " , "   " },
+	{ " 8 " , "   " , "   " , "   " , num6  , "   " , num4  , num9  , num1  , "   " },
+	{ " 9 " , "   " , "   " , num6  , "   " , num7  , "   " , "   " , "   " , "   " }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 6 " , " 1 " , " 4 " , " 3 " , num9  , " 7 " , num5  , " 2 " , " 8 " },
-		{ " 2 " , " 2 " , num5  , num9  , num8  , " 6 " , num1  , " 7 " , " 4 " , " 3 " },
-		{ " 3 " , " 7 " , " 3 " , num8  , num2  , " 4 " , " 5 " , " 1 " , num6  , " 9 " },
-		{ " 4 " , " 9 " , num7  , " 2 " , " 4 " , num5  , " 6 " , num3  , " 8 " , " 1 " },
-		{ " 5 " , " 8 " , " 6 " , num5  , " 1 " , num3  , " 9 " , num4  , " 7 " , " 2 " },
-		{ " 6 " , " 3 " , " 4 " , num1  , " 7 " , num8  , " 2 " , " 6 " , num9  , " 5 " },
-		{ " 7 " , " 4 " , num9  , " 7 " , " 5 " , " 1 " , num8  , num2  , " 3 " , " 6 " },
-		{ " 8 " , " 5 " , " 8 " , " 3 " , num6  , " 2 " , num4  , num9  , num1  , " 7 " },
-		{ " 9 " , " 1 " , " 2 " , num6  , " 9 " , num7  , " 3 " , " 8 " , " 5 " , " 4 " }
+	{ " 1 " , " 6 " , " 1 " , " 4 " , " 3 " , num9  , " 7 " , num5  , " 2 " , " 8 " },
+	{ " 2 " , " 2 " , num5  , num9  , num8  , " 6 " , num1  , " 7 " , " 4 " , " 3 " },
+	{ " 3 " , " 7 " , " 3 " , num8  , num2  , " 4 " , " 5 " , " 1 " , num6  , " 9 " },
+	{ " 4 " , " 9 " , num7  , " 2 " , " 4 " , num5  , " 6 " , num3  , " 8 " , " 1 " },
+	{ " 5 " , " 8 " , " 6 " , num5  , " 1 " , num3  , " 9 " , num4  , " 7 " , " 2 " },
+	{ " 6 " , " 3 " , " 4 " , num1  , " 7 " , num8  , " 2 " , " 6 " , num9  , " 5 " },
+	{ " 7 " , " 4 " , num9  , " 7 " , " 5 " , " 1 " , num8  , num2  , " 3 " , " 6 " },
+	{ " 8 " , " 5 " , " 8 " , " 3 " , num6  , " 2 " , num4  , num9  , num1  , " 7 " },
+	{ " 9 " , " 1 " , " 2 " , num6  , " 9 " , num7  , " 3 " , " 8 " , " 5 " , " 4 " }
 	};
 
 
-	string boardTop = "=========================================";              //--- large board top / block borders
+	string boardTop = "=========================================";                            //--- large board top / block borders
 	string boardMid = "|===|===========|===========|===========|";
 
 	//================ GENERATE LARGE PUZZLES =======================
@@ -2811,31 +2799,31 @@ void hard9x9()
 
 	cout << endl << endl;
 
-	cout << "Select a puzzle to play (1-3): ";                                  //--- user selects a puzzle
+	cout << "Select a puzzle to play (1-3): ";                                                //--- user selects a puzzle
 	getline(cin, boardChoice);
 
-	while (valid == false)                                                      //--- check-input loop
+	while (valid == false)                                                                    //--- check-input loop
 	{
-		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")     //--- if good input...
+		if (boardChoice == "1" || boardChoice == "2" || boardChoice == "3")                   //--- if good input...
 		{
-			valid = true;                                                       //--- set flag to true
+			valid = true;                                                                     //--- set flag to true
 		}
-		else                                                                    //--- otherwise...
+		else                                                                                  //--- otherwise...
 		{
 			cout << lightred;
-			cout << "Invalid input. Please enter a number 1-3: ";               //--- ask again
+			cout << "Invalid input. Please enter a number 1-3: ";                             //--- ask again
 			cout << lightcyan;
 			getline(cin, boardChoice);
 		}
 	}
 
-	if (boardChoice == "1")                                                     //--- if puzzle 1 chosen...
+	if (boardChoice == "1")                                                                   //--- if puzzle 1 chosen...
 	{
-		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function
+		playLargeGame(boardOne, boardOneAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function
 	}
-	if (boardChoice == "2")                                                     //--- if puzzle 2...
+	if (boardChoice == "2")                                                                   //--- if puzzle 2...
 	{
-		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);             //--- send it to playLargeGame function, etc.
+		playLargeGame(boardTwo, boardTwoAnswer, boardTop, boardMid, rows, cols);              //--- send it to playLargeGame function, etc.
 	}
 	if (boardChoice == "3")
 	{
@@ -2848,25 +2836,25 @@ void hard9x9()
 //===========================Elise Borbely Start===================================
 void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols)
 {
-	system("CLS");                                                              //--- clear screen
+	system("CLS");                                                                            //--- clear screen
 
-	const string num1 = "[1]";                                          //--- constants
+	const string num1 = "[1]";                                                                //--- constants
 	const string num2 = "[2]";
 	const string num3 = "[3]";
 	const string num4 = "[4]";
 
-	string choiceRow;                                                           //--- input variables
+	string choiceRow;                                                                         //--- input variables
 	string choiceCol;
 	string choiceNum;
-	int numRow;                                                                 //--- used as row when entering number into array
-	int numCol;                                                                 //--- used as col when entering number into array
-	bool valid = false;                                                         //--- check-input flag
+	int numRow;                                                                               //--- used as row when entering number into array
+	int numCol;                                                                               //--- used as col when entering number into array
+	bool valid = false;                                                                       //--- check-input flag
 	bool CorrectAnswer = false;
 	bool ArraysEqual = true;
 	bool GiveUp = false;
 	cout << endl << endl << lightcyan;
 
-	while (CorrectAnswer == false)												//---Elise Borbely figured out the loop. 
+	while (CorrectAnswer == false)                                                            //---Elise Borbely figured out the loop. 
 	{
 
 		cout << boardTop << endl;
@@ -2918,22 +2906,22 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 			}
 		}
 
-		cout << endl << endl << lightmagenta << "Select a row (1-4) to enter a number in: ";        //--- get desired row
+		cout << endl << endl << lightmagenta << "Select a row (1-4) to enter a number in: ";  //--- get desired row
 		getline(cin, choiceRow);
-		cout << lightcyan; 
+		cout << lightcyan;
 
-		while (valid == false)                                                      //--- check-input loop
+		while (valid == false)                                                                //--- check-input loop
 		{
 			if (choiceRow == "1" || choiceRow == "2" || choiceRow == "3" || choiceRow == "4" || choiceRow == "-999") //--- if good input...
 			{
-				valid = true;                                                       //--- set flag to true
-				if (choiceRow == "1")                                               //--- then, if user chose row 1 to enter a number in...
+				valid = true;                                                                 //--- set flag to true
+				if (choiceRow == "1")                                                         //--- then, if user chose row 1 to enter a number in...
 				{
-					numRow = 1;                                                     //--- set numRow to 1
+					numRow = 1;                                                               //--- set numRow to 1
 				}
-				if (choiceRow == "2")                                               //--- if user chose row 2...
+				if (choiceRow == "2")                                                         //--- if user chose row 2...
 				{
-					numRow = 2;                                                     //--- set numRow to 2, etc.
+					numRow = 2;                                                               //--- set numRow to 2, etc.
 				}
 				if (choiceRow == "3")
 				{
@@ -2949,40 +2937,38 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 					CorrectAnswer = true;
 				}
 			}
-			else                                                                    //--- otherwise, bad input. ask again
+			else                                                                              //--- otherwise, bad input. ask again
 			{
 				cout << yellow << "Invalid input. Please select a row (1-4) to enter a number in: ";
 				getline(cin, choiceRow);
-				cout << lightcyan; 
+				cout << lightcyan;
 			}
 		}
 
-		valid = false;
+		valid = false;                                                                        //--- reset check-input flag to false for next loop
 
 
-		//--- reset check-input flag to false for next loop
 
-		//--- if user enters lowercase letter, this will change it to uppercase
-		if (GiveUp == false)
+
+
+
+		while (valid == false && GiveUp == false)                                                       //--- check-input loop
 		{
 			cout << endl << endl << lightmagenta << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
 			getline(cin, choiceCol);
-			choiceCol[0] = toupper(choiceCol[0]);
+			choiceCol[0] = toupper(choiceCol[0]);                                             //--- if user enters lowercase letter, this will change it to uppercase
 			cout << lightcyan;
-		}
 
-		while (valid == false && GiveUp == false)                                                      //--- check-input loop
-		{
 			if (choiceCol == "A" || choiceCol == "B" || choiceCol == "C" || choiceCol == "D" || choiceCol == "-999")  //--- if good input...
 			{
-				valid = true;                                                       //--- set flag to true
-				if (choiceCol == "A")                                               //--- then, if column A is chosen...
+				valid = true;                                                                 //--- set flag to true
+				if (choiceCol == "A")                                                         //--- then, if column A is chosen...
 				{
-					numCol = 1;                                                     //--- set numCol to 1
+					numCol = 1;                                                               //--- set numCol to 1
 				}
-				if (choiceCol == "B")                                               //--- if column B...
+				if (choiceCol == "B")                                                         //--- if column B...
 				{
-					numCol = 2;                                                     //--- set numCol to 2, etc.
+					numCol = 2;                                                               //--- set numCol to 2, etc.
 				}
 				if (choiceCol == "C")
 				{
@@ -2998,35 +2984,35 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 					CorrectAnswer = true;
 				}
 			}
-			else                                                                    //--- otherwise, bad input, ask again.
+			else                                                                              //--- otherwise, bad input, ask again.
 			{
 				cout << yellow << "Invalid input. Please select a column (A-D) to enter a number in: ";
 				getline(cin, choiceCol);
-				choiceCol[0] = toupper(choiceCol[0]);                               //--- changing new entered-letter to uppercase again
-				cout << lightcyan; 
+				choiceCol[0] = toupper(choiceCol[0]);                                         //--- changing new entered-letter to uppercase again
+				cout << lightcyan;
 			}
 		}
 
-		valid = false;                                                              //--- flag to false again for next loop
-		if (GiveUp == false)
+		valid = false;                                                                        //--- flag to false again for next loop
+
+
+
+		while (valid == false && GiveUp == false)                                             //--- check-input loop
 		{
 			cout << endl << endl << lightmagenta << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
 			getline(cin, choiceNum);
 			cout << lightcyan;
-		}
 
-		while (valid == false && GiveUp == false)                                                      //--- check-input loop
-		{
 			if (choiceNum == "1" || choiceNum == "2" || choiceNum == "3" || choiceNum == "4" || choiceNum == "-999")  //--- if good input...
 			{
-				valid = true;                                                       //--- flag to true
-				if (choiceNum == "1")                                               //--- if user wants to insert a 1 in chosen cell...
+				valid = true;                                                                 //--- flag to true
+				if (choiceNum == "1")                                                         //--- if user wants to insert a 1 in chosen cell...
 				{
-					choiceNum = num1;                                              //--- set the variable to same number with spaces around it (this keeps the board from thinning when the number is entered in array)
+					choiceNum = num1;                                                         //--- set the variable to same number with spaces around it (this keeps the board from thinning when the number is entered in array)
 				}
-				if (choiceNum == "2")                                               //--- if user wants to insert a 2...
+				if (choiceNum == "2")                                                         //--- if user wants to insert a 2...
 				{
-					choiceNum = num2;                                              //--- set variable to 2 with spaces, etc.
+					choiceNum = num2;                                                         //--- set variable to 2 with spaces, etc.
 				}
 				if (choiceNum == "3")
 				{
@@ -3042,47 +3028,47 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 					CorrectAnswer = true;
 				}
 			}
-			else                                                                     //--- otherwise, bad input, ask again
+			else                                                                              //--- otherwise, bad input, ask again
 			{
 				cout << yellow << "Invalid input. Please select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";
 				getline(cin, choiceNum);
-				cout << lightcyan; 
+				cout << lightcyan;
 			}
 		}
 		if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
 		{
 
 
-			board[numRow][numCol] = choiceNum;                                          //--- update the array using the converted row and col variables, and insert the modified number into array
-			valid = false;																//--- This fixed the loops problem--From Elise. 
+			board[numRow][numCol] = choiceNum;                                                //--- update the array using the converted row and col variables, and insert the modified number into array
+			valid = false;																      //--- This fixed the loops problem--From Elise. 
 
-																						//===========Elise Borbely==============================================
-			if (board[numRow][numCol] == boardAnswer[numRow][numCol])               //---- Compares the user input to the board answer
+																							  //===========Elise Borbely==============================================
+			if (board[numRow][numCol] == boardAnswer[numRow][numCol])                         //--- Compares the user input to the board answer
 			{
-				cout << yellow << endl << "That number is correctly placed" << endl;        //---If the input matches the answer the number has brackets.
-				cout << lightcyan; 
+				cout << yellow << endl << "That number is correctly placed" << endl;          //--- If the input matches the answer the number has brackets.
+				cout << lightcyan;
 			}
-			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])          //---If the number isn't correct
+			else if (board[numRow][numCol] != boardAnswer[numRow][numCol])                    //--- If the number isn't correct
 			{
-				cout << yellow << endl << "That number is not correctly placed" << endl;     //---This code makes it so it doesn't have brackets so the user knows to try and change that one. 
-				cout << lightcyan; 
+				cout << yellow << endl << "That number is not correctly placed" << endl;      //--- This code makes it so it doesn't have brackets so the user knows to try and change that one. 
+				cout << lightcyan;
 
 				if (board[numRow][numCol] == num1)
 				{
 					board[numRow][numCol] = " 1 ";
 				}
 				if (board[numRow][numCol] == num2)
-				{ 
-					board[numRow][numCol] = " 2 "; 
+				{
+					board[numRow][numCol] = " 2 ";
 				}
 				if (board[numRow][numCol] == num3)
-				{ 
-					board[numRow][numCol] = " 3 "; 
+				{
+					board[numRow][numCol] = " 3 ";
 				}
 				if (board[numRow][numCol] == num4)
-				{ 
+				{
 					board[numRow][numCol] = " 4 ";
-				} 
+				}
 			}
 
 			int rowCount = 0;
@@ -3115,13 +3101,13 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 	{
 		SmallGamesolution(board, boardAnswer, boardTop, boardMid, boardChoice, rows, cols, choiceRow, choiceCol, choiceNum);
 		CorrectAnswer = false;
-		GiveUp = false; 
-		valid = false; 
-		ArraysEqual = true; 
+		GiveUp = false;
+		valid = false;
+		ArraysEqual = true;
 
 	}
 
-	
+
 
 }
 //===========================Elise Borbely End=========================================
@@ -3367,11 +3353,11 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 	const string num8 = "[8]";
 	const string num9 = "[9]";
 	string terminate = "-999";                    //--- sentinel
-	string choiceRow;
-	string choiceCol;
-	string choiceNum;
-	int numRow;
-	int numCol;
+	string choiceRow;                             //--- user input for row choice
+	string choiceCol;                             //--- user input for column choice
+	string choiceNum;                             //--- user input for number-to-enter choice
+	int numRow;                                   //--- assigned integer from string choiceRow to use when calling array row
+	int numCol;                                   //--- assigned integer from string choiceCol to use when calling array column
 	int steps = 0;                                //--- score tracker
 	bool validInput = false;                      //--- validate input flag
 	bool validCell = false;                       //--- valid cell flag
@@ -3383,7 +3369,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 
 
-	while (gameOver == false)                                             //--- run game loop
+	while (gameOver == false)                                                                 //--- run game loop
 	{
 		cout << lightred;
 		cout << "        ===================================" << endl;
@@ -3395,7 +3381,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 		cout << "                =================" << endl << endl;
 
 		cout << cyan;
-		cout << "     " << boardTop << endl;                                         //--- generate board
+		cout << "     " << boardTop << endl;                                                  //--- generate board
 		for (int i = 0; i < rows; i++)
 		{
 			cout << "     |";
@@ -3490,21 +3476,21 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 
 		cout << cyan;
 
-		while (validCell == false && gameOver == false)                                //--- This loop prevents already-given cells from being changed
+		while (validCell == false && gameOver == false)                                       //--- This loop prevents already-given cells from being changed
 		{
 			cout << endl << "     Select a row (1-9) to enter a number in: ";
 			cout << normal;
 			getline(cin, choiceRow);
 			cout << cyan;
 
-			while (validInput == false)                                                //--- input validation loop for row selection
+			while (validInput == false)                                                       //--- input validation loop for row selection
 			{
 
-				if (choiceRow == terminate)                                            //======= IF SENTINEL WAS ENTERED AS ROW =========
+				if (choiceRow == terminate)                                                   //======= IF SENTINEL WAS ENTERED AS ROW =========
 				{
-					gameOver = true;                                                   //--- set gameOver flag to true to quit game
-					validInput = true;                                                 //--- set validInput flag to true to leave current loop
-				}                                                                      //================================================
+					gameOver = true;                                                          //--- set gameOver flag to true to quit game
+					validInput = true;                                                        //--- set validInput flag to true to leave current loop
+				}                                                                             //================================================
 
 
 				else if ((choiceRow >= "1" && choiceRow <= "9") && choiceRow.size() == 1)     //--- else if good input...
@@ -3560,7 +3546,7 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 			if (gameOver == false)                                                            //======= IF SENTINEL HAS NOT BEEN ENTERED ==========
 			{
 				validInput = false;                                                           //--- set input flag to false for next input loop
-				cout << "     Select a column (A-I) to enter a number in: ";               //--- get column input
+				cout << "     Select a column (A-I) to enter a number in: ";                  //--- get column input
 				cout << normal;
 				getline(cin, choiceCol);
 				cout << cyan;
@@ -3754,14 +3740,14 @@ void playLargeGame(string board[][10], string boardAnswer[][10], string boardTop
 void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardTop, string boardMid, string boardChoice, int rows, int cols, string choiceRow, string choiceCol, string choiceNum)
 {
 	string Answer;
-	bool Random = false; 
+	bool Random = false;
 
 	system("CLS");
 	if (choiceRow != "-999" && choiceCol != "-999" && choiceNum != "-999")
 	{
 		cout << lightmagenta << "Congratulations! You solved the puzzle!" << endl;
 		//=============== GENERATE COMPLETED BOARD ===================
-		cout << cyan; 
+		cout << cyan;
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)
 		{
@@ -3769,7 +3755,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			for (int j = 0; j < cols; j++)
 			{
 				cout << lightmagenta << board[i][j];
-				cout << cyan; 
+				cout << cyan;
 				if (i == 0)
 				{
 					cout << "|";
@@ -3806,12 +3792,12 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 		}
 
 		cout << endl << endl;
-		
+
 	}
 	else
 	{
 		cout << lightmagenta << "Here is your partially completed board:" << endl;							// Generating the partial board
-		cout << cyan; 
+		cout << cyan;
 		cout << boardTop << endl;
 		for (int i = 0; i < rows; i++)
 		{
@@ -3819,7 +3805,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			for (int j = 0; j < cols; j++)
 			{
 				cout << lightmagenta << board[i][j];
-				cout << cyan; 
+				cout << cyan;
 				if (i == 0)
 				{
 					cout << "|";
@@ -3858,16 +3844,16 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 		cout << endl << endl;
 
 		cout << lightmagenta << "Would you like to reveal the answer? (Y / N): ";
-		getline(cin, Answer); 
+		getline(cin, Answer);
 		Answer[0] = toupper(Answer[0]);
-		cout << endl; 
+		cout << endl;
 
 		while (Random == false)
 		{
 			if (Answer == "Y")
 			{
 				Random = true;
-				cout << lightmagenta << "Here is the answer to the puzzle:" << endl; 
+				cout << lightmagenta << "Here is the answer to the puzzle:" << endl;
 				cout << cyan << boardTop << endl;
 				for (int i = 0; i < rows; i++)
 				{
@@ -3875,7 +3861,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 					for (int j = 0; j < cols; j++)
 					{
 						cout << lightmagenta << boardAnswer[i][j];
-						cout << cyan; 
+						cout << cyan;
 						if (i == 0)
 						{
 							cout << "|";
@@ -3915,7 +3901,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			}
 			else if (Answer == "N")
 			{
-				Random = true; 
+				Random = true;
 			}
 			else
 			{
@@ -3925,7 +3911,7 @@ void SmallGamesolution(string board[][5], string boardAnswer[][5], string boardT
 			}
 		}
 	}
-	
+
 }
 //=====================Elise Borbely End=======================================
 
@@ -3949,18 +3935,18 @@ void mediumGameSolution(string board[][7], string boardAnswer[][7], string board
 			{
 				cout << "|";                                                 //--- print right-side wall of each cell, will close last cell (column header dividers)
 			}
-			else if (j == 0 || j == 3 || j == 6 || j == 9)                   //--- if not first row, but is column 0, 3, 6, or 9...
+			else if (j == 0 || j == 3 || j == 6)                             //--- if not first row, but is column 0, 3, or 6...
 			{
 				cout << "|";                                                 //--- print divider (this will close off row headers as well as become block dividers)
 			}
-			else                                                             //--- if not first row, or columns 0, 3, 6, or 9...
+			else                                                             //--- if not first row, or columns 0, 3, or 6...
 			{
 				cout << " ";                                                 //--- print space to even out the rows
 			}
 		}
-		if (i == 0 || i == 2 || i == 4 || i == 6)                            //--- if row 0, 3, 6, or 9...
+		if (i == 0 || i == 2 || i == 4 || i == 6)                            //--- if row 0, 2, 4, or 6...
 		{
-			if (i == 0 || i == 2 || i == 4)                                  //--- if row 0, 3, or 6...
+			if (i == 0 || i == 2 || i == 4)                                  //--- if row 0, 2, or 4...
 			{
 				cout << endl << boardMid << endl;                            //--- skip line, print mid border, skip line (these are block floors / ceilings)
 			}
@@ -3979,7 +3965,7 @@ void mediumGameSolution(string board[][7], string boardAnswer[][7], string board
 				{
 					cout << "|---|";                                         //--- print row-header divider
 				}
-				else if (j == 3 || j == 6 || j == 9)                         //--- if column 3, 6, or 9...
+				else if (j == 3 || j == 6)                                   //--- if column 3 or 6...
 				{
 					cout << "           |";                                  //--- print gap and wall to form borders
 				}
@@ -4012,19 +3998,15 @@ void largeGameSolution(string board[][10], string boardAnswer[][10], string boar
 	string pose4 = "^('')^";
 	for (int i = 0; i < 5; i++)
 	{
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose1 << "     " << "LOADING.";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose2 << "     " << "LOADING..";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose3 << "     " << "LOADING...";
 		Sleep(250);
 		system("CLS");
-		//cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                 " << pose4 << "     " << "LOADING..";
 		Sleep(250);
 		system("CLS");
