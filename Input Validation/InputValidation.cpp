@@ -2907,10 +2907,11 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 				cout << endl;
 			}
 		}
-
+		
 		cout << endl << endl << lightmagenta << "Select a row (1-4) to enter a number in: ";  //--- get desired row
 		getline(cin, choiceRow);
 		cout << lightcyan;
+		
 
 		while (valid == false)                                                                //--- check-input loop
 		{
@@ -2948,19 +2949,16 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 		}
 
 		valid = false;                                                                        //--- reset check-input flag to false for next loop
-
-
-
-
-
-
-		while (valid == false && GiveUp == false)                                                       //--- check-input loop
+		if (choiceRow != "-999")
 		{
 			cout << endl << endl << lightmagenta << "Select a column (A-D) to enter a number in: ";     //--- ask user for a column
 			getline(cin, choiceCol);
 			choiceCol[0] = toupper(choiceCol[0]);                                             //--- if user enters lowercase letter, this will change it to uppercase
 			cout << lightcyan;
+		}
 
+		while (valid == false && GiveUp == false)                                                       //--- check-input loop
+		{
 			if (choiceCol == "A" || choiceCol == "B" || choiceCol == "C" || choiceCol == "D" || choiceCol == "-999")  //--- if good input...
 			{
 				valid = true;                                                                 //--- set flag to true
@@ -2996,15 +2994,15 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 		}
 
 		valid = false;                                                                        //--- flag to false again for next loop
-
-
-
-		while (valid == false && GiveUp == false)                                             //--- check-input loop
+		if (choiceCol != "-999" && choiceRow != "-999")
 		{
 			cout << endl << endl << lightmagenta << "Select a number (1-4) to insert in cell " << choiceCol << "-" << choiceRow << ": ";  //--- get a number to enter in chosen cell
 			getline(cin, choiceNum);
 			cout << lightcyan;
+		}
 
+		while (valid == false && GiveUp == false)                                             //--- check-input loop
+		{
 			if (choiceNum == "1" || choiceNum == "2" || choiceNum == "3" || choiceNum == "4" || choiceNum == "-999")  //--- if good input...
 			{
 				valid = true;                                                                 //--- flag to true

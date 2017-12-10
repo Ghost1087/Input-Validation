@@ -1,3 +1,5 @@
 ﻿  InputValidation.cpp
-c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(4396): warning C4715: 'replay': not all control paths return a value
-  Input Validation.vcxproj -> C:\Users\Mike\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
+c:\users\elise\documents\github\input-validation\input validation\inputvalidation.cpp(4460): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\elise\documents\github\input-validation\input validation\inputvalidation.cpp(4451): warning C4715: 'replay': not all control paths return a value
+  Input Validation.vcxproj -> C:\Users\elise\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
+  Input Validation.vcxproj -> C:\Users\elise\Documents\GitHub\Input-Validation\Debug\Input Validation.pdb (Partial PDB)
