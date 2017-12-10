@@ -1480,7 +1480,7 @@ void med6x6()
 	};
 
 	string board_Two[row][col] = {
-		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
+	{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
 	{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
 	{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
 	{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
@@ -1489,12 +1489,12 @@ void med6x6()
 	{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
 
 	string board_Two_Answer[row][col] = {
-		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
+	{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
 	{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
 	{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
 	{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
 	{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
-	{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
+	{ " 5 ", " 4 ", num5 , num6 , " 3 ", " 1 ", num2 },
 	{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
 
 	string board_Three[row][col] = {
