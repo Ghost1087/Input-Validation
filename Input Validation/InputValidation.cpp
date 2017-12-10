@@ -450,55 +450,55 @@ void easy4x4()
 	string boardOne[rows][cols] =                                       //--- puzzle arrays
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " , "   " , "   " ,  num3 },
-		{ " 2 " , "   " ,  num2 ,  num1 , "   " },
-		{ " 3 " , "   " ,  num4 ,  num3 , "   " },
-		{ " 4 " ,  num2 , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " ,  num3 },
+	{ " 2 " , "   " ,  num2 ,  num1 , "   " },
+	{ " 3 " , "   " ,  num4 ,  num3 , "   " },
+	{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
 
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
-		{ " 2 " ,  num3 ,  num2 ,  num1 ,  num4 },
-		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
-		{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
+	{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
+	{ " 2 " ,  num3 ,  num2 ,  num1 ,  num4 },
+	{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
+	{ " 4 " ,  num2 ,  num3 ,  num4 ,  num1 }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num4 ,  num1 , "   " },
-		{ " 2 " , "   " , "   " , "   " ,  num4 },
-		{ " 3 " ,  num2 , "   " , "   " , "   " },
-		{ " 4 " , "   " ,  num3 ,  num2 , "   " }
+	{ " 1 " , "   " ,  num4 ,  num1 , "   " },
+	{ " 2 " , "   " , "   " , "   " ,  num4 },
+	{ " 3 " ,  num2 , "   " , "   " , "   " },
+	{ " 4 " , "   " ,  num3 ,  num2 , "   " }
 	};
 
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num3 ,  num4 ,  num1 ,  num2 },
-		{ " 2 " ,  num1 ,  num2 ,  num3 ,  num4 },
-		{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
-		{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
+	{ " 1 " ,  num3 ,  num4 ,  num1 ,  num2 },
+	{ " 2 " ,  num1 ,  num2 ,  num3 ,  num4 },
+	{ " 3 " ,  num2 ,  num1 ,  num4 ,  num3 },
+	{ " 4 " ,  num4 ,  num3 ,  num2 ,  num1 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 , "   " , "   " ,  num2 },
-		{ " 2 " , "   " ,  num2 , "   " , "   " },
-		{ " 3 " , "   " , "   " ,  num3 , "   " },
-		{ " 4 " ,  num3 , "   " , "   " ,  num4 }
+	{ " 1 " ,  num1 , "   " , "   " ,  num2 },
+	{ " 2 " , "   " ,  num2 , "   " , "   " },
+	{ " 3 " , "   " , "   " ,  num3 , "   " },
+	{ " 4 " ,  num3 , "   " , "   " ,  num4 }
 	};
 
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
-		{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
-		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
+	{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
+	{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
+	{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
 
 
@@ -706,55 +706,55 @@ void med4x4()
 	string MboardOne[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 , "   " , "   " , "   " },
-		{ " 2 " , "   " ,  num2 , "   " ,  num1 },
-		{ " 3 " , "   " ,  num4 , "   " ,  num2 },
-		{ " 4 " ,  num2 , "   " , "   " , "   " }
+	{ " 1 " ,  num4 , "   " , "   " , "   " },
+	{ " 2 " , "   " ,  num2 , "   " ,  num1 },
+	{ " 3 " , "   " ,  num4 , "   " ,  num2 },
+	{ " 4 " ,  num2 , "   " , "   " , "   " }
 	};
 
 	string MboardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
-		{ " 2 " ,  num3 ,  num2 ,  num4 ,  num1 },
-		{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
-		{ " 4 " ,  num2 ,  num3 ,  num1 ,  num4 }
+	{ " 1 " ,  num4 ,  num1 ,  num2 ,  num3 },
+	{ " 2 " ,  num3 ,  num2 ,  num4 ,  num1 },
+	{ " 3 " ,  num1 ,  num4 ,  num3 ,  num2 },
+	{ " 4 " ,  num2 ,  num3 ,  num1 ,  num4 }
 	};
 
 	string MboardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num1 ,  num3 , "   " },
-		{ " 2 " , "   " , "   " , "   " ,  num1 },
-		{ " 3 " , "   " , "   " , "   " ,  num3 },
-		{ " 4 " , "   " ,  num3 ,  num4 , "   " }
+	{ " 1 " , "   " ,  num1 ,  num3 , "   " },
+	{ " 2 " , "   " , "   " , "   " ,  num1 },
+	{ " 3 " , "   " , "   " , "   " ,  num3 },
+	{ " 4 " , "   " ,  num3 ,  num4 , "   " }
 	};
 
 	string MboardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num2 ,  num1 ,  num3 ,  num4 },
-		{ " 2 " ,  num3 ,  num4 ,  num2 ,  num1 },
-		{ " 3 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 4 " ,  num1 ,  num3 ,  num4 ,  num2 }
+	{ " 1 " ,  num2 ,  num1 ,  num3 ,  num4 },
+	{ " 2 " ,  num3 ,  num4 ,  num2 ,  num1 },
+	{ " 3 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 4 " ,  num1 ,  num3 ,  num4 ,  num2 }
 	};
 
 	string MboardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num1 , "   " , "   " },
-		{ " 2 " ,  num3 , "   " ,  num1 , "   " },
-		{ " 3 " ,  num4 , "   " ,  num3 , "   " },
-		{ " 4 " , "   " ,  num3 , "   " , "   " }
+	{ " 1 " , "   " ,  num1 , "   " , "   " },
+	{ " 2 " ,  num3 , "   " ,  num1 , "   " },
+	{ " 3 " ,  num4 , "   " ,  num3 , "   " },
+	{ " 4 " , "   " ,  num3 , "   " , "   " }
 	};
 
 	string MboardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num2 ,  num1 ,  num4 ,  num3 },
-		{ " 2 " ,  num3 ,  num4 ,  num1 ,  num2 },
-		{ " 3 " ,  num4 ,  num2 ,  num3 ,  num1 },
-		{ " 4 " ,  num1 ,  num3 ,  num2 ,  num4 }
+	{ " 1 " ,  num2 ,  num1 ,  num4 ,  num3 },
+	{ " 2 " ,  num3 ,  num4 ,  num1 ,  num2 },
+	{ " 3 " ,  num4 ,  num2 ,  num3 ,  num1 },
+	{ " 4 " ,  num1 ,  num3 ,  num2 ,  num4 }
 	};
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
@@ -960,55 +960,55 @@ void hard4x4()
 	string HboardOne[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num3 , "   " , "   " },
-		{ " 2 " ,  num4 , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , "   " ,  num1 },
-		{ " 4 " ,  num3 , "   " ,  num2 , "   " }
+	{ " 1 " , "   " ,  num3 , "   " , "   " },
+	{ " 2 " ,  num4 , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , "   " ,  num1 },
+	{ " 4 " ,  num3 , "   " ,  num2 , "   " }
 	};
 
 	string HboardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
-		{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
-		{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
-		{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
+	{ " 1 " ,  num1 ,  num3 ,  num4 ,  num2 },
+	{ " 2 " ,  num4 ,  num2 ,  num1 ,  num3 },
+	{ " 3 " ,  num2 ,  num4 ,  num3 ,  num1 },
+	{ " 4 " ,  num3 ,  num1 ,  num2 ,  num4 }
 	};
 
 	string HboardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " , "   " ,  num2 ,  num4 , "   " },
-		{ " 2 " ,  num1 , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , "   " ,  num4 },
-		{ " 4 " , "   " , "   " ,  num3 , "   " }
+	{ " 1 " , "   " ,  num2 ,  num4 , "   " },
+	{ " 2 " ,  num1 , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , "   " ,  num4 },
+	{ " 4 " , "   " , "   " ,  num3 , "   " }
 	};
 
 	string HboardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num3 ,  num2 ,  num4 ,  num1 },
-		{ " 2 " ,  num1 ,  num4 ,  num2 ,  num3 },
-		{ " 3 " ,  num2 ,  num3 ,  num1 ,  num4 },
-		{ " 4 " ,  num4 ,  num1 ,  num3 ,  num2 }
+	{ " 1 " ,  num3 ,  num2 ,  num4 ,  num1 },
+	{ " 2 " ,  num1 ,  num4 ,  num2 ,  num3 },
+	{ " 3 " ,  num2 ,  num3 ,  num1 ,  num4 },
+	{ " 4 " ,  num4 ,  num1 ,  num3 ,  num2 }
 	};
 
 	string HboardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 , "   " , "   " ,  num2 },
-		{ " 2 " , "   " ,  num2 , "   " , "   " },
-		{ " 3 " , "   " , "   " ,  num3 , "   " },
-		{ " 4 " , "   " , "   " , "   " ,  num1 }
+	{ " 1 " ,  num4 , "   " , "   " ,  num2 },
+	{ " 2 " , "   " ,  num2 , "   " , "   " },
+	{ " 3 " , "   " , "   " ,  num3 , "   " },
+	{ " 4 " , "   " , "   " , "   " ,  num1 }
 	};
 
 	string HboardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " },
-		{ " 1 " ,  num4 ,  num3 ,  num1 ,  num2 },
-		{ " 2 " ,  num1 ,  num2 ,  num4 ,  num3 },
-		{ " 3 " ,  num2 ,  num1 ,  num3 ,  num4 },
-		{ " 4 " ,  num3 ,  num4 ,  num2 ,  num1 }
+	{ " 1 " ,  num4 ,  num3 ,  num1 ,  num2 },
+	{ " 2 " ,  num1 ,  num2 ,  num4 ,  num3 },
+	{ " 3 " ,  num2 ,  num1 ,  num3 ,  num4 },
+	{ " 4 " ,  num3 ,  num4 ,  num2 ,  num1 }
 	};
 
 	//============ GENERATING THE BOARDS SIDE BY SIDE =============
@@ -1207,57 +1207,57 @@ void easy6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
+	{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
+	{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
+	{ " 3 ", num4 , num3 , " 2 ",  num6, "   ",  num1 },
+	{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
+	{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
+	{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", "   " } };
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
-		{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
-		{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
-		{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
-		{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
-		{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
+	{ " 1 ", num1 , " 4 ", " 5 ",  num2, num3 ,  num6 },
+	{ " 2 ", " 2 ", " 6 ", " 3 ",  num5, num1 , " 4 " },
+	{ " 3 ", num4 , num3 , " 2 ",  num6, " 5 ",  num1 },
+	{ " 4 ", num5 , num1 , " 6 ", " 3 ", num4 ,  num2 },
+	{ " 5 ", " 3 ", " 2 ", num4 ,  num1, num6 ,  num5 },
+	{ " 6 ", num6 , num5 , num1 ,  num4, " 2 ", " 3 " } };
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num1 , num6 , num5 , "   " },
-		{ " 2 ", num3 , num6 , num5 , "   ", "   ", num2 },
-		{ " 3 ", "   ", num5 , "   ", "   ", num2 , num6 },
-		{ " 4 ", "   ", num2 , num4 , num3 , num1 , num5 },
-		{ " 5 ", num4 , num3 , num2 , "   ", "   ", "   " },
-		{ " 6 ", "   ", num1 , "   ", num2 , num3 , num4 } };
+	{ " 1 ", "   ", "   ", num1 , num6 , num5 , "   " },
+	{ " 2 ", num3 , num6 , num5 , "   ", "   ", num2 },
+	{ " 3 ", "   ", num5 , "   ", "   ", num2 , num6 },
+	{ " 4 ", "   ", num2 , num4 , num3 , num1 , num5 },
+	{ " 5 ", num4 , num3 , num2 , "   ", "   ", "   " },
+	{ " 6 ", "   ", num1 , "   ", num2 , num3 , num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 2 ", " 4 ", num1 , num6 , num5 , " 3 " },
-		{ " 2 ", num3 , num6 , num5 , " 1 ", " 4 ", num2 },
-		{ " 3 ", " 1 ", num5 , " 3 ", " 4 ", num2 , num6 },
-		{ " 4 ", " 6 ", num2 , num4 , num3 , num1 , num5 },
-		{ " 5 ", num4 , num3 , num2 , " 5 ", " 6 ", " 1 " },
-		{ " 6 ", " 5 ", num1 , " 6 ", num2 , num3 , num4 } };
+	{ " 1 ", " 2 ", " 4 ", num1 , num6 , num5 , " 3 " },
+	{ " 2 ", num3 , num6 , num5 , " 1 ", " 4 ", num2 },
+	{ " 3 ", " 1 ", num5 , " 3 ", " 4 ", num2 , num6 },
+	{ " 4 ", " 6 ", num2 , num4 , num3 , num1 , num5 },
+	{ " 5 ", num4 , num3 , num2 , " 5 ", " 6 ", " 1 " },
+	{ " 6 ", " 5 ", num1 , " 6 ", num2 , num3 , num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num2 , num6 , "   ", "   ", num5 },
-		{ " 2 ", num3 , "   ", "   ", "   ", num6 , num2 },
-		{ " 3 ", "   ", "   ", num3 , num5 , "   ", num6 },
-		{ " 4 ", num5 , num6 , num1 , num3 , "   ", "   " },
-		{ " 5 ", num4 , "   ", "   ", "   ", num5 , num3 },
-		{ " 6 ", "   ", num3 , num5 , num2 , num4 , num1 } };
+	{ " 1 ", num1 , num2 , num6 , "   ", "   ", num5 },
+	{ " 2 ", num3 , "   ", "   ", "   ", num6 , num2 },
+	{ " 3 ", "   ", "   ", num3 , num5 , "   ", num6 },
+	{ " 4 ", num5 , num6 , num1 , num3 , "   ", "   " },
+	{ " 5 ", num4 , "   ", "   ", "   ", num5 , num3 },
+	{ " 6 ", "   ", num3 , num5 , num2 , num4 , num1 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num2 , num6 , " 4 ", " 3 ", num5 },
-		{ " 2 ", num3 , " 5 ", " 4 ", " 1 ", num6 , num2 },
-		{ " 3 ", " 2 ", " 4 ", num3 , num5 , " 1 ", num6 },
-		{ " 4 ", num5 , num6 , num1 , num3 , " 2 ", " 4 " },
-		{ " 5 ", num4 , " 1 ", " 2 ", " 6 ", num5 , num3 },
-		{ " 6 ", " 6 ", num3 , num5 , num2 , num4 , num1 } };
+	{ " 1 ", num1 , num2 , num6 , " 4 ", " 3 ", num5 },
+	{ " 2 ", num3 , " 5 ", " 4 ", " 1 ", num6 , num2 },
+	{ " 3 ", " 2 ", " 4 ", num3 , num5 , " 1 ", num6 },
+	{ " 4 ", num5 , num6 , num1 , num3 , " 2 ", " 4 " },
+	{ " 5 ", num4 , " 1 ", " 2 ", " 6 ", num5 , num3 },
+	{ " 6 ", " 6 ", num3 , num5 , num2 , num4 , num1 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1461,59 +1461,59 @@ void med6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num4 , num2 , "   ", num6 , "   " },
-		{ " 2 ", "   ", "   ", "   ", num2 , "   ", "   " },
-		{ " 3 ", num2 , "   ", "   ", num5 , num1 , num3 },
-		{ " 4 ", "   ", "   ", num1 , num4 , num2 , "   " },
-		{ " 5 ", num4 , num1 , "   ", "   ", "   ", "   " },
-		{ " 6 ", num6 , "   ", "   ", num1 , num5 , num4 }
+	{ " 1 ", num1 , num4 , num2 , "   ", num6 , "   " },
+	{ " 2 ", "   ", "   ", "   ", num2 , "   ", "   " },
+	{ " 3 ", num2 , "   ", "   ", num5 , num1 , num3 },
+	{ " 4 ", "   ", "   ", num1 , num4 , num2 , "   " },
+	{ " 5 ", num4 , num1 , "   ", "   ", "   ", "   " },
+	{ " 6 ", num6 , "   ", "   ", num1 , num5 , num4 }
 	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , num4 , num2 , " 3 ", num6 , " 5 " },
-		{ " 2 ", " 3 ", " 5 ", " 6 ", num2 , " 4 ", " 1 " },
-		{ " 3 ", num2 , " 6 ", " 4 ", num5 , num1 , num3 },
-		{ " 4 ", " 5 ", " 3 ", num1 , num4 , num2 , " 6 " },
-		{ " 5 ", num4 , num1 , " 5 ", " 6 ", " 3 ", " 2 " },
-		{ " 6 ", num6 , " 2 ", " 3 ", num1 , num5 , num4 }
+	{ " 1 ", num1 , num4 , num2 , " 3 ", num6 , " 5 " },
+	{ " 2 ", " 3 ", " 5 ", " 6 ", num2 , " 4 ", " 1 " },
+	{ " 3 ", num2 , " 6 ", " 4 ", num5 , num1 , num3 },
+	{ " 4 ", " 5 ", " 3 ", num1 , num4 , num2 , " 6 " },
+	{ " 5 ", num4 , num1 , " 5 ", " 6 ", " 3 ", " 2 " },
+	{ " 6 ", num6 , " 2 ", " 3 ", num1 , num5 , num4 }
 	};
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
-		{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
-		{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
-		{ " 4 ", num3 , "   ", "   ", num2 , num5 , "   " },
-		{ " 5 ", "   ", num5 , num6 , "   ", "   ", num2 },
-		{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
+	{ " 1 ", "   ", "   ", num2 , num4 , num3 , "   " },
+	{ " 2 ", num1 , "   ", "   ", num6 , "   ", "   " },
+	{ " 3 ", num6 , num2 , "   ", "   ", num4 , num3 },
+	{ " 4 ", num3 , "   ", "   ", num2 , num5 , "   " },
+	{ " 5 ", "   ", num5 , num6 , "   ", "   ", num2 },
+	{ " 6 ", num2 , "   ", "   ", num5 , "   ", num4 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
-		{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
-		{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
-		{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
-		{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
-		{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
+	{ " 1 ", " 5 ", " 6 ", num2 , num4 , num3 , " 1 " },
+	{ " 2 ", num1 , " 3 ", " 4 ", num6 , " 2 ", " 5 " },
+	{ " 3 ", num6 , num2 , " 5 ", " 1 ", num4 , num3 },
+	{ " 4 ", num3 , " 4 ", " 1 ", num2 , num5 , " 6 " },
+	{ " 5 ", " 4 ", num5 , num6 , "   ", "   ", num2 },
+	{ " 6 ", num2 , " 1 ", " 3 ", num5 , " 6 ", num4 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
-		{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
-		{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
-		{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
-		{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
-		{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
+	{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
+	{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
+	{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
+	{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
+	{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
+	{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
-		{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
-		{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
-		{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
-		{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
-		{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
+	{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
+	{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
+	{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
+	{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
+	{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
+	{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
 
 
 	string boardTop = "=============================";              //--- large board top / block borders
@@ -1718,59 +1718,59 @@ void hard6x6()
 
 	string board_One[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", "   ", "   ", num2 , num6 , "   ", num5 },
-		{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
-		{ " 3 ", num6 , num3 , "   ", "   ", "   ", num2 },
-		{ " 4 ", num2 , "   ", "   ", "   ", num3 , num6 },
-		{ " 5 ", "   ", "   ", num3 , "   ", "   ", num1 },
-		{ " 6 ", "   ", num2 , num1 , num3 , "   ", "   " }
+	{ " 1 ", "   ", "   ", num2 , num6 , "   ", num5 },
+	{ " 2 ", "   ", "   ", "   ", "   ", "   ", "   " },
+	{ " 3 ", num6 , num3 , "   ", "   ", "   ", num2 },
+	{ " 4 ", num2 , "   ", "   ", "   ", num3 , num6 },
+	{ " 5 ", "   ", "   ", num3 , "   ", "   ", num1 },
+	{ " 6 ", "   ", num2 , num1 , num3 , "   ", "   " }
 	};
 
 	string board_One_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", " 3 ", " 4 ", num2 , num6 , " 1 ", num5 },
-		{ " 2 ", " 1 ", " 5 ", " 6 ", " 2 ", " 4 ", " 3 " },
-		{ " 3 ", num6 , num3 , " 4 ", " 1 ", " 5 ", num2 },
-		{ " 4 ", num2 , " 1 ", " 5 ", " 4 ", num3 , num6 },
-		{ " 5 ", " 4 ", " 6 ", num3 , " 5 ", " 2 ", num1 },
-		{ " 6 ", " 5 ", num2 , num1 , num3 , " 6 ", " 4 " }
+	{ " 1 ", " 3 ", " 4 ", num2 , num6 , " 1 ", num5 },
+	{ " 2 ", " 1 ", " 5 ", " 6 ", " 2 ", " 4 ", " 3 " },
+	{ " 3 ", num6 , num3 , " 4 ", " 1 ", " 5 ", num2 },
+	{ " 4 ", num2 , " 1 ", " 5 ", " 4 ", num3 , num6 },
+	{ " 5 ", " 4 ", " 6 ", num3 , " 5 ", " 2 ", num1 },
+	{ " 6 ", " 5 ", num2 , num1 , num3 , " 6 ", " 4 " }
 	};
 
 	string board_Two[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num3 , "   ", num1 , "   ", num4 , "   " },
-		{ " 2 ", "   ", num5 , num6 , "   ", "   ", num3 },
-		{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
-		{ " 4 ", "   ", "   ", num4 , num2 , "   ", "   " },
-		{ " 5 ", num1 , "   ", "   ", "   ", num6 , "   " },
-		{ " 6 ", "   ", num4, "   ", num3 , num1 , num2 } };
+	{ " 1 ", num3 , "   ", num1 , "   ", num4 , "   " },
+	{ " 2 ", "   ", num5 , num6 , "   ", "   ", num3 },
+	{ " 3 ", "   ", "   ", "   ", "   ", "   ", "   " },
+	{ " 4 ", "   ", "   ", num4 , num2 , "   ", "   " },
+	{ " 5 ", num1 , "   ", "   ", "   ", num6 , "   " },
+	{ " 6 ", "   ", num4, "   ", num3 , num1 , num2 } };
 
 	string board_Two_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num3 , " 2 ", num1 , " 5 ", num4 , " 6 " },
-		{ " 2 ", " 4 ", num5 , num6 , " 1 ", " 2 ", num3 },
-		{ " 3 ", " 2 ", " 1 ", " 3 ", " 6 ", " 5 ", " 4 " },
-		{ " 4 ", " 5 ", " 6 ", num4 , num2 , " 3 ", " 1 " },
-		{ " 5 ", num1 , " 3 ", " 2 ", " 4 ", num6 , " 5 " },
-		{ " 6 ", " 6 ", num4, " 5 ", num3 , num1 , num2 } };
+	{ " 1 ", num3 , " 2 ", num1 , " 5 ", num4 , " 6 " },
+	{ " 2 ", " 4 ", num5 , num6 , " 1 ", " 2 ", num3 },
+	{ " 3 ", " 2 ", " 1 ", " 3 ", " 6 ", " 5 ", " 4 " },
+	{ " 4 ", " 5 ", " 6 ", num4 , num2 , " 3 ", " 1 " },
+	{ " 5 ", num1 , " 3 ", " 2 ", " 4 ", num6 , " 5 " },
+	{ " 6 ", " 6 ", num4, " 5 ", num3 , num1 , num2 } };
 
 	string board_Three[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
-		{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
-		{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
-		{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
-		{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
-		{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
+	{ " 1 ", num1 , "   ", "   ", num3 , num6 , "   " },
+	{ " 2 ", "   ", num6 , num3 , "   ", "   ", num5 },
+	{ " 3 ", "   ", num2 , "   ", num6 , "   ", num3 },
+	{ " 4 ", "   ", "   ", "   ", num2 , num5 , num1 },
+	{ " 5 ", num2 , "   ", num5 , num4 , "   ", "   " },
+	{ " 6 ", num3 , num4 , "   ", "   ", "   ", num2 } };
 
 	string board_Three_Answer[row][col] = {
 		{ "   ", " A ", " B ", " C ", " D ", " E ", " F " },
-		{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
-		{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
-		{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
-		{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
-		{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
-		{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
+	{ " 1 ", num1 , " 5 ", " 2 ", num3 , num6 , " 4 " },
+	{ " 2 ", " 4 ", num6 , num3 , " 1 ", " 2 ", num5 },
+	{ " 3 ", " 5 ", num2 , " 1 ", num6 , " 4 ", num3 },
+	{ " 4 ", " 6 ", " 3 ", " 4 ", num2 , num5 , num1 },
+	{ " 5 ", num2 , " 1 ", num5 , num4 , " 3 ", " 6 " },
+	{ " 6 ", num3 , num4 , " 6 ", " 5 ", " 1 ", num2 } };
 
 
 
@@ -1988,82 +1988,82 @@ void easy9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num4  , "   " , num1  , num2  , num9  , "   " , "   " , num7  , num5 },
-		{ " 2 " , num2  , "   " , "   " , num3  , "   " , "   " , num8  , "   " , "   " },
-		{ " 3 " , "   " , num7  , "   " , "   " , num8  , "   " , "   " , "   " , num6 },
-		{ " 4 " , "   " , "   " , "   " , num1  , "   " , num3  , "   " , num6  , num2 },
-		{ " 5 " , num1  , "   " , num5  , "   " , "   " , "   " , num4  , "   " , num3 },
-		{ " 6 " , num7  , num3  , "   " , num6  , "   " , num8  , "   " , "   " , "   " },
-		{ " 7 " , num6  , "   " , "   " , "   " , num2  , "   " , "   " , num3  , "   " },
-		{ " 8 " , "   " , "   " , num7  , "   " , "   " , num1  , "   " , "   " , num4 },
-		{ " 9 " , num8  , num9  , "   " , "   " , num6  , num5  , num1  , "   " , num7 }
+	{ " 1 " , num4  , "   " , num1  , num2  , num9  , "   " , "   " , num7  , num5 },
+	{ " 2 " , num2  , "   " , "   " , num3  , "   " , "   " , num8  , "   " , "   " },
+	{ " 3 " , "   " , num7  , "   " , "   " , num8  , "   " , "   " , "   " , num6 },
+	{ " 4 " , "   " , "   " , "   " , num1  , "   " , num3  , "   " , num6  , num2 },
+	{ " 5 " , num1  , "   " , num5  , "   " , "   " , "   " , num4  , "   " , num3 },
+	{ " 6 " , num7  , num3  , "   " , num6  , "   " , num8  , "   " , "   " , "   " },
+	{ " 7 " , num6  , "   " , "   " , "   " , num2  , "   " , "   " , num3  , "   " },
+	{ " 8 " , "   " , "   " , num7  , "   " , "   " , num1  , "   " , "   " , num4 },
+	{ " 9 " , num8  , num9  , "   " , "   " , num6  , num5  , num1  , "   " , num7 }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num4  , " 8 " , num1  , num2  , num9  , " 6 " , " 3 " , num7  , num5 },
-		{ " 2 " , num2  , " 5 " , " 6 " , num3  , " 1 " , " 7 " , num8  , " 4 " , " 9 " },
-		{ " 3 " , " 3 " , num7  , " 9 " , " 5 " , num8  , " 4 " , " 2 " , " 1 " , num6 },
-		{ " 4 " , " 9 " , " 4 " , " 8 " , num1  , " 5 " , num3  , " 7 " , num6  , num2 },
-		{ " 5 " , num1  , " 6 " , num5  , " 9 " , " 7 " , " 2 " , num4  , " 8 " , num3 },
-		{ " 6 " , num7  , num3  , " 2 " , num6  , " 4 " , num8  , " 9 " , " 5 " , " 1 " },
-		{ " 7 " , num6  , " 1 " , " 4 " , " 7 " , num2  , " 9 " , " 5 " , num3  , " 8 " },
-		{ " 8 " , " 5 " , " 2 " , num7  , " 8 " , " 3 " , num1  , " 6 " , " 9 " , num4 },
-		{ " 9 " , num8  , num9  , " 3 " , " 4 " , num6  , num5  , num1  , " 2 " , num7 }
+	{ " 1 " , num4  , " 8 " , num1  , num2  , num9  , " 6 " , " 3 " , num7  , num5 },
+	{ " 2 " , num2  , " 5 " , " 6 " , num3  , " 1 " , " 7 " , num8  , " 4 " , " 9 " },
+	{ " 3 " , " 3 " , num7  , " 9 " , " 5 " , num8  , " 4 " , " 2 " , " 1 " , num6 },
+	{ " 4 " , " 9 " , " 4 " , " 8 " , num1  , " 5 " , num3  , " 7 " , num6  , num2 },
+	{ " 5 " , num1  , " 6 " , num5  , " 9 " , " 7 " , " 2 " , num4  , " 8 " , num3 },
+	{ " 6 " , num7  , num3  , " 2 " , num6  , " 4 " , num8  , " 9 " , " 5 " , " 1 " },
+	{ " 7 " , num6  , " 1 " , " 4 " , " 7 " , num2  , " 9 " , " 5 " , num3  , " 8 " },
+	{ " 8 " , " 5 " , " 2 " , num7  , " 8 " , " 3 " , num1  , " 6 " , " 9 " , num4 },
+	{ " 9 " , num8  , num9  , " 3 " , " 4 " , num6  , num5  , num1  , " 2 " , num7 }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num9  , "   " , num2  , "   " , num1  , num7  , num4  , num6  , "   " },
-		{ " 2 " , "   " , num1  , "   " , num9  , num4  , "   " , "   " , "   " , "   " },
-		{ " 3 " , num3  , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , "   " , "   " , num5  , num8  , "   " , "   " , num6  , "   " , num4 },
-		{ " 5 " , "   " , num4  , num9  , num3  , "   " , num5  , num7  , num2  , "   " },
-		{ " 6 " , num1  , "   " , num3  , "   " , "   " , num4  , num9  , "   " , "   " },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num5 },
-		{ " 8 " , "   " , "   " , "   " , "   " , num3  , num2  , "   " , num4  , "   " },
-		{ " 9 " , "   " , num3  , num1  , num6  , num5  , "   " , num2  , "   " , num7 }
+	{ " 1 " , num9  , "   " , num2  , "   " , num1  , num7  , num4  , num6  , "   " },
+	{ " 2 " , "   " , num1  , "   " , num9  , num4  , "   " , "   " , "   " , "   " },
+	{ " 3 " , num3  , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , "   " , "   " , num5  , num8  , "   " , "   " , num6  , "   " , num4 },
+	{ " 5 " , "   " , num4  , num9  , num3  , "   " , num5  , num7  , num2  , "   " },
+	{ " 6 " , num1  , "   " , num3  , "   " , "   " , num4  , num9  , "   " , "   " },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num5 },
+	{ " 8 " , "   " , "   " , "   " , "   " , num3  , num2  , "   " , num4  , "   " },
+	{ " 9 " , "   " , num3  , num1  , num6  , num5  , "   " , num2  , "   " , num7 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num9  , " 8 " , num2  , " 5 " , num1  , num7  , num4  , num6  , " 3 " },
-		{ " 2 " , " 7 " , num1  , " 6 " , num9  , num4  , " 3 " , " 5 " , " 8 " , " 2 " },
-		{ " 3 " , num3  , " 5 " , " 4 " , " 2 " , " 8 " , " 6 " , " 1 " , " 7 " , " 9 " },
-		{ " 4 " , " 2 " , " 7 " , num5  , num8  , " 9 " , " 1 " , num6  , " 3 " , num4 },
-		{ " 5 " , " 8 " , num4  , num9  , num3  , " 6 " , num5  , num7  , num2  , " 1 " },
-		{ " 6 " , num1  , " 6 " , num3  , " 7 " , " 2 " , num4  , num9  , " 5 " , " 8 " },
-		{ " 7 " , " 6 " , " 2 " , " 8 " , " 4 " , " 7 " , " 9 " , " 3 " , " 1 " , num5 },
-		{ " 8 " , " 5 " , " 9 " , " 7 " , " 1 " , num3  , num2  , " 8 " , num4  , " 6 " },
-		{ " 9 " , " 4 " , num3  , num1  , num6  , num5  , " 8 " , num2  , " 9 " , num7 }
+	{ " 1 " , num9  , " 8 " , num2  , " 5 " , num1  , num7  , num4  , num6  , " 3 " },
+	{ " 2 " , " 7 " , num1  , " 6 " , num9  , num4  , " 3 " , " 5 " , " 8 " , " 2 " },
+	{ " 3 " , num3  , " 5 " , " 4 " , " 2 " , " 8 " , " 6 " , " 1 " , " 7 " , " 9 " },
+	{ " 4 " , " 2 " , " 7 " , num5  , num8  , " 9 " , " 1 " , num6  , " 3 " , num4 },
+	{ " 5 " , " 8 " , num4  , num9  , num3  , " 6 " , num5  , num7  , num2  , " 1 " },
+	{ " 6 " , num1  , " 6 " , num3  , " 7 " , " 2 " , num4  , num9  , " 5 " , " 8 " },
+	{ " 7 " , " 6 " , " 2 " , " 8 " , " 4 " , " 7 " , " 9 " , " 3 " , " 1 " , num5 },
+	{ " 8 " , " 5 " , " 9 " , " 7 " , " 1 " , num3  , num2  , " 8 " , num4  , " 6 " },
+	{ " 9 " , " 4 " , num3  , num1  , num6  , num5  , " 8 " , num2  , " 9 " , num7 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num8  , "   " , "   " , "   " , num9  , "   " , num6  , "   " , "   " },
-		{ " 2 " , "   " , "   " , num4  , num1  , num5  , num6  , num8  , "   " , "   " },
-		{ " 3 " , "   " , num6  , num5  , "   " , "   " , num8  , "   " , "   " , "   " },
-		{ " 4 " , num5  , "   " , "   " , num3  , num6  , "   " , num2  , "   " , "   " },
-		{ " 5 " , num9  , "   " , num8  , "   " , "   " , "   " , num1  , "   " , num6 },
-		{ " 6 " , "   " , "   " , num7  , "   " , num1  , num9  , "   " , "   " , num4 },
-		{ " 7 " , "   " , "   " , "   " , num9  , "   " , "   " , num7  , num1  , "   " },
-		{ " 8 " , "   " , "   " , num9  , num2  , num7  , num5  , num4  , "   " , "   " },
-		{ " 9 " , "   " , "   " , num2  , "   " , num4  , "   " , "   " , "   " , num9 }
+	{ " 1 " , num8  , "   " , "   " , "   " , num9  , "   " , num6  , "   " , "   " },
+	{ " 2 " , "   " , "   " , num4  , num1  , num5  , num6  , num8  , "   " , "   " },
+	{ " 3 " , "   " , num6  , num5  , "   " , "   " , num8  , "   " , "   " , "   " },
+	{ " 4 " , num5  , "   " , "   " , num3  , num6  , "   " , num2  , "   " , "   " },
+	{ " 5 " , num9  , "   " , num8  , "   " , "   " , "   " , num1  , "   " , num6 },
+	{ " 6 " , "   " , "   " , num7  , "   " , num1  , num9  , "   " , "   " , num4 },
+	{ " 7 " , "   " , "   " , "   " , num9  , "   " , "   " , num7  , num1  , "   " },
+	{ " 8 " , "   " , "   " , num9  , num2  , num7  , num5  , num4  , "   " , "   " },
+	{ " 9 " , "   " , "   " , num2  , "   " , num4  , "   " , "   " , "   " , num9 }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num8  , " 1 " , " 3 " , " 7 " , num9  , " 2 " , num6  , " 4 " , " 5 " },
-		{ " 2 " , " 2 " , " 9 " , num4  , num1  , num5  , num6  , num8  , " 3 " , " 7 " },
-		{ " 3 " , " 7 " , num6  , num5  , " 4 " , " 3 " , num8  , " 9 " , " 2 " , " 1 " },
-		{ " 4 " , num5  , " 4 " , " 1 " , num3  , num6  , " 7 " , num2  , " 9 " , " 8 " },
-		{ " 5 " , num9  , " 3 " , num8  , " 5 " , " 2 " , " 4 " , num1  , " 7 " , num6 },
-		{ " 6 " , " 6 " , " 2 " , num7  , " 8 " , num1  , num9  , " 3 " , " 5 " , num4 },
-		{ " 7 " , " 4 " , " 5 " , " 6 " , num9  , " 8 " , " 3 " , num7  , num1  , " 2 " },
-		{ " 8 " , " 1 " , " 8 " , num9  , num2  , num7  , num5  , num4  , " 6 " , " 3 " },
-		{ " 9 " , " 3 " , " 7 " , num2  , " 6 " , num4  , " 1 " , " 5 " , " 8 " , num9 }
+	{ " 1 " , num8  , " 1 " , " 3 " , " 7 " , num9  , " 2 " , num6  , " 4 " , " 5 " },
+	{ " 2 " , " 2 " , " 9 " , num4  , num1  , num5  , num6  , num8  , " 3 " , " 7 " },
+	{ " 3 " , " 7 " , num6  , num5  , " 4 " , " 3 " , num8  , " 9 " , " 2 " , " 1 " },
+	{ " 4 " , num5  , " 4 " , " 1 " , num3  , num6  , " 7 " , num2  , " 9 " , " 8 " },
+	{ " 5 " , num9  , " 3 " , num8  , " 5 " , " 2 " , " 4 " , num1  , " 7 " , num6 },
+	{ " 6 " , " 6 " , " 2 " , num7  , " 8 " , num1  , num9  , " 3 " , " 5 " , num4 },
+	{ " 7 " , " 4 " , " 5 " , " 6 " , num9  , " 8 " , " 3 " , num7  , num1  , " 2 " },
+	{ " 8 " , " 1 " , " 8 " , num9  , num2  , num7  , num5  , num4  , " 6 " , " 3 " },
+	{ " 9 " , " 3 " , " 7 " , num2  , " 6 " , num4  , " 1 " , " 5 " , " 8 " , num9 }
 	};
 
 
@@ -2277,82 +2277,82 @@ void med9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , num9  , "   " , "   " , num5  , "   " , "   " },
-		{ " 2 " , "   " , "   " , num2  , "   " , num3  , "   " , num9  , num1  , "   " },
-		{ " 3 " , num9  , "   " , "   " , "   " , num8  , num5  , num2  , "   " , num6 },
-		{ " 4 " , num8  , "   " , "   " , "   " , num7  , "   " , "   " , "   " , num4 },
-		{ " 5 " , "   " , "   " , num4  , num3  , "   " , num6  , num1  , "   " , "   " },
-		{ " 6 " , num6  , "   " , "   " , "   " , num9  , "   " , "   " , "   " , num5 },
-		{ " 7 " , num2  , "   " , num5  , num8  , num6  , "   " , "   " , "   " , num1 },
-		{ " 8 " , "   " , num6  , num7  , "   " , num1  , "   " , num8  , "   " , "   " },
-		{ " 9 " , "   " , "   " , num8  , "   " , "   " , num2  , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , num9  , "   " , "   " , num5  , "   " , "   " },
+	{ " 2 " , "   " , "   " , num2  , "   " , num3  , "   " , num9  , num1  , "   " },
+	{ " 3 " , num9  , "   " , "   " , "   " , num8  , num5  , num2  , "   " , num6 },
+	{ " 4 " , num8  , "   " , "   " , "   " , num7  , "   " , "   " , "   " , num4 },
+	{ " 5 " , "   " , "   " , num4  , num3  , "   " , num6  , num1  , "   " , "   " },
+	{ " 6 " , num6  , "   " , "   " , "   " , num9  , "   " , "   " , "   " , num5 },
+	{ " 7 " , num2  , "   " , num5  , num8  , num6  , "   " , "   " , "   " , num1 },
+	{ " 8 " , "   " , num6  , num7  , "   " , num1  , "   " , num8  , "   " , "   " },
+	{ " 9 " , "   " , "   " , num8  , "   " , "   " , num2  , "   " , "   " , "   " }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 1 " , " 4 " , " 6 " , num9  , " 2 " , " 7 " , num5  , " 8 " , " 3 " },
-		{ " 2 " , " 5 " , " 8 " , num2  , " 6 " , num3  , " 4 " , num9  , num1  , " 7 " },
-		{ " 3 " , num9  , " 7 " , " 3 " , " 1 " , num8  , num5  , num2  , " 4 " , num6 },
-		{ " 4 " , num8  , " 5 " , " 9 " , " 2 " , num7  , " 1 " , " 3 " , " 6 " , num4 },
-		{ " 5 " , " 7 " , " 2 " , num4  , num3  , " 5 " , num6  , num1  , " 9 " , " 8 " },
-		{ " 6 " , num6  , " 3 " , " 1 " , " 4 " , num9  , " 8 " , " 7 " , " 2 " , num5 },
-		{ " 7 " , num2  , " 9 " , num5  , num8  , num6  , " 3 " , " 4 " , " 7 " , num1 },
-		{ " 8 " , " 4 " , num6  , num7  , " 5 " , num1  , " 9 " , num8  , " 3 " , " 2 " },
-		{ " 9 " , " 3 " , " 1 " , num8  , " 7 " , " 4 " , num2  , " 6 " , " 5 " , " 9 " }
+	{ " 1 " , " 1 " , " 4 " , " 6 " , num9  , " 2 " , " 7 " , num5  , " 8 " , " 3 " },
+	{ " 2 " , " 5 " , " 8 " , num2  , " 6 " , num3  , " 4 " , num9  , num1  , " 7 " },
+	{ " 3 " , num9  , " 7 " , " 3 " , " 1 " , num8  , num5  , num2  , " 4 " , num6 },
+	{ " 4 " , num8  , " 5 " , " 9 " , " 2 " , num7  , " 1 " , " 3 " , " 6 " , num4 },
+	{ " 5 " , " 7 " , " 2 " , num4  , num3  , " 5 " , num6  , num1  , " 9 " , " 8 " },
+	{ " 6 " , num6  , " 3 " , " 1 " , " 4 " , num9  , " 8 " , " 7 " , " 2 " , num5 },
+	{ " 7 " , num2  , " 9 " , num5  , num8  , num6  , " 3 " , " 4 " , " 7 " , num1 },
+	{ " 8 " , " 4 " , num6  , num7  , " 5 " , num1  , " 9 " , num8  , " 3 " , " 2 " },
+	{ " 9 " , " 3 " , " 1 " , num8  , " 7 " , " 4 " , num2  , " 6 " , " 5 " , " 9 " }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num2  , "   " , num3  , "   " , num9  , num7  , "   " , "   " , num8 },
-		{ " 2 " , "   " , num7  , "   " , num6  , num8  , "   " , "   " , num2  , "   " },
-		{ " 3 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , "   " , "   " , "   " , "   " , num2  , num3  , num1  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num9  , num1  , num4  , num6  , num8  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num4  , num9  , num5  , "   " , "   " , "   " , "   " },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 8 " , "   " , num9  , "   " , "   " , num7  , num5  , "   " , num6  , "   " },
-		{ " 9 " , num8  , "   " , "   " , num2  , num1  , "   " , num5  , "   " , num4 }
+	{ " 1 " , num2  , "   " , num3  , "   " , num9  , num7  , "   " , "   " , num8 },
+	{ " 2 " , "   " , num7  , "   " , num6  , num8  , "   " , "   " , num2  , "   " },
+	{ " 3 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , "   " , "   " , "   " , "   " , num2  , num3  , num1  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num9  , num1  , num4  , num6  , num8  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num4  , num9  , num5  , "   " , "   " , "   " , "   " },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 8 " , "   " , num9  , "   " , "   " , num7  , num5  , "   " , num6  , "   " },
+	{ " 9 " , num8  , "   " , "   " , num2  , num1  , "   " , num5  , "   " , num4 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num2  , " 4 " , num3  , " 5 " , num9  , num7  , " 6 " , " 1 " , num8 },
-		{ " 2 " , " 9 " , num7  , " 5 " , num6  , num8  , " 1 " , " 4 " , num2  , " 3 " },
-		{ " 3 " , " 6 " , " 8 " , " 1 " , " 4 " , " 3 " , " 2 " , " 7 " , " 9 " , " 5 " },
-		{ " 4 " , " 5 " , " 6 " , " 8 " , " 7 " , num2  , num3  , num1  , " 4 " , " 9 " },
-		{ " 5 " , " 3 " , " 2 " , num9  , num1  , num4  , num6  , num8  , " 5 " , " 7 " },
-		{ " 6 " , " 7 " , " 1 " , num4  , num9  , num5  , " 8 " , " 2 " , " 3 " , " 6 " },
-		{ " 7 " , " 1 " , " 5 " , " 7 " , " 3 " , " 6 " , " 4 " , " 9 " , " 8 " , " 2 " },
-		{ " 8 " , " 4 " , num9  , " 2 " , " 8 " , num7  , num5  , " 3 " , num6  , " 1 " },
-		{ " 9 " , num8  , " 3 " , " 6 " , num2  , num1  , " 9 " , num5  , " 7 " , num4 }
+	{ " 1 " , num2  , " 4 " , num3  , " 5 " , num9  , num7  , " 6 " , " 1 " , num8 },
+	{ " 2 " , " 9 " , num7  , " 5 " , num6  , num8  , " 1 " , " 4 " , num2  , " 3 " },
+	{ " 3 " , " 6 " , " 8 " , " 1 " , " 4 " , " 3 " , " 2 " , " 7 " , " 9 " , " 5 " },
+	{ " 4 " , " 5 " , " 6 " , " 8 " , " 7 " , num2  , num3  , num1  , " 4 " , " 9 " },
+	{ " 5 " , " 3 " , " 2 " , num9  , num1  , num4  , num6  , num8  , " 5 " , " 7 " },
+	{ " 6 " , " 7 " , " 1 " , num4  , num9  , num5  , " 8 " , " 2 " , " 3 " , " 6 " },
+	{ " 7 " , " 1 " , " 5 " , " 7 " , " 3 " , " 6 " , " 4 " , " 9 " , " 8 " , " 2 " },
+	{ " 8 " , " 4 " , num9  , " 2 " , " 8 " , num7  , num5  , " 3 " , num6  , " 1 " },
+	{ " 9 " , num8  , " 3 " , " 6 " , num2  , num1  , " 9 " , num5  , " 7 " , num4 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , "   " , "   " , num7  , num9  , num5  , "   " },
-		{ " 2 " , num7  , "   " , num3  , "   " , num5  , "   " , "   " , "   " , num2 },
-		{ " 3 " , "   " , "   " , "   " , "   " , num6  , num4  , "   " , num3  , "   " },
-		{ " 4 " , "   " , num9  , "   " , "   " , "   " , "   " , num2  , "   " , num8 },
-		{ " 5 " , "   " , num6  , "   " , "   " , "   " , "   " , "   " , num9  , "   " },
-		{ " 6 " , num4  , "   " , num7  , "   " , "   " , "   " , "   " , num1  , "   " },
-		{ " 7 " , "   " , num3  , "   " , num8  , num4  , "   " , "   " , "   " , "   " },
-		{ " 8 " , num5  , "   " , "   " , "   " , num1  , "   " , num4  , "   " , num3 },
-		{ " 9 " , "   " , num4  , num1  , num7  , "   " , "   " , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , "   " , "   " , num7  , num9  , num5  , "   " },
+	{ " 2 " , num7  , "   " , num3  , "   " , num5  , "   " , "   " , "   " , num2 },
+	{ " 3 " , "   " , "   " , "   " , "   " , num6  , num4  , "   " , num3  , "   " },
+	{ " 4 " , "   " , num9  , "   " , "   " , "   " , "   " , num2  , "   " , num8 },
+	{ " 5 " , "   " , num6  , "   " , "   " , "   " , "   " , "   " , num9  , "   " },
+	{ " 6 " , num4  , "   " , num7  , "   " , "   " , "   " , "   " , num1  , "   " },
+	{ " 7 " , "   " , num3  , "   " , num8  , num4  , "   " , "   " , "   " , "   " },
+	{ " 8 " , num5  , "   " , "   " , "   " , num1  , "   " , num4  , "   " , num3 },
+	{ " 9 " , "   " , num4  , num1  , num7  , "   " , "   " , "   " , "   " , "   " }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 6 " , " 8 " , " 4 " , " 3 " , " 2 " , num7  , num9  , num5  , " 1 " },
-		{ " 2 " , num7  , " 1 " , num3  , " 9 " , num5  , " 8 " , " 6 " , " 4 " , num2 },
-		{ " 3 " , " 9 " , " 5 " , " 2 " , " 1 " , num6  , num4  , " 8 " , num3  , " 7 " },
-		{ " 4 " , " 3 " , num9  , " 5 " , " 4 " , " 7 " , " 1 " , num2  , " 6 " , num8 },
-		{ " 5 " , " 1 " , num6  , " 8 " , " 5 " , " 3 " , " 2 " , " 7 " , num9  , " 4 " },
-		{ " 6 " , num4  , " 2 " , num7  , " 6 " , " 8 " , " 9 " , " 3 " , num1  , " 5 " },
-		{ " 7 " , " 2 " , num3  , " 6 " , num8  , num4  , " 5 " , " 1 " , " 7 " , " 9 " },
-		{ " 8 " , num5  , " 7 " , " 9 " , " 2 " , num1  , " 6 " , num4  , " 8 " , num3 },
-		{ " 9 " , " 8 " , num4  , num1  , num7  , " 9 " , " 3 " , " 5 " , " 2 " , " 6 " }
+	{ " 1 " , " 6 " , " 8 " , " 4 " , " 3 " , " 2 " , num7  , num9  , num5  , " 1 " },
+	{ " 2 " , num7  , " 1 " , num3  , " 9 " , num5  , " 8 " , " 6 " , " 4 " , num2 },
+	{ " 3 " , " 9 " , " 5 " , " 2 " , " 1 " , num6  , num4  , " 8 " , num3  , " 7 " },
+	{ " 4 " , " 3 " , num9  , " 5 " , " 4 " , " 7 " , " 1 " , num2  , " 6 " , num8 },
+	{ " 5 " , " 1 " , num6  , " 8 " , " 5 " , " 3 " , " 2 " , " 7 " , num9  , " 4 " },
+	{ " 6 " , num4  , " 2 " , num7  , " 6 " , " 8 " , " 9 " , " 3 " , num1  , " 5 " },
+	{ " 7 " , " 2 " , num3  , " 6 " , num8  , num4  , " 5 " , " 1 " , " 7 " , " 9 " },
+	{ " 8 " , num5  , " 7 " , " 9 " , " 2 " , num1  , " 6 " , num4  , " 8 " , num3 },
+	{ " 9 " , " 8 " , num4  , num1  , num7  , " 9 " , " 3 " , " 5 " , " 2 " , " 6 " }
 	};
 
 
@@ -2565,82 +2565,82 @@ void hard9x9()
 
 	string boardOne[rows][cols] = {
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , num3  , num9  , num6  , "   " , "   " , num4  , "   " },
-		{ " 2 " , "   " , num7  , "   " , "   " , "   " , "   " , "   " , num2  , num9 },
-		{ " 3 " , "   " , "   " , "   " , "   " , num8  , "   " , num1  , "   " , "   " },
-		{ " 4 " , "   " , "   " , "   " , "   " , "   " , num6  , "   " , "   " , "   " },
-		{ " 5 " , num1  , "   " , num2  , "   " , num5  , "   " , num6  , "   " , num4 },
-		{ " 6 " , "   " , "   " , "   " , num7  , "   " , "   " , "   " , "   " , "   " },
-		{ " 7 " , "   " , "   " , num7  , "   " , num3  , "   " , "   " , "   " , "   " },
-		{ " 8 " , num2  , num5  , "   " , "   " , "   " , "   " , "   " , num1  , "   " },
-		{ " 9 " , "   " , num3  , "   " , "   " , num4  , num9  , num8  , "   " , "   " }
+	{ " 1 " , "   " , "   " , num3  , num9  , num6  , "   " , "   " , num4  , "   " },
+	{ " 2 " , "   " , num7  , "   " , "   " , "   " , "   " , "   " , num2  , num9 },
+	{ " 3 " , "   " , "   " , "   " , "   " , num8  , "   " , num1  , "   " , "   " },
+	{ " 4 " , "   " , "   " , "   " , "   " , "   " , num6  , "   " , "   " , "   " },
+	{ " 5 " , num1  , "   " , num2  , "   " , num5  , "   " , num6  , "   " , num4 },
+	{ " 6 " , "   " , "   " , "   " , num7  , "   " , "   " , "   " , "   " , "   " },
+	{ " 7 " , "   " , "   " , num7  , "   " , num3  , "   " , "   " , "   " , "   " },
+	{ " 8 " , num2  , num5  , "   " , "   " , "   " , "   " , "   " , num1  , "   " },
+	{ " 9 " , "   " , num3  , "   " , "   " , num4  , num9  , num8  , "   " , "   " }
 	};
 	string boardOneAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 5 " , " 1 " , num3  , num9  , num6  , " 2 " , " 7 " , num4  , " 8 " },
-		{ " 2 " , " 8 " , num7  , " 6 " , " 4 " , " 1 " , " 5 " , " 3 " , num2  , num9 },
-		{ " 3 " , " 9 " , " 2 " , " 4 " , " 3 " , num8  , " 7 " , num1  , " 6 " , " 5 " },
-		{ " 4 " , " 7 " , " 4 " , " 8 " , " 1 " , " 9 " , num6  , " 5 " , " 3 " , " 2 " },
-		{ " 5 " , num1  , " 9 " , num2  , " 8 " , num5  , " 3 " , num6  , " 7 " , num4 },
-		{ " 6 " , " 3 " , " 6 " , " 5 " , num7  , " 2 " , " 4 " , " 9 " , " 8 " , " 1 " },
-		{ " 7 " , " 4 " , " 8 " , num7  , " 5 " , num3  , " 1 " , " 2 " , " 9 " , " 6 " },
-		{ " 8 " , num2  , num5  , " 9 " , " 6 " , " 7 " , " 8 " , " 4 " , num1  , " 3 " },
-		{ " 9 " , " 6 " , num3  , " 1 " , " 2 " , num4  , num9  , num8  , " 5 " , " 7 " }
+	{ " 1 " , " 5 " , " 1 " , num3  , num9  , num6  , " 2 " , " 7 " , num4  , " 8 " },
+	{ " 2 " , " 8 " , num7  , " 6 " , " 4 " , " 1 " , " 5 " , " 3 " , num2  , num9 },
+	{ " 3 " , " 9 " , " 2 " , " 4 " , " 3 " , num8  , " 7 " , num1  , " 6 " , " 5 " },
+	{ " 4 " , " 7 " , " 4 " , " 8 " , " 1 " , " 9 " , num6  , " 5 " , " 3 " , " 2 " },
+	{ " 5 " , num1  , " 9 " , num2  , " 8 " , num5  , " 3 " , num6  , " 7 " , num4 },
+	{ " 6 " , " 3 " , " 6 " , " 5 " , num7  , " 2 " , " 4 " , " 9 " , " 8 " , " 1 " },
+	{ " 7 " , " 4 " , " 8 " , num7  , " 5 " , num3  , " 1 " , " 2 " , " 9 " , " 6 " },
+	{ " 8 " , num2  , num5  , " 9 " , " 6 " , " 7 " , " 8 " , " 4 " , num1  , " 3 " },
+	{ " 9 " , " 6 " , num3  , " 1 " , " 2 " , num4  , num9  , num8  , " 5 " , " 7 " }
 	};
 
 	string boardTwo[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num1  , num6  , "   " , num3  , num2  , "   " , num4  , "   " , "   " },
-		{ " 2 " , "   " , "   " , "   " , "   " , num4  , "   " , "   " , num2  , num9 },
-		{ " 3 " , "   " , num2  , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
-		{ " 4 " , num9  , "   " , num3  , num4  , "   " , "   " , num7  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num4  , "   " , "   " , "   " , num6  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num2  , "   " , "   " , num5  , num3  , "   " , num8 },
-		{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num6  , "   " },
-		{ " 8 " , num2  , num3  , "   " , "   " , num9  , "   " , "   " , "   " , "   " },
-		{ " 9 " , "   " , "   " , num6  , "   " , num1  , num7  , "   " , num5  , num3 }
+	{ " 1 " , num1  , num6  , "   " , num3  , num2  , "   " , num4  , "   " , "   " },
+	{ " 2 " , "   " , "   " , "   " , "   " , num4  , "   " , "   " , num2  , num9 },
+	{ " 3 " , "   " , num2  , "   " , "   " , "   " , "   " , "   " , "   " , "   " },
+	{ " 4 " , num9  , "   " , num3  , num4  , "   " , "   " , num7  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num4  , "   " , "   " , "   " , num6  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num2  , "   " , "   " , num5  , num3  , "   " , num8 },
+	{ " 7 " , "   " , "   " , "   " , "   " , "   " , "   " , "   " , num6  , "   " },
+	{ " 8 " , num2  , num3  , "   " , "   " , num9  , "   " , "   " , "   " , "   " },
+	{ " 9 " , "   " , "   " , num6  , "   " , num1  , num7  , "   " , num5  , num3 }
 	};
 	string boardTwoAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , num1  , num6  , " 5 " , num3  , num2  , " 9 " , num4  , " 8 " , " 7 " },
-		{ " 2 " , " 3 " , " 7 " , " 8 " , " 6 " , num4  , " 1 " , " 5 " , num2  , num9 },
-		{ " 3 " , " 4 " , num2  , " 9 " , " 7 " , " 5 " , " 8 " , " 1 " , " 3 " , " 6 " },
-		{ " 4 " , num9  , " 8 " , num3  , num4  , " 6 " , " 2 " , num7  , " 1 " , " 5 " },
-		{ " 5 " , " 7 " , " 5 " , num4  , " 1 " , " 8 " , " 3 " , num6  , " 9 " , " 2 " },
-		{ " 6 " , " 6 " , " 1 " , num2  , " 9 " , " 7 " , num5  , num3  , " 4 " , num8 },
-		{ " 7 " , " 5 " , " 9 " , " 7 " , " 8 " , " 3 " , " 4 " , " 2 " , num6  , " 1 " },
-		{ " 8 " , num2  , num3  , " 1 " , " 5 " , num9  , " 6 " , " 8 " , " 7 " , " 4 " },
-		{ " 9 " , " 8 " , " 4 " , num6  , " 2 " , num1  , num7  , " 9 " , num5  , num3 }
+	{ " 1 " , num1  , num6  , " 5 " , num3  , num2  , " 9 " , num4  , " 8 " , " 7 " },
+	{ " 2 " , " 3 " , " 7 " , " 8 " , " 6 " , num4  , " 1 " , " 5 " , num2  , num9 },
+	{ " 3 " , " 4 " , num2  , " 9 " , " 7 " , " 5 " , " 8 " , " 1 " , " 3 " , " 6 " },
+	{ " 4 " , num9  , " 8 " , num3  , num4  , " 6 " , " 2 " , num7  , " 1 " , " 5 " },
+	{ " 5 " , " 7 " , " 5 " , num4  , " 1 " , " 8 " , " 3 " , num6  , " 9 " , " 2 " },
+	{ " 6 " , " 6 " , " 1 " , num2  , " 9 " , " 7 " , num5  , num3  , " 4 " , num8 },
+	{ " 7 " , " 5 " , " 9 " , " 7 " , " 8 " , " 3 " , " 4 " , " 2 " , num6  , " 1 " },
+	{ " 8 " , num2  , num3  , " 1 " , " 5 " , num9  , " 6 " , " 8 " , " 7 " , " 4 " },
+	{ " 9 " , " 8 " , " 4 " , num6  , " 2 " , num1  , num7  , " 9 " , num5  , num3 }
 	};
 
 	string boardThree[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , "   " , "   " , "   " , "   " , num9  , "   " , num5  , "   " , "   " },
-		{ " 2 " , "   " , num5  , num9  , num8  , "   " , num1  , "   " , "   " , "   " },
-		{ " 3 " , "   " , "   " , num8  , num2  , "   " , "   " , "   " , num6  , "   " },
-		{ " 4 " , "   " , num7  , "   " , "   " , num5  , "   " , num3  , "   " , "   " },
-		{ " 5 " , "   " , "   " , num5  , "   " , num3  , "   " , num4  , "   " , "   " },
-		{ " 6 " , "   " , "   " , num1  , "   " , num8  , "   " , "   " , num9  , "   " },
-		{ " 7 " , "   " , num9  , "   " , "   " , "   " , num8  , num2  , "   " , "   " },
-		{ " 8 " , "   " , "   " , "   " , num6  , "   " , num4  , num9  , num1  , "   " },
-		{ " 9 " , "   " , "   " , num6  , "   " , num7  , "   " , "   " , "   " , "   " }
+	{ " 1 " , "   " , "   " , "   " , "   " , num9  , "   " , num5  , "   " , "   " },
+	{ " 2 " , "   " , num5  , num9  , num8  , "   " , num1  , "   " , "   " , "   " },
+	{ " 3 " , "   " , "   " , num8  , num2  , "   " , "   " , "   " , num6  , "   " },
+	{ " 4 " , "   " , num7  , "   " , "   " , num5  , "   " , num3  , "   " , "   " },
+	{ " 5 " , "   " , "   " , num5  , "   " , num3  , "   " , num4  , "   " , "   " },
+	{ " 6 " , "   " , "   " , num1  , "   " , num8  , "   " , "   " , num9  , "   " },
+	{ " 7 " , "   " , num9  , "   " , "   " , "   " , num8  , num2  , "   " , "   " },
+	{ " 8 " , "   " , "   " , "   " , num6  , "   " , num4  , num9  , num1  , "   " },
+	{ " 9 " , "   " , "   " , num6  , "   " , num7  , "   " , "   " , "   " , "   " }
 	};
 	string boardThreeAnswer[rows][cols] =
 	{
 		{ "   " , " A " , " B " , " C " , " D " , " E " , " F " , " G " , " H " , " I " },
-		{ " 1 " , " 6 " , " 1 " , " 4 " , " 3 " , num9  , " 7 " , num5  , " 2 " , " 8 " },
-		{ " 2 " , " 2 " , num5  , num9  , num8  , " 6 " , num1  , " 7 " , " 4 " , " 3 " },
-		{ " 3 " , " 7 " , " 3 " , num8  , num2  , " 4 " , " 5 " , " 1 " , num6  , " 9 " },
-		{ " 4 " , " 9 " , num7  , " 2 " , " 4 " , num5  , " 6 " , num3  , " 8 " , " 1 " },
-		{ " 5 " , " 8 " , " 6 " , num5  , " 1 " , num3  , " 9 " , num4  , " 7 " , " 2 " },
-		{ " 6 " , " 3 " , " 4 " , num1  , " 7 " , num8  , " 2 " , " 6 " , num9  , " 5 " },
-		{ " 7 " , " 4 " , num9  , " 7 " , " 5 " , " 1 " , num8  , num2  , " 3 " , " 6 " },
-		{ " 8 " , " 5 " , " 8 " , " 3 " , num6  , " 2 " , num4  , num9  , num1  , " 7 " },
-		{ " 9 " , " 1 " , " 2 " , num6  , " 9 " , num7  , " 3 " , " 8 " , " 5 " , " 4 " }
+	{ " 1 " , " 6 " , " 1 " , " 4 " , " 3 " , num9  , " 7 " , num5  , " 2 " , " 8 " },
+	{ " 2 " , " 2 " , num5  , num9  , num8  , " 6 " , num1  , " 7 " , " 4 " , " 3 " },
+	{ " 3 " , " 7 " , " 3 " , num8  , num2  , " 4 " , " 5 " , " 1 " , num6  , " 9 " },
+	{ " 4 " , " 9 " , num7  , " 2 " , " 4 " , num5  , " 6 " , num3  , " 8 " , " 1 " },
+	{ " 5 " , " 8 " , " 6 " , num5  , " 1 " , num3  , " 9 " , num4  , " 7 " , " 2 " },
+	{ " 6 " , " 3 " , " 4 " , num1  , " 7 " , num8  , " 2 " , " 6 " , num9  , " 5 " },
+	{ " 7 " , " 4 " , num9  , " 7 " , " 5 " , " 1 " , num8  , num2  , " 3 " , " 6 " },
+	{ " 8 " , " 5 " , " 8 " , " 3 " , num6  , " 2 " , num4  , num9  , num1  , " 7 " },
+	{ " 9 " , " 1 " , " 2 " , num6  , " 9 " , num7  , " 3 " , " 8 " , " 5 " , " 4 " }
 	};
 
 
@@ -2907,11 +2907,11 @@ void playSmallGame(string board[][5], string boardAnswer[][5], string boardTop, 
 				cout << endl;
 			}
 		}
-		
+
 		cout << endl << endl << lightmagenta << "Select a row (1-4) to enter a number in: ";  //--- get desired row
 		getline(cin, choiceRow);
 		cout << lightcyan;
-		
+
 
 		while (valid == false)                                                                //--- check-input loop
 		{
@@ -3270,7 +3270,12 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 			while (Input == false && Terminated == false && usedHint == false)
 			{
 
-				if ((column.length() > 1 || column < "A" || column > "F") && usedHint == false)
+				if (column == terminate)
+				{
+					Terminated = true;
+				}
+
+				else if ((column.length() > 1 || column < "A" || column > "F") && usedHint == false)
 				{
 					cout << "Bad input. Enter a column(A-F): ";
 					getline(cin, column);
@@ -3282,10 +3287,6 @@ void playMedGame(string board[][7], string board_answer[][7], const int rows, co
 					{
 						hint6x6(board, board_answer, hintsRemaining, usedHint);
 					}
-				}
-				else if (column == terminate)
-				{
-					Terminated = true;
 				}
 
 				else
