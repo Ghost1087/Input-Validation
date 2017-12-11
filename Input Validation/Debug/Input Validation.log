@@ -1,5 +1,4 @@
-﻿  stdafx.cpp
-  InputValidation.cpp
-c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(4461): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(4452): warning C4715: 'replay': not all control paths return a value
+﻿  InputValidation.cpp
+c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(2799): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mike\documents\github\input-validation\input validation\inputvalidation.cpp(4501): warning C4715: 'replay': not all control paths return a value
   Input Validation.vcxproj -> C:\Users\Mike\Documents\GitHub\Input-Validation\Debug\Input Validation.exe
